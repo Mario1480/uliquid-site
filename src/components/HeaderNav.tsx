@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 
@@ -14,8 +15,15 @@ export function HeaderNav() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4 sm:px-10 lg:px-16">
-        <Link href="/" className="text-lg font-semibold text-text">
-          uLiquid
+        <Link href="/" className="flex items-center gap-3 text-lg font-semibold text-text">
+          <Image
+            src="/logo.png"
+            alt="uLiquid logo"
+            width={32}
+            height={32}
+            className="h-8 w-8"
+          />
+          <span>uLiquid</span>
         </Link>
         <nav className="hidden items-center gap-6 text-sm text-muted md:flex">
           {navLinks.map((link) => (
