@@ -1,0 +1,72 @@
+import Link from "next/link";
+
+const footerLinks = {
+  Product: [
+    { label: "Overview", href: "/product" },
+    { label: "Pricing", href: "/pricing" },
+    { label: "Security", href: "/security" },
+  ],
+  Company: [
+    { label: "About", href: "/company" },
+    { label: "Contact", href: "/company#contact" },
+    { label: "Careers", href: "/company" },
+  ],
+  Resources: [
+    { label: "Docs", href: "/docs" },
+    { label: "Exchanges", href: "/exchanges" },
+    { label: "Status", href: "/security" },
+  ],
+  Legal: [
+    { label: "Privacy", href: "/privacy" },
+    { label: "Terms", href: "/terms" },
+  ],
+};
+
+export function Footer() {
+  return (
+    <footer className="border-t border-border/70 bg-surface/50">
+      <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 py-12 sm:px-10 lg:grid-cols-[1.2fr_2fr] lg:px-16">
+        <div className="space-y-4">
+          <p className="text-lg font-semibold text-text">uLiquid</p>
+          <p className="text-sm text-muted">
+            Affordable liquidity tooling for listing-ready orderbooks. SaaS only. No
+            market-making desk required.
+          </p>
+          <div className="text-sm text-muted">
+            Contact: <span className="text-text">hello@uliquid.vip</span>
+          </div>
+          <div className="flex gap-3 text-xs text-muted">
+            <span className="rounded-full border border-border px-3 py-1">
+              X / Twitter
+            </span>
+            <span className="rounded-full border border-border px-3 py-1">
+              LinkedIn
+            </span>
+            <span className="rounded-full border border-border px-3 py-1">
+              Telegram
+            </span>
+          </div>
+        </div>
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {Object.entries(footerLinks).map(([title, links]) => (
+            <div key={title}>
+              <p className="mb-3 text-sm font-semibold text-text">{title}</p>
+              <ul className="space-y-2 text-sm text-muted">
+                {links.map((link) => (
+                  <li key={link.label}>
+                    <Link href={link.href} className="hover:text-text">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="border-t border-border/60 px-6 py-4 text-center text-xs text-muted">
+        © {new Date().getFullYear()} uLiquid. All rights reserved.
+      </div>
+    </footer>
+  );
+}

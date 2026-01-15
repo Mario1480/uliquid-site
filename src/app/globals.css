@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 225 28% 6%;
+  --surface: 225 24% 10%;
+  --border: 225 20% 22%;
+  --text: 210 35% 92%;
+  --muted: 220 16% 65%;
+  --accent-cyan: 188 96% 53%;
+  --accent-blue: 216 90% 60%;
+  --accent-purple: 278 85% 66%;
+}
+
+body {
+  color: hsl(var(--text));
+  background: radial-gradient(
+      circle at top,
+      hsl(220 40% 12% / 0.6),
+      transparent 55%
+    ),
+    hsl(var(--background));
+  font-family: var(--font-geist-sans), "Geist", sans-serif;
+}
+
+@layer utilities {
+.text-balance {
+  text-wrap: balance;
+}
+}
