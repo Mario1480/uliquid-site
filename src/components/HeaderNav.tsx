@@ -1,9 +1,9 @@
-\"use client\";
+"use client";
 
-import Image from \"next/image\";
-import Link from \"next/link\";
-import { useState } from \"react\";
-import { Button } from \"@/components/ui/Button\";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import { Button } from "@/components/ui/Button";
 
 const navLinks = [
   { href: "/product", label: "Product" },
