@@ -17,16 +17,20 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "uLiquid — Affordable Liquidity SaaS for CEX Listings",
+  title: {
+    default: "uLiquid Market Maker",
+    template: "%s | uLiquid Market Maker",
+  },
   description:
-    "Stable spreads, risk limits, monitoring & listing-ready reports for small and mid-sized token projects.",
+    "uLiquid Market Maker is a self-hosted crypto market-making system with volume execution, price follow, price support, and enterprise-grade security.",
   metadataBase: new URL("https://uliquid.vip"),
   openGraph: {
-    title: "uLiquid — Affordable Liquidity SaaS for CEX Listings",
+    title: "uLiquid Market Maker",
     description:
-      "Stable spreads, risk limits, monitoring & listing-ready reports for small and mid-sized token projects.",
+      "uLiquid Market Maker is a self-hosted crypto market-making system with volume execution, price follow, price support, and enterprise-grade security.",
     url: "https://uliquid.vip",
     images: ["/og.png"],
+    siteName: "uLiquid Market Maker",
   },
   icons: {
     icon: "/favicon.ico",

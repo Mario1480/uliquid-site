@@ -2,27 +2,36 @@ import { FAQAccordion } from "@/components/FAQAccordion";
 import { PricingCards } from "@/components/PricingCards";
 import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
+import { FeatureMatrixTable } from "@/components/FeatureMatrixTable";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Pricing & License Tiers – uLiquid Market Maker",
+  description:
+    "Transparent pricing for uLiquid Market Maker licenses. Run on your own VPS with feature-based licensing and optional add-ons.",
+};
 
 const pricingFaqs = [
   {
-    question: "Is there a free trial?",
-    answer: "Yes. Start with a guided trial and upgrade when you are ready to go live.",
+    question: "Do I need my own VPS?",
+    answer: "Yes. uLiquid Market Maker is fully self-hosted.",
   },
   {
-    question: "Can I upgrade or downgrade later?",
-    answer: "Plans can be adjusted at any time as your liquidity needs change.",
+    question: "How are features unlocked?",
+    answer: "Via the integrated license server using feature flags.",
   },
   {
-    question: "Can I cancel anytime?",
-    answer: "Yes. Your plan remains active through the current billing cycle.",
-  },
-  {
-    question: "Do you offer invoicing?",
-    answer: "Invoicing and custom billing are available for the Scale plan.",
+    question: "Can I run multiple instances?",
+    answer: "Yes. One instance per customer or venue is recommended for isolation.",
   },
 ];
 
-const addOns = ["Extra exchange", "Extra pairs", "Additional seats"];
+const addOns = [
+  "Price Support Module",
+  "Additional Exchange Connectors",
+  "Extra Bots",
+  "AI Recommendations (coming soon)",
+];
 
 export default function PricingPage() {
   return (
@@ -31,11 +40,19 @@ export default function PricingPage() {
         <div className="max-w-3xl">
           <h1 className="text-4xl font-semibold text-text">Pricing</h1>
           <p className="mt-4 text-lg text-muted">
-            Transparent plans for growing token projects and listing teams.
+            uLiquid Market Maker runs on your own VPS. Pricing applies to the software license, updates,
+            and feature access — not infrastructure.
           </p>
         </div>
         <div className="mt-10">
           <PricingCards />
+        </div>
+        <div className="mt-12">
+          <h2 className="text-3xl font-semibold text-text">Feature Matrix</h2>
+          <p className="mt-3 text-muted">Compare included modules and gated add-ons.</p>
+          <div className="mt-6">
+            <FeatureMatrixTable />
+          </div>
         </div>
       </Section>
 

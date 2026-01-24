@@ -1,30 +1,88 @@
 import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Documentation & Guides – uLiquid Market Maker",
+  description:
+    "Technical documentation for uLiquid Market Maker: setup guides, exchange integration, bots, price follow, price support, security, and production operations.",
+};
 
 const docsCards = [
   {
-    title: "Quickstart",
-    description: "Launch your first liquidity workflow in a few steps.",
+    title: "Quickstart: Docker & VPS Setup",
+    description: "Deploy the stack on your VPS and wire up your domain.",
   },
   {
-    title: "Connect Exchange",
-    description: "Add API keys with the correct permissions and scope.",
+    title: "Connecting Exchange API Keys",
+    description: "Add API keys with trading permissions only, no withdrawals.",
   },
   {
-    title: "Configure Pairs",
-    description: "Set spread, budget, and guardrails for each listing pair.",
+    title: "Creating a Market-Making Bot",
+    description: "Choose pair, budgets, and distributions for market making.",
   },
   {
-    title: "Alerts",
-    description: "Configure notifications for fills and risk triggers.",
+    title: "Volume Bot (Fill-Based Counter)",
+    description: "Configure daily notional and real-fill tracking.",
   },
   {
-    title: "Reports",
-    description: "Generate listing-ready summaries and exports.",
+    title: "Price Follow (Master / Slave)",
+    description: "Use a feed-only master and execute elsewhere.",
   },
   {
-    title: "FAQ",
-    description: "Answers to common operational questions.",
+    title: "Price Support & Budget Handling",
+    description: "Set a floor price with alerts and auto-stop.",
+  },
+  {
+    title: "Security & Access Control",
+    description: "Roles, re-auth, and optional email 2FA.",
+  },
+  {
+    title: "Production Operations & Backups",
+    description: "Health checks, heartbeat alerts, and backups.",
+  },
+  {
+    title: "License & Feature Gating",
+    description: "Manage feature gates and tier limits.",
+  },
+];
+
+const miniGuides = [
+  {
+    title: "Quickstart: Docker & VPS Setup",
+    description: "Use Docker Compose, set environment variables, and point your domain.",
+  },
+  {
+    title: "Connecting Exchange API Keys",
+    description: "Use trade-only permissions and verify connectivity before launch.",
+  },
+  {
+    title: "Creating a Market-Making Bot",
+    description: "Define the pair, budgets, and distributions for ladder depth.",
+  },
+  {
+    title: "Volume Bot (Fill-Based Counter)",
+    description: "Set daily notional targets and real-fill pacing limits.",
+  },
+  {
+    title: "Price Follow (Master / Slave)",
+    description: "Separate price discovery from execution using a feed-only master.",
+  },
+  {
+    title: "Price Support & Budget Handling",
+    description: "Allocate a support budget and configure depletion alerts.",
+  },
+  {
+    title: "Security & Access Control",
+    description: "Assign roles and require re-auth for sensitive actions.",
+  },
+  {
+    title: "Production Operations & Backups",
+    description: "Monitor runner heartbeat and verify backup schedules.",
+  },
+  {
+    title: "License & Feature Gating",
+    description: "Enable modules with license flags and track limits.",
   },
 ];
 
@@ -47,6 +105,21 @@ export default function DocsPage() {
               <h3 className="text-lg font-semibold text-text">{card.title}</h3>
               <p className="mt-3 text-sm text-muted">{card.description}</p>
             </Card>
+          ))}
+        </div>
+      </Section>
+
+      <Section>
+        <div className="mb-8">
+          <h2 className="text-3xl font-semibold text-text">Mini Guides</h2>
+          <p className="mt-3 text-muted">Quick references for operators getting started.</p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-2">
+          {miniGuides.map((guide) => (
+            <details key={guide.title} className="rounded-2xl border border-border/60 bg-surface/60 p-5">
+              <summary className="cursor-pointer text-sm font-semibold text-text">{guide.title}</summary>
+              <p className="mt-3 text-sm text-muted">{guide.description}</p>
+            </details>
           ))}
         </div>
       </Section>

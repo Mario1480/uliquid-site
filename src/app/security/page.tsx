@@ -1,26 +1,37 @@
 import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Security & Access Control – uLiquid Market Maker",
+  description:
+    "Enterprise-grade security with encrypted exchange keys, role-based access control, re-authentication, optional email 2FA, and self-hosted infrastructure.",
+};
 
 const securityItems = [
   {
-    title: "API Key Permissions",
-    description: "Trading-only permissions with no withdrawal access. Keys are scoped per exchange connector.",
+    title: "Encrypted Exchange Keys",
+    description: "API keys are encrypted at rest and can only be viewed or modified after re-authentication.",
   },
   {
-    title: "Encryption",
-    description: "Designed to encrypt data in transit and at rest across platform services.",
+    title: "Role-Based Access Control",
+    description: "Granular permissions per workspace for Admins, Operators, and Viewers.",
   },
   {
-    title: "Project Isolation",
-    description: "Workspaces are segmented to keep strategies and reports separated per project.",
+    title: "Re-Authentication (OTP)",
+    description: "Sensitive actions require a temporary verification code.",
   },
   {
-    title: "Audit Logs",
-    description: "Track team activity, changes, and system events in a centralized log.",
+    title: "Optional Email 2FA",
+    description: "Additional account protection configurable per user.",
   },
   {
-    title: "Operational Safety",
-    description: "Kill switch, rate limit handling, and alerting to protect active orderbooks.",
+    title: "CSRF & Origin Protections",
+    description: "Cookie-based authentication hardened with CSRF and origin checks.",
+  },
+  {
+    title: "Self-Hosted Architecture",
+    description: "Your keys, your server, your rules — no shared custody.",
   },
 ];
 
@@ -31,7 +42,8 @@ export default function SecurityPage() {
         <div className="max-w-3xl">
           <h1 className="text-4xl font-semibold text-text">Security</h1>
           <p className="mt-4 text-lg text-muted">
-            uLiquid is built to keep your liquidity operations secure, isolated, and observable.
+            Security is a core design principle of uLiquid Market Maker. The system is built to minimize risk
+            while maintaining operational flexibility.
           </p>
         </div>
       </Section>

@@ -29,8 +29,8 @@ export function Footer() {
         <div className="space-y-4">
           <p className="text-lg font-semibold text-text">uLiquid</p>
           <p className="text-sm text-muted">
-            Affordable liquidity tooling for listing-ready orderbooks. SaaS only. No
-            market-making desk required.
+            Self-hosted liquidity tooling for listing-ready orderbooks. No market-making
+            desk required.
           </p>
           <div className="text-sm text-muted">
             Contact: <span className="text-text">hello@uliquid.vip</span>

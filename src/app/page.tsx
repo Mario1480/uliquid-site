@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { AppScreenshotPlaceholder } from "@/components/AppScreenshotPlaceholder";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -9,11 +10,28 @@ import { PricingCards } from "@/components/PricingCards";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { CTASection } from "@/components/CTASection";
 
+export const metadata: Metadata = {
+  title: "uLiquid Market Maker – Professional Crypto Market Making on Your VPS",
+  description:
+    "Self-hosted crypto market-making software with volume bots, price follow, price support, and advanced risk controls. Built for professional operators.",
+  openGraph: {
+    title: "uLiquid Market Maker – Professional Crypto Market Making on Your VPS",
+    description:
+      "Self-hosted crypto market-making software with volume bots, price follow, price support, and advanced risk controls. Built for professional operators.",
+    type: "website",
+    siteName: "uLiquid Market Maker",
+  },
+};
+
 const trustChips = [
+  "Self-hosted on your VPS",
+  "Market Making & Volume Bot",
+  "Price Follow (Master / Slave)",
+  "Price Support with budget control",
   "Risk limits & kill switch",
-  "Exchange-ready connectors",
-  "Reporting for listing teams",
-  "SaaS — no servers needed",
+  "RBAC, Re-Auth & Email 2FA",
+  "Telegram alerts & runner heartbeat",
+  "License-gated add-ons (SaaS-ready)",
 ];
 
 const builtFor = [
@@ -41,55 +59,51 @@ const benefits = [
 
 const features = [
   {
-    title: "Spread & Quote Controls",
-    description: "Base spread, layers, refresh, and min/max distance tuning.",
+    title: "Market Making Engine",
+    description:
+      "Multi-level order ladders with configurable spread, step size, distributions, jitter, and inventory-based skew.",
   },
   {
-    title: "Inventory Targets",
-    description: "Targets per asset, bands, and rebalance triggers.",
+    title: "Fill-Based Volume Bot",
+    description: "Volume execution that counts only real fills. No fake volume, no cancel-based manipulation.",
   },
   {
-    title: "Risk & Safety",
-    description: "Max exposure, drawdown limits, and kill switch controls.",
+    title: "Price Follow (Master / Slave)",
+    description:
+      "Use one exchange purely as a price feed and execute trades on another — even without running a bot on the master exchange.",
   },
   {
-    title: "Monitoring & Alerts",
-    description: "Fills, latency, disconnects; webhook/telegram/email placeholders.",
+    title: "Price Support",
+    description:
+      "Protect a minimum price level using a separate support budget. Automatically stops when the budget is depleted.",
   },
   {
-    title: "Reports for Listings",
-    description: "Stability reports with CSV/PDF export placeholders.",
+    title: "Risk & Safety Controls",
+    description: "Min balance guard, max deviation, max open orders, and daily loss limits — enforced at runtime.",
   },
   {
-    title: "Multi-user & Roles",
-    description: "Team access, audit log, and multiple projects per workspace.",
+    title: "Security & Access Control",
+    description:
+      "Workspace-based roles, re-authentication for sensitive actions, encrypted exchange keys, and optional email 2FA.",
   },
 ];
 
 const faqs = [
   {
-    question: "How fast is setup?",
-    answer: "Most teams connect an exchange and go live in a day or two, depending on API approval.",
+    question: "Where does uLiquid Market Maker run?",
+    answer: "On your own VPS using Docker. You keep full custody and infrastructure control.",
   },
   {
-    question: "What API permissions are required?",
-    answer: "Trading-only permissions with no withdrawal rights. Budget caps and kill switch remain in your control.",
+    question: "Do I need withdrawal permissions on exchanges?",
+    answer: "No. Trade-only API permissions are sufficient.",
   },
   {
-    question: "Do you enforce budget and risk guardrails?",
-    answer: "Yes. You set exposure limits, drawdown thresholds, and orderbook constraints before launch.",
+    question: "How are features enabled or limited?",
+    answer: "Via the integrated license server using feature flags and limits.",
   },
   {
-    question: "Which exchanges are supported?",
-    answer: "We maintain a growing connector library. See the Exchanges page for placeholders and requests.",
-  },
-  {
-    question: "Can I export reports?",
-    answer: "Yes. Listing-ready exports are available in CSV/PDF placeholders for your internal review.",
-  },
-  {
-    question: "Can multiple team members access one workspace?",
-    answer: "Absolutely. Roles, permissions, and shared dashboards are included in growth plans.",
+    question: "How do alerts work?",
+    answer: "Via Telegram notifications for runtime errors, risk stops, and price support events.",
   },
 ];
 
@@ -99,18 +113,18 @@ export default function Home() {
       <Section className="pt-20">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:items-center">
           <div>
-            <Badge className="mb-4">Affordable Liquidity SaaS</Badge>
+            <Badge className="mb-4">uLiquid Market Maker</Badge>
             <h1 className="text-4xl font-semibold text-text sm:text-5xl">
-              Liquidity that gets your token listed — without a market-making desk.
+              Professional Crypto Market Making — On Your Own Infrastructure
             </h1>
             <p className="mt-6 text-lg text-muted">
-              uLiquid is an affordable SaaS for stable orderbooks on CEX: controlled spreads, risk
-              limits, monitoring, and listing-ready reports.
+              uLiquid Market Maker is a self-hosted market-making system with volume execution, price follow,
+              and price support — built for operators who require control, security, and reliability.
             </p>
             <div className="mt-6 flex flex-wrap gap-4">
-              <Button href="/app">Start Free Trial</Button>
-              <Button href="/pricing" variant="secondary">
-                See Pricing
+              <Button href="/app">Get Started</Button>
+              <Button href="/product" variant="secondary">
+                View Features
               </Button>
             </div>
             <div className="mt-8 flex flex-wrap gap-3">

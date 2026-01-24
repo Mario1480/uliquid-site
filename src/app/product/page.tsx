@@ -2,6 +2,22 @@ import { AppScreenshotPlaceholder } from "@/components/AppScreenshotPlaceholder"
 import { Section } from "@/components/ui/Section";
 import { Tabs } from "@/components/Tabs";
 import { Card } from "@/components/ui/Card";
+import { FeatureGrid } from "@/components/FeatureGrid";
+import { FeatureMatrixTable } from "@/components/FeatureMatrixTable";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Market Making Features – uLiquid Market Maker",
+  description:
+    "Explore uLiquid Market Maker features: automated market making, fill-based volume bots, price follow (master/slave), price support, and production-ready operations.",
+  openGraph: {
+    title: "Market Making Features – uLiquid Market Maker",
+    description:
+      "Explore uLiquid Market Maker features: automated market making, fill-based volume bots, price follow (master/slave), price support, and production-ready operations.",
+    type: "website",
+    siteName: "uLiquid Market Maker",
+  },
+};
 
 const tabItems = [
   {
@@ -65,11 +81,50 @@ export default function ProductPage() {
         <div className="max-w-3xl">
           <h1 className="text-4xl font-semibold text-text">Product</h1>
           <p className="mt-4 text-lg text-muted">
-            Every workflow your listing team needs — from setup to reporting — in a single SaaS platform.
+            uLiquid Market Maker is a modular trading system designed for professional market-making
+            operations. It combines automated execution, strict risk control, and production-grade
+            infrastructure — without sacrificing custody or transparency.
           </p>
         </div>
         <div className="mt-10">
           <Tabs items={tabItems} />
+        </div>
+      </Section>
+
+      <Section>
+        <FeatureGrid
+          title="Core Modules"
+          subtitle="Operator-focused tooling for self-hosted liquidity programs."
+          items={[
+            {
+              title: "Market Making",
+              description:
+                "Automated bid/ask liquidity with full control over ladder shape, spread, randomness, and inventory bias.",
+            },
+            {
+              title: "Volume Bot (Fill-Based)",
+              description: "Execute target daily volume using real trades only, with configurable trade sizes and pacing.",
+            },
+            {
+              title: "Price Follow (Master / Slave)",
+              description: "Separate price discovery from execution. Follow external markets without placing orders on the master exchange.",
+            },
+            {
+              title: "Price Support (budgeted)",
+              description: "Maintain a price floor using a dedicated budget. Includes auto-stop and notifications when funds are depleted.",
+            },
+            {
+              title: "Manual Trading (role-gated)",
+              description: "Place manual limit or market orders directly from the UI. Protected by role permissions and re-authentication.",
+            },
+            {
+              title: "Production Operations",
+              description: "Dockerized deployment, health checks, runner heartbeat monitoring, and automated database backups.",
+            },
+          ]}
+        />
+        <div className="mt-10">
+          <FeatureMatrixTable />
         </div>
       </Section>
 
