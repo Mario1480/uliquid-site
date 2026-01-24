@@ -8,38 +8,41 @@ type PricingCardsProps = {
 
 const tiers = [
   {
-    name: "Starter",
-    price: "from $X/mo",
-    description: "Self-hosted license for a single workspace.",
+    name: "Basic",
+    price: "$300 / month",
+    description: "Managed VPS included. Core market making for one bot.",
     features: [
-      "1 Workspace",
-      "1 Exchange Connector",
-      "Market Making",
-      "Fill-Based Volume Bot",
-      "Telegram Alerts",
+      "Dedicated VPS (included)",
+      "1 CEX integration",
+      "1 Bot",
+      "Core Market Making",
+      "Fill-based Volume Bot",
+      "Telegram notifications",
     ],
   },
   {
     name: "Growth",
-    price: "from $X/mo",
-    description: "More exchanges, more bots, more control.",
+    price: "$500 / month",
+    description: "Managed VPS with multi-exchange coverage.",
     features: [
-      "1 Workspace",
-      "Multiple Exchanges",
+      "Dedicated VPS (included)",
+      "Up to 5 CEX integrations",
+      "Up to 5 Bots",
       "Price Follow (Master / Slave)",
-      "Preset Export / Import",
-      "Advanced Risk Controls",
+      "All Basic features",
     ],
   },
   {
     name: "Scale",
-    price: "from $X/mo",
-    description: "Multi-workspace operations with advanced limits.",
+    price: "$700 / month",
+    description: "Higher limits with priority provisioning.",
     features: [
-      "Multiple Workspaces",
-      "Higher Limits",
-      "Advanced Feature Flags",
-      "Priority Support",
+      "Dedicated VPS (included)",
+      "Up to 10 CEX integrations",
+      "Up to 10 Bots",
+      "Price Follow (Master / Slave)",
+      "Price Support module",
+      "Priority provisioning",
     ],
   },
 ];
@@ -77,8 +80,8 @@ export function PricingCards({ variant = "full" }: PricingCardsProps) {
           </ul>
           {isTeaser ? null : (
             <div className="mt-6">
-              <Button href="/app" className="w-full">
-                Start Free Trial
+              <Button href="https://license-server.uliquid.vip/" className="w-full">
+                Buy License
               </Button>
             </div>
           )}

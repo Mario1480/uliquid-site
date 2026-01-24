@@ -22,12 +22,12 @@ export const metadata: Metadata = {
     template: "%s | uLiquid Market Maker",
   },
   description:
-    "uLiquid Market Maker is a self-hosted crypto market-making system with volume execution, price follow, price support, and enterprise-grade security.",
+    "uLiquid Market Maker is a managed crypto market-making system with volume execution, price follow, price support, and enterprise-grade security.",
   metadataBase: new URL("https://uliquid.vip"),
   openGraph: {
     title: "uLiquid Market Maker",
     description:
-      "uLiquid Market Maker is a self-hosted crypto market-making system with volume execution, price follow, price support, and enterprise-grade security.",
+      "uLiquid Market Maker is a managed crypto market-making system with volume execution, price follow, price support, and enterprise-grade security.",
     url: "https://uliquid.vip",
     images: ["/og.png"],
     siteName: "uLiquid Market Maker",

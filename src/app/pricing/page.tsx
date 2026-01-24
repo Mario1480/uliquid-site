@@ -8,13 +8,13 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Pricing & License Tiers – uLiquid Market Maker",
   description:
-    "Transparent pricing for uLiquid Market Maker licenses. Run on your own VPS with feature-based licensing and optional add-ons.",
+    "Transparent pricing for uLiquid Market Maker licenses. Managed VPS included with feature-based licensing and optional add-ons.",
 };
 
 const pricingFaqs = [
   {
     question: "Do I need my own VPS?",
-    answer: "Yes. uLiquid Market Maker is fully self-hosted.",
+    answer: "No. A dedicated VPS is included with your subscription.",
   },
   {
     question: "How are features unlocked?",
@@ -22,15 +22,14 @@ const pricingFaqs = [
   },
   {
     question: "Can I run multiple instances?",
-    answer: "Yes. One instance per customer or venue is recommended for isolation.",
+    answer: "Yes. Instances are provisioned per license in the License Manager.",
   },
 ];
 
 const addOns = [
-  "Price Support Module",
-  "Additional Exchange Connectors",
-  "Extra Bots",
-  "AI Recommendations (coming soon)",
+  "Additional Bots",
+  "Additional CEX connections",
+  "Optional advanced features (future)",
 ];
 
 export default function PricingPage() {
@@ -40,12 +39,21 @@ export default function PricingPage() {
         <div className="max-w-3xl">
           <h1 className="text-4xl font-semibold text-text">Pricing</h1>
           <p className="mt-4 text-lg text-muted">
-            uLiquid Market Maker runs on your own VPS. Pricing applies to the software license, updates,
+            uLiquid Market Maker includes a managed VPS. Pricing applies to the software license, updates,
             and feature access — not infrastructure.
+          </p>
+          <p className="mt-3 text-sm text-muted">
+            Manage your license, VPS details, and subscription in the Customer Portal / License Manager.
           </p>
         </div>
         <div className="mt-10">
           <PricingCards />
+        </div>
+        <div className="mt-10 grid gap-4 rounded-2xl border border-border/60 bg-surface/60 p-6 text-sm text-muted">
+          <p className="font-semibold text-text">Pricing Notes</p>
+          <p>VPS cost is included.</p>
+          <p>No self-hosting required.</p>
+          <p>License limits enforced by the Market Maker runtime.</p>
         </div>
         <div className="mt-12">
           <h2 className="text-3xl font-semibold text-text">Feature Matrix</h2>

@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Security & Access Control – uLiquid Market Maker",
   description:
-    "Enterprise-grade security with encrypted exchange keys, role-based access control, re-authentication, optional email 2FA, and self-hosted infrastructure.",
+    "Enterprise-grade security with encrypted exchange keys, role-based access control, re-authentication, optional email 2FA, and managed infrastructure.",
 };
 
 const securityItems = [
@@ -30,8 +30,8 @@ const securityItems = [
     description: "Cookie-based authentication hardened with CSRF and origin checks.",
   },
   {
-    title: "Self-Hosted Architecture",
-    description: "Your keys, your server, your rules — no shared custody.",
+    title: "Managed VPS Architecture",
+    description: "Dedicated infrastructure provisioned and maintained by uLiquid.",
   },
 ];
 

@@ -4,8 +4,9 @@ import { Card } from "@/components/ui/Card";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Login – uLiquid Market Maker",
-  description: "Secure login for uLiquid Market Maker. Access your workspace, bots, and trading operations.",
+  title: "License Manager – uLiquid Market Maker",
+  description:
+    "Manage your uLiquid Market Maker license, VPS details, and subscription in the Customer Portal.",
 };
 
 export default function AppLoginPage() {
@@ -14,12 +15,12 @@ export default function AppLoginPage() {
       <Section className="pt-24">
         <div className="mx-auto max-w-xl">
           <Card className="text-center">
-            <h1 className="text-3xl font-semibold text-text">Login to uLiquid</h1>
+            <h1 className="text-3xl font-semibold text-text">Customer Portal / License Manager</h1>
             <p className="mt-3 text-sm text-muted">
-              License required. Contact us if you need onboarding support.
+              Manage your license, VPS details, and subscription in the uLiquid License Manager.
             </p>
             <div className="mt-6 flex flex-col gap-3">
-              <Button>Continue with Email</Button>
+              <Button href="https://license-server.uliquid.vip/">Go to License Manager</Button>
               <Button href="/company#contact" variant="secondary">
                 Contact Sales
               </Button>

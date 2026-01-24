@@ -11,20 +11,20 @@ import { FAQAccordion } from "@/components/FAQAccordion";
 import { CTASection } from "@/components/CTASection";
 
 export const metadata: Metadata = {
-  title: "uLiquid Market Maker – Professional Crypto Market Making on Your VPS",
+  title: "uLiquid Market Maker – Professional Crypto Market Making on a Dedicated VPS",
   description:
-    "Self-hosted crypto market-making software with volume bots, price follow, price support, and advanced risk controls. Built for professional operators.",
+    "Managed crypto market-making software with volume bots, price follow, price support, and advanced risk controls. Built for professional operators.",
   openGraph: {
-    title: "uLiquid Market Maker – Professional Crypto Market Making on Your VPS",
+    title: "uLiquid Market Maker – Professional Crypto Market Making on a Dedicated VPS",
     description:
-      "Self-hosted crypto market-making software with volume bots, price follow, price support, and advanced risk controls. Built for professional operators.",
+      "Managed crypto market-making software with volume bots, price follow, price support, and advanced risk controls. Built for professional operators.",
     type: "website",
     siteName: "uLiquid Market Maker",
   },
 };
 
 const trustChips = [
-  "Self-hosted on your VPS",
+  "Dedicated VPS included",
   "Market Making & Volume Bot",
   "Price Follow (Master / Slave)",
   "Price Support with budget control",
@@ -91,7 +91,7 @@ const features = [
 const faqs = [
   {
     question: "Where does uLiquid Market Maker run?",
-    answer: "On your own VPS using Docker. You keep full custody and infrastructure control.",
+    answer: "On a dedicated VPS provisioned and maintained by uLiquid after license purchase.",
   },
   {
     question: "Do I need withdrawal permissions on exchanges?",
@@ -105,6 +105,10 @@ const faqs = [
     question: "How do alerts work?",
     answer: "Via Telegram notifications for runtime errors, risk stops, and price support events.",
   },
+  {
+    question: "Where do I manage my license and VPS details?",
+    answer: "In the Customer Portal / License Manager at license-server.uliquid.vip.",
+  },
 ];
 
 export default function Home() {
@@ -115,16 +119,16 @@ export default function Home() {
           <div>
             <Badge className="mb-4">uLiquid Market Maker</Badge>
             <h1 className="text-4xl font-semibold text-text sm:text-5xl">
-              Professional Crypto Market Making — On Your Own Infrastructure
+              Professional Crypto Market Making — Managed VPS Included
             </h1>
             <p className="mt-6 text-lg text-muted">
-              uLiquid Market Maker is a self-hosted market-making system with volume execution, price follow,
+              uLiquid Market Maker is a managed market-making system with volume execution, price follow,
               and price support — built for operators who require control, security, and reliability.
             </p>
             <div className="mt-6 flex flex-wrap gap-4">
-              <Button href="/app">Get Started</Button>
-              <Button href="/product" variant="secondary">
-                View Features
+              <Button href="https://license-server.uliquid.vip/">Buy License</Button>
+              <Button href="https://license-server.uliquid.vip/" variant="secondary">
+                Go to License Manager
               </Button>
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -144,7 +148,7 @@ export default function Home() {
             Liquidity operations for listing teams and project operators who want predictable execution.
           </p>
         </div>
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {builtFor.map((item) => (
             <Card key={item.title}>
               <h3 className="text-lg font-semibold text-text">{item.title}</h3>
@@ -172,16 +176,20 @@ export default function Home() {
         <div className="grid gap-6 md:grid-cols-3">
           {[
             {
-              title: "Connect exchange",
-              description: "API keys with minimal permissions.",
+              title: "Purchase a license",
+              description: "Buy via the uLiquid License Manager.",
             },
             {
-              title: "Choose pair + budget",
-              description: "Parameters and guardrails tuned to your listing goals.",
+              title: "VPS provisioned automatically",
+              description: "Dedicated VPS is configured with Market Maker installed.",
             },
             {
-              title: "Go live & monitor",
-              description: "Alerts, logs, and reports keep you listing-ready.",
+              title: "Receive access details",
+              description: "Credentials are sent by email and visible in the License Manager.",
+            },
+            {
+              title: "Manage bots",
+              description: "Configure and monitor bots from the Market Maker dashboard.",
             },
           ].map((step, index) => (
             <Card key={step.title}>
@@ -194,6 +202,21 @@ export default function Home() {
       </Section>
 
       <Section>
+        <div className="mb-8">
+          <h2 className="text-3xl font-semibold text-text">Supported Exchanges</h2>
+          <p className="mt-3 text-muted">Current CEX integrations with more added on demand.</p>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {["Bitmart", "Coinstore", "Pionex"].map((exchange) => (
+            <Card key={exchange} className="text-sm text-muted">
+              {exchange}
+            </Card>
+          ))}
+        </div>
+        <p className="mt-4 text-sm text-muted">Additional exchanges can be added based on demand.</p>
+      </Section>
+
+      <Section>
         <FeatureGrid title="Key features" subtitle="Control, safety, and reporting in one platform." items={features} />
       </Section>
 
@@ -201,7 +224,7 @@ export default function Home() {
         <div className="mb-10 flex items-center justify-between gap-6">
           <div>
             <h2 className="text-3xl font-semibold text-text">Pricing preview</h2>
-            <p className="mt-3 text-muted">Simple plans that fit early-stage listings.</p>
+            <p className="mt-3 text-muted">Managed VPS included with every subscription.</p>
           </div>
           <Link href="/pricing" className="text-sm font-semibold text-accent-cyan">
             View full pricing →
@@ -219,12 +242,12 @@ export default function Home() {
       </Section>
 
       <CTASection
-        title="Get listing-ready liquidity — in days, not weeks."
-        subtitle="Launch a stable orderbook with guardrails and reports your exchange contacts expect."
-        primaryLabel="Start Trial"
-        primaryHref="/app"
-        secondaryLabel="Talk to Sales"
-        secondaryHref="/company#contact"
+        title="Launch market making without managing infrastructure."
+        subtitle="Purchase a license, get a dedicated VPS, and manage bots through the License Manager."
+        primaryLabel="Buy License"
+        primaryHref="https://license-server.uliquid.vip/"
+        secondaryLabel="Manage Subscription"
+        secondaryHref="https://license-server.uliquid.vip/"
       />
     </div>
   );

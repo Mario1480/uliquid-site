@@ -14,6 +14,7 @@ const footerLinks = {
   Resources: [
     { label: "Docs", href: "/docs" },
     { label: "Exchanges", href: "/exchanges" },
+    { label: "License Manager", href: "https://license-server.uliquid.vip/" },
     { label: "Status", href: "/security" },
   ],
   Legal: [
@@ -29,8 +30,7 @@ export function Footer() {
         <div className="space-y-4">
           <p className="text-lg font-semibold text-text">uLiquid</p>
           <p className="text-sm text-muted">
-            Self-hosted liquidity tooling for listing-ready orderbooks. No market-making
-            desk required.
+            Managed liquidity tooling with a dedicated VPS included. No market-making desk required.
           </p>
           <div className="text-sm text-muted">
             Contact: <span className="text-text">hello@uliquid.vip</span>

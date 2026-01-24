@@ -94,7 +94,7 @@ export default function ProductPage() {
       <Section>
         <FeatureGrid
           title="Core Modules"
-          subtitle="Operator-focused tooling for self-hosted liquidity programs."
+          subtitle="Operator-focused tooling for managed liquidity programs."
           items={[
             {
               title: "Market Making",

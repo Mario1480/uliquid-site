@@ -1,6 +1,9 @@
-import Image from "next/image";
-import Link from "next/link";
-import { Button } from "@/components/ui/Button";
+\"use client\";
+
+import Image from \"next/image\";
+import Link from \"next/link\";
+import { useState } from \"react\";
+import { Button } from \"@/components/ui/Button\";
 
 const navLinks = [
   { href: "/product", label: "Product" },
@@ -12,6 +15,8 @@ const navLinks = [
 ];
 
 export function HeaderNav() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4 sm:px-10 lg:px-16">
@@ -32,20 +37,49 @@ export function HeaderNav() {
             </Link>
           ))}
         </nav>
-        <div className="flex items-center gap-3">
-          <Button href="/app" variant="secondary">
-            Login
+        <div className="hidden items-center gap-3 md:flex">
+          <Button href="https://license-server.uliquid.vip/" variant="secondary">
+            Go to License Manager
           </Button>
-          <Button href="/app">Start Free Trial</Button>
+          <Button href="https://license-server.uliquid.vip/">Buy License</Button>
         </div>
+        <button
+          type="button"
+          className="inline-flex items-center justify-center rounded-full border border-border px-3 py-2 text-sm font-semibold text-text transition hover:border-accent-blue md:hidden"
+          aria-label="Toggle menu"
+          aria-expanded={isOpen}
+          onClick={() => setIsOpen((open) => !open)}
+        >
+          <span className="sr-only">Menu</span>
+          <span className="flex h-5 w-5 flex-col justify-center gap-1.5">
+            <span className="h-0.5 w-full bg-text" />
+            <span className="h-0.5 w-full bg-text" />
+            <span className="h-0.5 w-full bg-text" />
+          </span>
+        </button>
       </div>
-      <nav className="flex flex-wrap items-center justify-center gap-4 border-t border-border/40 px-6 py-3 text-xs text-muted md:hidden">
-        {navLinks.map((link) => (
-          <Link key={link.href} href={link.href} className="hover:text-text">
-            {link.label}
-          </Link>
-        ))}
-      </nav>
+      {isOpen ? (
+        <div className="border-t border-border/40 bg-background/95 px-6 py-4 text-sm text-muted md:hidden">
+          <div className="flex flex-col gap-3">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="rounded-lg px-2 py-2 hover:text-text"
+                onClick={() => setIsOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+          <div className="mt-4 flex flex-col gap-3">
+            <Button href="https://license-server.uliquid.vip/" variant="secondary">
+              Go to License Manager
+            </Button>
+            <Button href="https://license-server.uliquid.vip/">Buy License</Button>
+          </div>
+        </div>
+      ) : null}
     </header>
   );
 }
