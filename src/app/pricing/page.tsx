@@ -33,6 +33,16 @@ const addOns = [
     label: "Add-on",
   },
   {
+    title: "Price Follow (Master / Slave)",
+    description: "Follow external markets without placing orders on the master exchange.",
+    label: "Add-on",
+  },
+  {
+    title: "Price Support",
+    description: "Maintain a price floor using a dedicated support budget.",
+    label: "Add-on",
+  },
+  {
     title: "AI Advisory",
     description: "Read-only recommendations for safer and more efficient configs.",
     label: "Add-on",
