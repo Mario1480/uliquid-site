@@ -28,6 +28,8 @@ const trustChips = [
   "Market Making & Volume Bot",
   "Price Follow (Master / Slave)",
   "Price Support with budget control",
+  "CEX + DEX price intelligence",
+  "AI recommendations (no auto-trading)",
   "Risk limits & kill switch",
   "RBAC, Re-Auth & Email 2FA",
   "Telegram alerts & runner heartbeat",
@@ -86,6 +88,16 @@ const features = [
     description:
       "Workspace-based roles, re-authentication for sensitive actions, encrypted exchange keys, and optional email 2FA.",
   },
+  {
+    title: "DEX Price Feed (Add-on)",
+    description:
+      "Use on-chain pricing as a master reference or validation layer for low-cap tokens. Read-only feed — no DEX trading required.",
+  },
+  {
+    title: "AI Advisory (Read-only)",
+    description:
+      "AI analyzes market structure and execution data to recommend better settings. It never places trades — operators stay in control.",
+  },
 ];
 
 const faqs = [
@@ -108,6 +120,14 @@ const faqs = [
   {
     question: "Where do I manage my license and VPS details?",
     answer: "In the Customer Portal / License Manager at license-server.uliquid.vip.",
+  },
+  {
+    question: "Does uLiquid trade on DEXs?",
+    answer: "No. DEX integrations are used as price feeds only.",
+  },
+  {
+    question: "Does the AI control my bots?",
+    answer: "No. AI provides recommendations only. All trading stays deterministic and under operator control.",
   },
 ];
 
@@ -218,6 +238,10 @@ export default function Home() {
 
       <Section>
         <FeatureGrid title="Key features" subtitle="Control, safety, and reporting in one platform." items={features} />
+        <p className="mt-6 text-sm text-muted">
+          DEX feeds are used for price reference only. AI provides recommendations only — trading remains
+          deterministic and user-controlled.
+        </p>
       </Section>
 
       <Section>
