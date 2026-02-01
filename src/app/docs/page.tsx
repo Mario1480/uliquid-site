@@ -45,6 +45,14 @@ const docsCards = [
     title: "License & Feature Gating",
     description: "Manage feature gates and tier limits.",
   },
+  {
+    title: "DEX Price Feed Add-on",
+    description: "Read-only on-chain price references for validation and low-cap pairs.",
+  },
+  {
+    title: "AI Advisory",
+    description: "What the AI analyzes and what it does NOT do.",
+  },
 ];
 
 const miniGuides = [
@@ -83,6 +91,14 @@ const miniGuides = [
   {
     title: "License & Feature Gating",
     description: "Enable modules with license flags and track limits.",
+  },
+  {
+    title: "DEX Price Feed Add-on",
+    description: "Understand read-only on-chain pricing and validation workflows.",
+  },
+  {
+    title: "AI Advisory",
+    description: "Recommendations only, no auto-execution.",
   },
 ];
 
