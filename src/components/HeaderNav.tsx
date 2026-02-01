@@ -26,7 +26,7 @@ export function HeaderNav() {
             alt="uLiquid logo"
             width={64}
             height={64}
-            className="h-10 w-10 drop-shadow-[0_0_18px_rgba(20,129,192,0.35)]"
+            className="h-15 w-15 drop-shadow-[0_0_18px_rgba(20,129,192,0.35)]"
           />
           <span>uLiquid</span>
         </Link>
