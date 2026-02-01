@@ -27,9 +27,26 @@ const pricingFaqs = [
 ];
 
 const addOns = [
-  "Additional Bots",
-  "Additional CEX connections",
-  "Optional advanced features (future)",
+  {
+    title: "DEX Price Feed",
+    description: "On-chain price reference for low-cap tokens (read-only).",
+    label: "Add-on",
+  },
+  {
+    title: "AI Advisory",
+    description: "Read-only recommendations for safer and more efficient configs.",
+    label: "Add-on",
+  },
+  {
+    title: "Additional Bots",
+    description: "Increase bot capacity under your license limits.",
+    label: "Add-on",
+  },
+  {
+    title: "Additional CEX connections",
+    description: "Expand exchange coverage as needed.",
+    label: "Add-on",
+  },
 ];
 
 export default function PricingPage() {
@@ -71,11 +88,20 @@ export default function PricingPage() {
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {addOns.map((item) => (
-            <Card key={item} className="text-sm text-muted">
-              {item}
+            <Card key={item.title} className="text-sm text-muted">
+              <div className="flex items-center justify-between">
+                <p className="text-base font-semibold text-text">{item.title}</p>
+                <span className="text-xs font-semibold uppercase tracking-wide text-accent-cyan">
+                  {item.label}
+                </span>
+              </div>
+              <p className="mt-3 text-sm text-muted">{item.description}</p>
             </Card>
           ))}
         </div>
+        <p className="mt-4 text-sm text-muted">
+          AI does not trade. DEX integrations are used for price feeds only.
+        </p>
       </Section>
 
       <Section>
