@@ -57,7 +57,7 @@ export function PricingCards({ variant = "full" }: PricingCardsProps) {
           key={tier.name}
           className={cn(
             "flex h-full flex-col",
-            index === 1 ? "border-accent-blue/60 shadow-lg" : "border-border"
+            index === 1 ? "border-accent-blue/60 shadow-[0_0_22px_rgba(20,129,192,0.45)]" : "border-border"
           )}
         >
           <div className="flex items-center justify-between">
