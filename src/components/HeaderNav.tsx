@@ -24,9 +24,9 @@ export function HeaderNav() {
           <Image
             src="/logo.png"
             alt="uLiquid logo"
-            width={32}
-            height={32}
-            className="h-8 w-8"
+            width={64}
+            height={64}
+            className="h-8 w-8 drop-shadow-[0_0_18px_rgba(20,129,192,0.35)]"
           />
           <span>uLiquid</span>
         </Link>
