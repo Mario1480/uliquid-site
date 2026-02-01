@@ -20,9 +20,24 @@ const featureRows = [
     notes: "License-gated",
   },
   {
+    feature: "DEX Price Feed",
+    included: "Add-on",
+    notes: "On-chain reference price feed (read-only)",
+  },
+  {
     feature: "Manual Trading",
     included: "✅",
     notes: "Role-gated",
+  },
+  {
+    feature: "AI Advisory",
+    included: "Add-on",
+    notes: "Read-only recommendations (no auto-trading)",
+  },
+  {
+    feature: "AI Auto Trading",
+    included: "Not supported",
+    notes: "uLiquid AI never executes trades",
   },
   {
     feature: "RBAC",
@@ -58,11 +73,6 @@ const featureRows = [
     feature: "License Integration",
     included: "✅",
     notes: "Feature flags",
-  },
-  {
-    feature: "AI Recommendations",
-    included: "⏳",
-    notes: "Planned",
   },
 ];
 
