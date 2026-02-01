@@ -11,12 +11,12 @@ const featureRows = [
   },
   {
     feature: "Price Follow",
-    included: "✅",
+    included: "Add-on",
     notes: "Master / Slave",
   },
   {
     feature: "Price Support",
-    included: "✅",
+    included: "Add-on",
     notes: "License-gated",
   },
   {
