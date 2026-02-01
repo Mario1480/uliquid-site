@@ -129,6 +129,48 @@ export default function ProductPage() {
       </Section>
 
       <Section>
+        <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-start">
+          <div>
+            <h2 className="text-3xl font-semibold text-text">Price Intelligence (CEX + DEX)</h2>
+            <p className="mt-4 text-muted">
+              Combine centralized exchange prices with on-chain DEX price feeds. Use DEX data as a master
+              reference, or as a safety validation layer.
+            </p>
+            <ul className="mt-6 space-y-3 text-sm text-muted">
+              <li>Read-only DEX price feed (no DEX trading)</li>
+              <li>Ideal for low-cap and illiquid pairs</li>
+              <li>Detect CEX anomalies with cross-source validation</li>
+            </ul>
+          </div>
+          <Card className="border-accent-blue/40 bg-surface/60">
+            <h3 className="text-lg font-semibold text-text">What it is / What it is not</h3>
+            <p className="mt-3 text-sm text-muted">Price feed only. No on-chain trading.</p>
+          </Card>
+        </div>
+      </Section>
+
+      <Section>
+        <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-start">
+          <div>
+            <h2 className="text-3xl font-semibold text-text">AI Advisory (Human-in-the-loop)</h2>
+            <p className="mt-4 text-muted">
+              uLiquid AI reviews market structure, order books, and execution stats to recommend better
+              parameters.
+            </p>
+            <ul className="mt-6 space-y-3 text-sm text-muted">
+              <li>Read-only recommendations</li>
+              <li>No autonomous trading</li>
+              <li>Use suggestions as presets</li>
+            </ul>
+          </div>
+          <Card className="border-accent-blue/40 bg-surface/60">
+            <h3 className="text-lg font-semibold text-text">What it is / What it is not</h3>
+            <p className="mt-3 text-sm text-muted">Recommendations only. Never executes trades.</p>
+          </Card>
+        </div>
+      </Section>
+
+      <Section>
         <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
           <div>
             <h2 className="text-3xl font-semibold text-text">Product Tour</h2>
