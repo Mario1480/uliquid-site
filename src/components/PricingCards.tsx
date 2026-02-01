@@ -8,7 +8,7 @@ type PricingCardsProps = {
 
 const tiers = [
   {
-    name: "Basic",
+    name: "Starter",
     price: "$300 / month",
     description: "Managed VPS included. Core market making for one bot.",
     features: [
@@ -21,7 +21,7 @@ const tiers = [
     ],
   },
   {
-    name: "Growth",
+    name: "Basic",
     price: "$500 / month",
     description: "Managed VPS with multi-exchange coverage.",
     features: [
@@ -33,16 +33,16 @@ const tiers = [
     ],
   },
   {
-    name: "Scale",
-    price: "$700 / month",
-    description: "Higher limits with priority provisioning.",
+    name: "Premium",
+    price: "$ soon / month",
+    description: "Higher limits with Premium Algos.",
     features: [
       "Dedicated VPS (included)",
       "Up to 10 CEX integrations",
       "Up to 10 Bots",
       "Price Follow (Master / Slave)",
       "Price Support module",
-      "Priority provisioning",
+      "Premium Algos",
     ],
   },
 ];
