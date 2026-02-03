@@ -1,6 +1,16 @@
 import { ContactForm } from "@/components/ContactForm";
 import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Company – uLiquid Market Maker",
+  description:
+    "Learn about uLiquid and contact the team for managed liquidity, listing support, and market-making operations.",
+  alternates: {
+    canonical: "/company",
+  },
+};
 
 export default function CompanyPage() {
   return (

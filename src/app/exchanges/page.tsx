@@ -1,6 +1,16 @@
 import { RequestExchangeForm } from "@/components/RequestExchangeForm";
 import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Exchanges – uLiquid Market Maker",
+  description:
+    "Supported exchange integrations and request form for new venues in uLiquid Market Maker.",
+  alternates: {
+    canonical: "/exchanges",
+  },
+};
 
 const supportedExchanges = [
   "Bitmart",

@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "License Manager – uLiquid Market Maker",
   description:
     "Manage your uLiquid Market Maker license, VPS details, and subscription in the Customer Portal.",
+  alternates: {
+    canonical: "/app",
+  },
 };
 
 export default function AppLoginPage() {

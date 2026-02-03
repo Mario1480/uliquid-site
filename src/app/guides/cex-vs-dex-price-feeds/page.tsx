@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "CEX vs DEX Price Feeds | uLiquid Guides",
   description:
     "Understand how CEX and DEX prices differ and how read-only DEX feeds help validate low-cap markets.",
+  alternates: {
+    canonical: "/guides/cex-vs-dex-price-feeds",
+  },
 };
 
 export default function CexVsDexPriceFeedsPage() {

@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "FAQ – uLiquid Market Maker",
   description:
     "Answers to common questions about uLiquid Market Maker, managed VPS, DEX price feeds, AI advisory, licensing, and security.",
+  alternates: {
+    canonical: "/faq",
+  },
 };
 
 const faqs = [

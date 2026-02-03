@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "What Is Market Making? | uLiquid Guides",
   description:
     "A practical overview of crypto market making, spreads, liquidity ladders, and operator controls.",
+  alternates: {
+    canonical: "/guides/what-is-market-making",
+  },
 };
 
 export default function WhatIsMarketMakingPage() {

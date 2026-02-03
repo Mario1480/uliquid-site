@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Low-Cap Liquidity – Use Case | uLiquid",
   description:
     "How uLiquid Market Maker stabilizes low-cap liquidity with managed VPS, DEX price feeds, and advisory AI.",
+  alternates: {
+    canonical: "/use-cases/low-cap-liquidity",
+  },
 };
 
 export default function LowCapLiquidityPage() {

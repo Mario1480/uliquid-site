@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Security – uLiquid Market Maker",
   description:
     "Encrypted exchange keys, workspace RBAC, re-auth for sensitive actions, optional email 2FA, alerts, and hardened session security.",
+  alternates: {
+    canonical: "/security",
+  },
 };
 
 const securityItems = [

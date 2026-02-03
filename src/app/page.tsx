@@ -15,12 +15,17 @@ export const metadata: Metadata = {
   title: "uLiquid Market Maker – Professional Crypto Market Making",
   description:
     "Managed VPS market-making suite with CEX/DEX price feeds, AI advisory, risk controls, and license-based feature gates.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "uLiquid Market Maker – Professional Crypto Market Making",
     description:
       "Managed VPS market-making suite with CEX/DEX price feeds, AI advisory, risk controls, and license-based feature gates.",
+    url: "https://uliquid.vip/",
     type: "website",
     siteName: "uLiquid Market Maker",
+    images: ["/logo.png"],
   },
 };
 

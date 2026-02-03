@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Master/Slave Price Follow – Use Case | uLiquid",
   description:
     "Follow external markets with master/slave price feeds while executing on your target exchange.",
+  alternates: {
+    canonical: "/use-cases/master-slave-price-follow",
+  },
 };
 
 export default function MasterSlavePriceFollowPage() {

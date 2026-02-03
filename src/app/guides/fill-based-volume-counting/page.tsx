@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Fill-Based Volume Counting | uLiquid Guides",
   description:
     "Why real fills matter and how fill-based volume bots avoid artificial volume or cancel-based inflation.",
+  alternates: {
+    canonical: "/guides/fill-based-volume-counting",
+  },
 };
 
 export default function FillBasedVolumeCountingPage() {

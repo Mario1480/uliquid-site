@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Exchange Listing Support – Use Case | uLiquid",
   description:
     "Prepare listing-ready order books with controlled spreads, reporting, and managed VPS execution.",
+  alternates: {
+    canonical: "/use-cases/exchange-listing-support",
+  },
 };
 
 export default function ExchangeListingSupportPage() {

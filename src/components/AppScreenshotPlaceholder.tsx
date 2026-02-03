@@ -1,7 +1,4 @@
-"use client";
-
 import Image from "next/image";
-import { useMemo, useState } from "react";
 import { cn } from "@/lib/cn";
 
 type AspectRatio = "16:9" | "4:3" | "1:1";
@@ -30,9 +27,8 @@ export function AppScreenshotPlaceholder({
   aspect = "16:9",
   src,
 }: AppScreenshotPlaceholderProps) {
-  const [hasError, setHasError] = useState(false);
-  const slug = useMemo(() => slugify(title), [title]);
-  const shouldShowImage = Boolean(src) && !hasError;
+  const slug = slugify(title);
+  const shouldShowImage = Boolean(src);
 
   return (
     <div
@@ -58,7 +54,6 @@ export function AppScreenshotPlaceholder({
               alt={`${title} screenshot`}
               fill
               className="object-cover"
-              onError={() => setHasError(true)}
               sizes="(max-width: 768px) 100vw, 800px"
             />
           ) : (

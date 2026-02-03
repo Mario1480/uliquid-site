@@ -12,12 +12,17 @@ export const metadata: Metadata = {
   title: "Features – uLiquid Market Maker",
   description:
     "Market making, fill-based volume bot, price follow (master/slave), price support, DEX price feed add-on and AI advisory.",
+  alternates: {
+    canonical: "/product",
+  },
   openGraph: {
     title: "Features – uLiquid Market Maker",
     description:
       "Market making, fill-based volume bot, price follow (master/slave), price support, DEX price feed add-on and AI advisory.",
+    url: "https://uliquid.vip/product",
     type: "website",
     siteName: "uLiquid Market Maker",
+    images: ["/logo.png"],
   },
 };
 

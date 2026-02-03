@@ -1,5 +1,15 @@
 import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms of Service – uLiquid Market Maker",
+  description:
+    "Terms governing use of uliquid.vip and the uLiquid Market Maker marketing site.",
+  alternates: {
+    canonical: "/terms",
+  },
+};
 
 export default function TermsPage() {
   return (

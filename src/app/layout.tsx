@@ -29,7 +29,8 @@ export const metadata: Metadata = {
     description:
       "uLiquid Market Maker is a managed crypto market-making system with volume execution, price follow, price support, and enterprise-grade security.",
     url: "https://uliquid.vip",
-    images: ["/og.png"],
+    type: "website",
+    images: ["/logo.png"],
     siteName: "uLiquid Market Maker",
   },
   icons: {

@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Docs – uLiquid Market Maker",
   description:
     "Guides for setup, bots, price follow, price support, DEX price feeds, AI advisory, security, and production operations.",
+  alternates: {
+    canonical: "/docs",
+  },
 };
 
 const docsCards = [

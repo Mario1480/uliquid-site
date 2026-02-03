@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: "Pricing – Managed VPS Plans | uLiquid",
   description:
     "Monthly plans include a dedicated VPS. Basic, Growth, and Scale tiers with exchange/bot limits and optional add-ons.",
+  alternates: {
+    canonical: "/pricing",
+  },
 };
 
 const pricingFaqs = [

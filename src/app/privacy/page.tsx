@@ -1,5 +1,15 @@
 import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy – uLiquid Market Maker",
+  description:
+    "Privacy policy describing how uliquid.vip collects and uses information on the marketing site.",
+  alternates: {
+    canonical: "/privacy",
+  },
+};
 
 export default function PrivacyPage() {
   return (
