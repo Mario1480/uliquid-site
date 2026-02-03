@@ -182,6 +182,9 @@ export default function PricingPage() {
       <Section>
         <div className="mb-10">
           <h2 className="text-3xl font-semibold text-text">Pricing FAQ</h2>
+          <p className="mt-3 text-sm text-muted">
+            Need more detail? <Link href="/faq" className="text-accent-cyan font-semibold">Visit the full FAQ →</Link>
+          </p>
         </div>
         <FAQAccordion items={pricingFaqs} />
       </Section>

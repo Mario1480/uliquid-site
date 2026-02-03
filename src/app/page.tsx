@@ -295,6 +295,30 @@ export default function Home() {
         <FAQAccordion items={faqs} />
       </Section>
 
+      <Section>
+        <div className="mb-8">
+          <h2 className="text-3xl font-semibold text-text">Resources</h2>
+          <p className="mt-3 text-muted">Operator guidance, use cases, and deep dives.</p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {[
+            { title: "FAQ", href: "/faq" },
+            { title: "Low-Cap Liquidity", href: "/use-cases/low-cap-liquidity" },
+            { title: "Exchange Listing Support", href: "/use-cases/exchange-listing-support" },
+            { title: "Master/Slave Price Follow", href: "/use-cases/master-slave-price-follow" },
+            { title: "What Is Market Making?", href: "/guides/what-is-market-making" },
+            { title: "CEX vs DEX Price Feeds", href: "/guides/cex-vs-dex-price-feeds" },
+          ].map((item) => (
+            <Card key={item.title}>
+              <h3 className="text-lg font-semibold text-text">{item.title}</h3>
+              <Link href={item.href} className="mt-3 inline-flex text-sm font-semibold text-accent-cyan">
+                Learn more →
+              </Link>
+            </Card>
+          ))}
+        </div>
+      </Section>
+
       <CTASection
         title="Launch market making without managing infrastructure."
         subtitle="Purchase a license, get a dedicated VPS, and manage bots through the License Manager."

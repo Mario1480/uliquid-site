@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { AppScreenshotPlaceholder } from "@/components/AppScreenshotPlaceholder";
 import { Section } from "@/components/ui/Section";
 import { Tabs } from "@/components/Tabs";
@@ -211,6 +212,14 @@ export default function ProductPage() {
                   </Card>
                 )
               )}
+            </div>
+            <div className="mt-6 flex flex-wrap gap-3 text-sm text-muted">
+              <Link href="/use-cases/master-slave-price-follow" className="text-accent-cyan font-semibold">
+                Master/Slave use case →
+              </Link>
+              <Link href="/guides/fill-based-volume-counting" className="text-accent-cyan font-semibold">
+                Fill-based volume guide →
+              </Link>
             </div>
           </div>
           <AppScreenshotPlaceholder title="Pairs & Configuration" aspect="4:3" />
