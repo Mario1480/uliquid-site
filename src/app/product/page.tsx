@@ -4,6 +4,7 @@ import { Tabs } from "@/components/Tabs";
 import { Card } from "@/components/ui/Card";
 import { FeatureGrid } from "@/components/FeatureGrid";
 import { FeatureMatrixTable } from "@/components/FeatureMatrixTable";
+import { JsonLd } from "@/components/JsonLd";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -18,6 +19,9 @@ export const metadata: Metadata = {
     siteName: "uLiquid Market Maker",
   },
 };
+
+const pageDescription =
+  "Market making, fill-based volume bot, price follow (master/slave), price support, DEX price feed add-on and AI advisory.";
 
 const tabItems = [
   {
@@ -77,6 +81,21 @@ const tabItems = [
 export default function ProductPage() {
   return (
     <div>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          name: "uLiquid Market Maker",
+          applicationCategory: "FinancialTradingSoftware",
+          operatingSystem: "Linux (Managed VPS)",
+          url: "https://uliquid.vip/product",
+          description: pageDescription,
+          offers: {
+            "@type": "Offer",
+            url: "https://license-server.uliquid.vip/",
+          },
+        }}
+      />
       <Section className="pt-20">
         <div className="max-w-3xl">
           <h1 className="text-4xl font-semibold text-text">uLiquid Market Maker Features</h1>
@@ -100,26 +119,32 @@ export default function ProductPage() {
               title: "Market Making",
               description:
                 "Automated bid/ask liquidity with full control over ladder shape, spread, randomness, and inventory bias.",
+              id: "market-making",
             },
             {
               title: "Volume Bot (Fill-Based)",
               description: "Execute target daily volume using real trades only, with configurable trade sizes and pacing.",
+              id: "volume-bot",
             },
             {
               title: "Price Follow (Master / Slave)",
               description: "Separate price discovery from execution. Follow external markets without placing orders on the master exchange.",
+              id: "price-follow",
             },
             {
               title: "Price Support (budgeted)",
               description: "Maintain a price floor using a dedicated budget. Includes auto-stop and notifications when funds are depleted.",
+              id: "price-support",
             },
             {
               title: "Manual Trading (role-gated)",
               description: "Place manual limit or market orders directly from the UI. Protected by role permissions and re-authentication.",
+              id: "manual-trading",
             },
             {
               title: "Production Operations",
               description: "Dockerized deployment, health checks, runner heartbeat monitoring, and automated database backups.",
+              id: "production-ops",
             },
           ]}
         />
@@ -128,7 +153,7 @@ export default function ProductPage() {
         </div>
       </Section>
 
-      <Section>
+      <Section id="price-intelligence">
         <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-start">
           <div>
             <h2 className="text-3xl font-semibold text-text">Price Intelligence (CEX + DEX)</h2>
@@ -149,7 +174,7 @@ export default function ProductPage() {
         </div>
       </Section>
 
-      <Section>
+      <Section id="ai-advisory">
         <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-start">
           <div>
             <h2 className="text-3xl font-semibold text-text">AI Advisory (Human-in-the-loop)</h2>

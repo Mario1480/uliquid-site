@@ -1,8 +1,12 @@
+import Link from "next/link";
 import { Card } from "@/components/ui/Card";
 
 type FeatureItem = {
   title: string;
   description: string;
+  id?: string;
+  href?: string;
+  linkLabel?: string;
 };
 
 type FeatureGridProps = {
@@ -23,8 +27,15 @@ export function FeatureGrid({ title, subtitle, items }: FeatureGridProps) {
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {items.map((item) => (
           <Card key={item.title}>
-            <h3 className="text-lg font-semibold text-text">{item.title}</h3>
+            <h3 id={item.id} className="text-lg font-semibold text-text">
+              {item.title}
+            </h3>
             <p className="mt-3 text-sm text-muted">{item.description}</p>
+            {item.href ? (
+              <Link href={item.href} className="mt-4 inline-flex text-sm font-semibold text-accent-cyan">
+                {item.linkLabel ?? "Learn more →"}
+              </Link>
+            ) : null}
           </Card>
         ))}
       </div>

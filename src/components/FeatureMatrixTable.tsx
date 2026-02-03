@@ -20,6 +20,11 @@ const featureRows = [
     notes: "License-gated",
   },
   {
+    feature: "Supported CEX (current)",
+    included: "✅",
+    notes: "Bitmart, Coinstore, Pionex",
+  },
+  {
     feature: "DEX Price Feed",
     included: "Add-on",
     notes: "On-chain reference price feed (read-only)",

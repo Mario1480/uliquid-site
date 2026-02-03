@@ -9,6 +9,7 @@ import { FeatureGrid } from "@/components/FeatureGrid";
 import { PricingCards } from "@/components/PricingCards";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { CTASection } from "@/components/CTASection";
+import { JsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "uLiquid Market Maker – Professional Crypto Market Making",
@@ -22,6 +23,9 @@ export const metadata: Metadata = {
     siteName: "uLiquid Market Maker",
   },
 };
+
+const pageDescription =
+  "Managed VPS market-making suite with CEX/DEX price feeds, AI advisory, risk controls, and license-based feature gates.";
 
 const trustChips = [
   "Dedicated VPS included",
@@ -64,39 +68,49 @@ const features = [
     title: "Market Making Engine",
     description:
       "Multi-level order ladders with configurable spread, step size, distributions, jitter, and inventory-based skew.",
+    href: "/product#core-modules",
   },
   {
     title: "Fill-Based Volume Bot",
     description: "Volume execution that counts only real fills. No fake volume, no cancel-based manipulation.",
+    href: "/product#core-modules",
   },
   {
     title: "Price Follow (Master / Slave)",
     description:
       "Use one exchange purely as a price feed and execute trades on another — even without running a bot on the master exchange.",
+    href: "/product#price-follow",
   },
   {
     title: "Price Support",
     description:
       "Protect a minimum price level using a separate support budget. Automatically stops when the budget is depleted.",
+    href: "/product#price-support",
   },
   {
     title: "Risk & Safety Controls",
     description: "Min balance guard, max deviation, max open orders, and daily loss limits — enforced at runtime.",
+    href: "/security",
+    linkLabel: "Security details →",
   },
   {
     title: "Security & Access Control",
     description:
       "Workspace-based roles, re-authentication for sensitive actions, encrypted exchange keys, and optional email 2FA.",
+    href: "/security",
+    linkLabel: "Security details →",
   },
   {
     title: "DEX Price Feed (Add-on)",
     description:
       "Use on-chain pricing as a master reference or validation layer for low-cap tokens. Read-only feed — no DEX trading required.",
+    href: "/product#price-intelligence",
   },
   {
     title: "AI Advisory (Read-only)",
     description:
       "AI analyzes market structure and execution data to recommend better settings. It never places trades — operators stay in control.",
+    href: "/product#ai-advisory",
   },
 ];
 
@@ -134,6 +148,21 @@ const faqs = [
 export default function Home() {
   return (
     <div>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          name: "uLiquid Market Maker",
+          applicationCategory: "FinancialTradingSoftware",
+          operatingSystem: "Linux (Managed VPS)",
+          url: "https://uliquid.vip/",
+          description: pageDescription,
+          offers: {
+            "@type": "Offer",
+            url: "https://license-server.uliquid.vip/",
+          },
+        }}
+      />
       <Section className="pt-20">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:items-center">
           <div>
@@ -236,7 +265,7 @@ export default function Home() {
         <p className="mt-4 text-sm text-muted">Additional exchanges can be added based on demand.</p>
       </Section>
 
-      <Section>
+      <Section id="core-modules">
         <FeatureGrid title="Key features" subtitle="Control, safety, and reporting in one platform." items={features} />
         <div className="mt-6 rounded-2xl border border-border/60 bg-surface/60 p-5 text-sm text-muted">
           <h3 className="text-base font-semibold text-text">What it is / What it is NOT</h3>

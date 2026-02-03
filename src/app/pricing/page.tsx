@@ -1,8 +1,10 @@
+import Link from "next/link";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { PricingCards } from "@/components/PricingCards";
 import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { FeatureMatrixTable } from "@/components/FeatureMatrixTable";
+import { JsonLd } from "@/components/JsonLd";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -31,21 +33,25 @@ const addOns = [
     title: "DEX Price Feed",
     description: "On-chain price reference for low-cap tokens (read-only).",
     label: "Add-on",
+    href: "/product#price-intelligence",
   },
   {
     title: "Price Follow (Master / Slave)",
     description: "Follow external markets without placing orders on the master exchange.",
     label: "Add-on",
+    href: "/product#price-follow",
   },
   {
     title: "Price Support",
     description: "Maintain a price floor using a dedicated support budget.",
     label: "Add-on",
+    href: "/product#price-support",
   },
   {
     title: "AI Advisory",
     description: "Read-only recommendations for safer and more efficient configs.",
     label: "Add-on",
+    href: "/product#ai-advisory",
   },
   {
     title: "Additional Bots",
@@ -62,6 +68,60 @@ const addOns = [
 export default function PricingPage() {
   return (
     <div>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "OfferCatalog",
+          name: "uLiquid Market Maker Pricing",
+          url: "https://uliquid.vip/pricing",
+          itemListElement: [
+            {
+              "@type": "Offer",
+              name: "Basic",
+              price: "300",
+              priceCurrency: "USD",
+              priceSpecification: {
+                "@type": "UnitPriceSpecification",
+                price: "300",
+                priceCurrency: "USD",
+                unitText: "month",
+              },
+              description: "Dedicated VPS, 1 CEX integration, 1 bot, core market making, fill-based volume bot.",
+              url: "https://license-server.uliquid.vip/",
+            },
+            {
+              "@type": "Offer",
+              name: "Growth",
+              price: "500",
+              priceCurrency: "USD",
+              priceSpecification: {
+                "@type": "UnitPriceSpecification",
+                price: "500",
+                priceCurrency: "USD",
+                unitText: "month",
+              },
+              description:
+                "Dedicated VPS, up to 5 CEX integrations, up to 5 bots, price follow, all basic features.",
+              url: "https://license-server.uliquid.vip/",
+            },
+            {
+              "@type": "Offer",
+              name: "Scale",
+              price: "700",
+              priceCurrency: "USD",
+              priceSpecification: {
+                "@type": "UnitPriceSpecification",
+                price: "700",
+                priceCurrency: "USD",
+                unitText: "month",
+              },
+              description:
+                "Dedicated VPS, up to 10 CEX integrations, up to 10 bots, price follow, price support, priority provisioning.",
+              url: "https://license-server.uliquid.vip/",
+            },
+          ],
+        }}
+      />
       <Section className="pt-20">
         <div className="max-w-3xl">
           <h1 className="text-4xl font-semibold text-text">Pricing Plans (VPS Included)</h1>
@@ -106,6 +166,11 @@ export default function PricingPage() {
                 </span>
               </div>
               <p className="mt-3 text-sm text-muted">{item.description}</p>
+              {item.href ? (
+                <Link href={item.href} className="mt-3 inline-flex text-sm font-semibold text-accent-cyan">
+                  Learn more →
+                </Link>
+              ) : null}
             </Card>
           ))}
         </div>
