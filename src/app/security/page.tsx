@@ -3,9 +3,9 @@ import { Card } from "@/components/ui/Card";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Security & Access Control – uLiquid Market Maker",
+  title: "Security – uLiquid Market Maker",
   description:
-    "Enterprise-grade security with encrypted exchange keys, role-based access control, re-authentication, optional email 2FA, and managed infrastructure.",
+    "Encrypted exchange keys, workspace RBAC, re-auth for sensitive actions, optional email 2FA, alerts, and hardened session security.",
 };
 
 const securityItems = [
@@ -40,7 +40,7 @@ export default function SecurityPage() {
     <div>
       <Section className="pt-20">
         <div className="max-w-3xl">
-          <h1 className="text-4xl font-semibold text-text">Security</h1>
+          <h1 className="text-4xl font-semibold text-text">Security & Access Control</h1>
           <p className="mt-4 text-lg text-muted">
             Security is a core design principle of uLiquid Market Maker. The system is built to minimize risk
             while maintaining operational flexibility.

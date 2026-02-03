@@ -6,9 +6,9 @@ import { FeatureMatrixTable } from "@/components/FeatureMatrixTable";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Pricing & License Tiers – uLiquid Market Maker",
+  title: "Pricing – Managed VPS Plans | uLiquid",
   description:
-    "Transparent pricing for uLiquid Market Maker licenses. Managed VPS included with feature-based licensing and optional add-ons.",
+    "Monthly plans include a dedicated VPS. Basic, Growth, and Scale tiers with exchange/bot limits and optional add-ons.",
 };
 
 const pricingFaqs = [
@@ -64,7 +64,7 @@ export default function PricingPage() {
     <div>
       <Section className="pt-20">
         <div className="max-w-3xl">
-          <h1 className="text-4xl font-semibold text-text">Pricing</h1>
+          <h1 className="text-4xl font-semibold text-text">Pricing Plans (VPS Included)</h1>
           <p className="mt-4 text-lg text-muted">
             uLiquid Market Maker includes a managed VPS. Pricing applies to the software license, updates,
             and feature access — not infrastructure.

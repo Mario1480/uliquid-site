@@ -7,13 +7,13 @@ import { FeatureMatrixTable } from "@/components/FeatureMatrixTable";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Market Making Features – uLiquid Market Maker",
+  title: "Features – uLiquid Market Maker",
   description:
-    "Explore uLiquid Market Maker features: automated market making, fill-based volume bots, price follow (master/slave), price support, and production-ready operations.",
+    "Market making, fill-based volume bot, price follow (master/slave), price support, DEX price feed add-on and AI advisory.",
   openGraph: {
-    title: "Market Making Features – uLiquid Market Maker",
+    title: "Features – uLiquid Market Maker",
     description:
-      "Explore uLiquid Market Maker features: automated market making, fill-based volume bots, price follow (master/slave), price support, and production-ready operations.",
+      "Market making, fill-based volume bot, price follow (master/slave), price support, DEX price feed add-on and AI advisory.",
     type: "website",
     siteName: "uLiquid Market Maker",
   },
@@ -79,7 +79,7 @@ export default function ProductPage() {
     <div>
       <Section className="pt-20">
         <div className="max-w-3xl">
-          <h1 className="text-4xl font-semibold text-text">Product</h1>
+          <h1 className="text-4xl font-semibold text-text">uLiquid Market Maker Features</h1>
           <p className="mt-4 text-lg text-muted">
             uLiquid Market Maker is a modular trading system designed for professional market-making
             operations. It combines automated execution, strict risk control, and production-grade
@@ -144,7 +144,7 @@ export default function ProductPage() {
           </div>
           <Card className="border-accent-blue/40 bg-surface/60">
             <h3 className="text-lg font-semibold text-text">What it is / What it is not</h3>
-            <p className="mt-3 text-sm text-muted">Price feed only. No on-chain trading.</p>
+            <p className="mt-3 text-sm text-muted">DEX Price Feed is read-only. No on-chain trading.</p>
           </Card>
         </div>
       </Section>
@@ -165,7 +165,7 @@ export default function ProductPage() {
           </div>
           <Card className="border-accent-blue/40 bg-surface/60">
             <h3 className="text-lg font-semibold text-text">What it is / What it is not</h3>
-            <p className="mt-3 text-sm text-muted">Recommendations only. Never executes trades.</p>
+            <p className="mt-3 text-sm text-muted">AI provides recommendations only. No autonomous trading.</p>
           </Card>
         </div>
       </Section>

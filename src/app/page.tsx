@@ -11,13 +11,13 @@ import { FAQAccordion } from "@/components/FAQAccordion";
 import { CTASection } from "@/components/CTASection";
 
 export const metadata: Metadata = {
-  title: "uLiquid Market Maker – Professional Crypto Market Making on a Dedicated VPS",
+  title: "uLiquid Market Maker – Professional Crypto Market Making",
   description:
-    "Managed crypto market-making software with volume bots, price follow, price support, and advanced risk controls. Built for professional operators.",
+    "Managed VPS market-making suite with CEX/DEX price feeds, AI advisory, risk controls, and license-based feature gates.",
   openGraph: {
-    title: "uLiquid Market Maker – Professional Crypto Market Making on a Dedicated VPS",
+    title: "uLiquid Market Maker – Professional Crypto Market Making",
     description:
-      "Managed crypto market-making software with volume bots, price follow, price support, and advanced risk controls. Built for professional operators.",
+      "Managed VPS market-making suite with CEX/DEX price feeds, AI advisory, risk controls, and license-based feature gates.",
     type: "website",
     siteName: "uLiquid Market Maker",
   },
@@ -139,11 +139,11 @@ export default function Home() {
           <div>
             <Badge className="mb-4">uLiquid Market Maker</Badge>
             <h1 className="text-4xl font-semibold text-text sm:text-5xl">
-              Professional Crypto Market Making — Managed VPS Included
+              Professional Crypto Market Making
             </h1>
             <p className="mt-6 text-lg text-muted">
-              uLiquid Market Maker is a managed market-making system with volume execution, price follow,
-              and price support — built for operators who require control, security, and reliability.
+              uLiquid Market Maker is a managed market-making system with volume execution, CEX/DEX price
+              intelligence, and AI advisory — built for operators who require control, security, and reliability.
             </p>
             <div className="mt-6 flex flex-wrap gap-4">
               <Button href="https://license-server.uliquid.vip/">Buy License</Button>
@@ -238,10 +238,11 @@ export default function Home() {
 
       <Section>
         <FeatureGrid title="Key features" subtitle="Control, safety, and reporting in one platform." items={features} />
-        <p className="mt-6 text-sm text-muted">
-          DEX feeds are used for price reference only. AI provides recommendations only — trading remains
-          deterministic and user-controlled.
-        </p>
+        <div className="mt-6 rounded-2xl border border-border/60 bg-surface/60 p-5 text-sm text-muted">
+          <h3 className="text-base font-semibold text-text">What it is / What it is NOT</h3>
+          <p className="mt-3">DEX Price Feed is read-only. No on-chain trading.</p>
+          <p className="mt-2">AI provides recommendations only. No autonomous trading.</p>
+        </div>
       </Section>
 
       <Section>

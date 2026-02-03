@@ -3,9 +3,9 @@ import { Card } from "@/components/ui/Card";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Documentation & Guides – uLiquid Market Maker",
+  title: "Docs – uLiquid Market Maker",
   description:
-    "Technical documentation for uLiquid Market Maker: setup guides, exchange integration, bots, price follow, price support, security, and production operations.",
+    "Guides for setup, bots, price follow, price support, DEX price feeds, AI advisory, security, and production operations.",
 };
 
 const docsCards = [
@@ -107,7 +107,7 @@ export default function DocsPage() {
     <div>
       <Section className="pt-20">
         <div className="max-w-3xl">
-          <h1 className="text-4xl font-semibold text-text">Docs</h1>
+          <h1 className="text-4xl font-semibold text-text">Documentation</h1>
           <p className="mt-4 text-lg text-muted">
             Lightweight documentation to get listing teams up and running fast.
           </p>
