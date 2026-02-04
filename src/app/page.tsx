@@ -261,7 +261,7 @@ export default function Home() {
           <p className="mt-3 text-muted">Current CEX integrations with more added on demand.</p>
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {["Bitmart", "Coinstore", "Pionex"].map((exchange) => (
+          {["Bitmart", "Coinstore", "MEXC", "P2B", "Pionex"].map((exchange) => (
             <Card key={exchange} className="text-sm text-muted">
               {exchange}
             </Card>

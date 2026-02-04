@@ -22,7 +22,7 @@ const featureRows = [
   {
     feature: "Supported CEX (current)",
     included: "✅",
-    notes: "Bitmart, Coinstore, Pionex",
+    notes: "Bitmart, Coinstore, MEXC, P2B, Pionex",
   },
   {
     feature: "DEX Price Feed",

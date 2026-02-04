@@ -37,7 +37,7 @@ const faqs = [
   },
   {
     question: "Which exchanges are supported?",
-    answer: "Current CEX integrations: Bitmart, Coinstore, and Pionex.",
+    answer: "Current CEX integrations: Bitmart, Coinstore, MEXC, P2B, and Pionex.",
   },
   {
     question: "How long does setup take?",

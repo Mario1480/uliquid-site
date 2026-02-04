@@ -15,6 +15,8 @@ export const metadata: Metadata = {
 const supportedExchanges = [
   "Bitmart",
   "Coinstore",
+  "MEXC",
+  "P2B",
   "Pionex",
 ];
 
