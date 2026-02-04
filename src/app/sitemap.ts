@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/support",
     "/help",
     "/crypto-market-maker",
+    "/blog",
     "/blog/what-is-a-crypto-market-maker",
     "/blog/market-making-for-token-projects",
     "/blog/market-maker-saas-vs-custom-bots",
