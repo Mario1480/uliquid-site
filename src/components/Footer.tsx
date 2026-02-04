@@ -14,6 +14,8 @@ const footerLinks = {
   Resources: [
     { label: "Docs", href: "/docs" },
     { label: "Exchanges", href: "/exchanges" },
+    { label: "Blog", href: "/blog" },
+    { label: "Crypto Market Maker", href: "/crypto-market-maker" },
     { label: "License Manager", href: "https://license-server.uliquid.vip/" },
     { label: "Status", href: "/security" },
   ],
@@ -36,15 +38,22 @@ export function Footer() {
             Contact: <span className="text-text">hello@uliquid.vip</span>
           </div>
           <div className="flex gap-3 text-xs text-muted">
-            <span className="rounded-full border border-border px-3 py-1">
+            <a
+              href="https://x.com/uliquidvip?s=21"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full border border-border px-3 py-1 hover:text-text"
+            >
               X / Twitter
-            </span>
-            <span className="rounded-full border border-border px-3 py-1">
-              LinkedIn
-            </span>
-            <span className="rounded-full border border-border px-3 py-1">
+            </a>
+            <a
+              href="https://t.me/uliquid_support"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full border border-border px-3 py-1 hover:text-text"
+            >
               Telegram
-            </span>
+            </a>
           </div>
         </div>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
