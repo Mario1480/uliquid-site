@@ -307,6 +307,7 @@ export default function Home() {
         </div>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {[
+            { title: "Crypto Market Maker Software", href: "/crypto-market-maker" },
             { title: "FAQ", href: "/faq" },
             { title: "Low-Cap Liquidity", href: "/use-cases/low-cap-liquidity" },
             { title: "Exchange Listing Support", href: "/use-cases/exchange-listing-support" },

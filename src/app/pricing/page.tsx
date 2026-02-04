@@ -135,6 +135,13 @@ export default function PricingPage() {
           <p className="mt-3 text-sm text-muted">
             Manage your license, VPS details, and subscription in the Customer Portal / License Manager.
           </p>
+          <p className="mt-3 text-sm text-muted">
+            New here? Start with{" "}
+            <Link href="/crypto-market-maker" className="text-accent-cyan font-semibold">
+              Crypto Market Maker Software
+            </Link>
+            .
+          </p>
         </div>
         <div className="mt-10">
           <PricingCards />
