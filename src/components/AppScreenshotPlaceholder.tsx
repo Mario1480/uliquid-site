@@ -100,7 +100,7 @@ export function AppScreenshotPlaceholder({
           )}
         </div>
         <div className="border-t border-border/60 px-4 py-2 text-xs text-muted">
-          Replace with real app screenshot: /public/screens/{slug}.png
+          {src ? "\u00A0" : `Replace with real app screenshot: /public/screens/${slug}.png`}
         </div>
       </div>
     </div>
