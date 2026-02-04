@@ -34,7 +34,7 @@ const tabItems = [
     title: "Dashboard",
     content: (
       <div className="grid gap-6 lg:grid-cols-[1.4fr_1fr] lg:items-center">
-        <AppScreenshotPlaceholder title="Dashboard – Health & KPIs" />
+        <AppScreenshotPlaceholder title="Dashboard – Health & KPIs" src="/screens/overview-dashboard.png" />
         <ul className="space-y-3 text-sm text-muted">
           <li>Status overview for all pairs and venues.</li>
           <li>KPI tiles for spread, inventory, and uptime.</li>
@@ -47,7 +47,7 @@ const tabItems = [
     title: "Strategy",
     content: (
       <div className="grid gap-6 lg:grid-cols-[1.4fr_1fr] lg:items-center">
-        <AppScreenshotPlaceholder title="Strategy Editor" />
+        <AppScreenshotPlaceholder title="Strategy Editor" src="/screens/strategy-editor.png" />
         <ul className="space-y-3 text-sm text-muted">
           <li>Set base spread, layers, and refresh intervals.</li>
           <li>Adjust depth distribution and quote placement.</li>
@@ -60,7 +60,7 @@ const tabItems = [
     title: "Risk",
     content: (
       <div className="grid gap-6 lg:grid-cols-[1.4fr_1fr] lg:items-center">
-        <AppScreenshotPlaceholder title="Risk Controls" />
+        <AppScreenshotPlaceholder title="Risk Controls" src="/screens/risk-controls.png" />
         <ul className="space-y-3 text-sm text-muted">
           <li>Exposure caps per asset and per venue.</li>
           <li>Drawdown thresholds with auto-pausing controls.</li>
@@ -73,7 +73,7 @@ const tabItems = [
     title: "Reports",
     content: (
       <div className="grid gap-6 lg:grid-cols-[1.4fr_1fr] lg:items-center">
-        <AppScreenshotPlaceholder title="Listing Reports" />
+        <AppScreenshotPlaceholder title="Listing Reports" src="/screens/listing-reports.png" />
         <ul className="space-y-3 text-sm text-muted">
           <li>Stability reports tailored for listing teams.</li>
           <li>Exports and summaries for internal review.</li>
@@ -227,7 +227,7 @@ export default function ProductPage() {
               </Link>
             </div>
           </div>
-          <AppScreenshotPlaceholder title="Pairs & Configuration" aspect="4:3" />
+          <AppScreenshotPlaceholder title="Pairs & Configuration" aspect="4:3" src="/screens/strategy-editor.png" />
         </div>
       </Section>
     </div>

@@ -191,7 +191,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <AppScreenshotPlaceholder title="Overview Dashboard" />
+          <AppScreenshotPlaceholder title="Overview Dashboard" src="/screens/overview-dashboard.png" />
         </div>
       </Section>
 
