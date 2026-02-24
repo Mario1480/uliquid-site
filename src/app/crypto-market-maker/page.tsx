@@ -43,7 +43,7 @@ const faqItems = [
   },
   {
     q: "Which exchanges are supported?",
-    a: "Current CEX integrations include Bitmart, Coinstore, MEXC, P2B, and Pionex. Additional exchanges can be added based on demand.",
+    a: "Current CEX integrations include Bitmart, Coinstore, Pionex, P2B, MEXC, BingX, XT, Binance, Bitget, Lbank, HTX, OKX, Bybit, Weex, Gate, KuCoin, Phemex, Bitfinex, CoinEx, and BloFin. Additional exchanges can be added based on demand.",
   },
 ];
 

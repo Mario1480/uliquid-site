@@ -15,9 +15,24 @@ export const metadata: Metadata = {
 const supportedExchanges = [
   "Bitmart",
   "Coinstore",
-  "MEXC",
-  "P2B",
   "Pionex",
+  "P2B",
+  "MEXC",
+  "BingX",
+  "XT",
+  "Binance",
+  "Bitget",
+  "Lbank",
+  "HTX",
+  "OKX",
+  "Bybit",
+  "Weex",
+  "Gate",
+  "KuCoin",
+  "Phemex",
+  "Bitfinex",
+  "CoinEx",
+  "BloFin",
 ];
 
 export default function ExchangesPage() {
