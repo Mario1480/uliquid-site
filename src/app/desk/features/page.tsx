@@ -8,7 +8,7 @@ import { deskFeatureSections } from "@/lib/content/desk";
 export const metadata = createPageMetadata({
   title: "Features",
   description:
-    "Explore uLiquid Desk features across Hyperliquid vaults, bots, AI-assisted workflows, strategies, automation, performance visibility, and user-friendly controls.",
+    "Explore uLiquid Desk features across Hyperliquid vaults, bots, AI-assisted workflows, strategies, automation, performance visibility, user-friendly controls, and connected CEX trading paths such as Bitget and MEXC where supported.",
   canonical: "/desk/features",
   siteName: deskName,
   openGraphTitle: `Features - ${deskName}`,
@@ -21,7 +21,7 @@ export default function DeskFeaturesPage() {
         <div className="max-w-3xl">
           <h1 className="text-4xl font-semibold text-text">Desk Features</h1>
           <p className="mt-4 text-lg text-muted">
-            Productized access to Hyperliquid vaults, bots, AI workflows, strategy discovery, automation, and ongoing visibility.
+            Productized access to Hyperliquid vaults, bots, AI workflows, strategy discovery, automation, ongoing visibility, and connected CEX trading paths where supported.
           </p>
         </div>
       </Section>
@@ -34,7 +34,7 @@ export default function DeskFeaturesPage() {
       <Section>
         <FeatureGrid
           title="Core product layers"
-          subtitle="Desk is designed to be cleaner and more accessible than operator tooling while still giving users control."
+          subtitle="Desk is designed to be cleaner and more accessible than operator tooling while still giving users control across Hyperliquid-first and supported connected exchange workflows."
           items={deskFeatureSections}
         />
       </Section>

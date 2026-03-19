@@ -12,7 +12,7 @@ export const marketMakerDescription =
 
 export const deskName = "uLiquid Desk";
 export const deskDescription =
-  "The vault, bot and AI layer for Hyperliquid. A user-friendly platform for vaults, bots, AI-assisted workflows, strategy discovery, automation, allocation, and performance visibility.";
+  "The Hyperliquid-first vault, bot and trading workflow layer. A user-friendly platform for vaults, bots, AI-assisted workflows, strategy discovery, automation, allocation, performance visibility, and connected CEX trading paths such as Bitget and MEXC where supported.";
 
 type PageMetadataOptions = {
   title: string;

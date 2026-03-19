@@ -8,7 +8,7 @@ import { deskAiWorkflowSections } from "@/lib/content/desk";
 export const metadata = createPageMetadata({
   title: "AI Workflows",
   description:
-    "Learn how uLiquid Desk brings AI-assisted signals, decision support, and workflow context into Hyperliquid vault, bot, and strategy experiences.",
+    "Learn how uLiquid Desk brings AI-assisted signals, decision support, and workflow context into Hyperliquid vault, bot, strategy, and connected CEX trading experiences where supported.",
   canonical: "/desk/ai-workflows",
   siteName: deskName,
   openGraphTitle: `AI Workflows - ${deskName}`,
@@ -22,7 +22,7 @@ export default function DeskAiWorkflowsPage() {
           <h1 className="text-4xl font-semibold text-text">AI Workflows on Desk</h1>
           <p className="mt-4 text-lg text-muted">
             Desk is designed to bring AI-assisted signals and decision support into a cleaner Hyperliquid
-            product flow across vaults, bots, strategies, and automation.
+            product flow across vaults, bots, strategies, automation, and supported connected trading paths.
           </p>
         </div>
       </Section>

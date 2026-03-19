@@ -8,7 +8,7 @@ import { deskBotAutomationSections } from "@/lib/content/desk";
 export const metadata = createPageMetadata({
   title: "Bots & Automation",
   description:
-    "Explore how uLiquid Desk supports Hyperliquid bots, automation workflows, strategy-linked execution, and user-friendly control surfaces.",
+    "Explore how uLiquid Desk supports Hyperliquid bots, automation workflows, strategy-linked execution, user-friendly control surfaces, and connected CEX trading paths such as Bitget and MEXC where supported.",
   canonical: "/desk/bots-automation",
   siteName: deskName,
   openGraphTitle: `Bots & Automation - ${deskName}`,
@@ -22,7 +22,8 @@ export default function DeskBotsAutomationPage() {
           <h1 className="text-4xl font-semibold text-text">Bots &amp; Automation on Desk</h1>
           <p className="mt-4 text-lg text-muted">
             Desk expands beyond vault access to support bot-driven workflows, strategy automation, and a
-            cleaner control layer for Hyperliquid users.
+            cleaner control layer for Hyperliquid users, with connected CEX trading paths such as Bitget
+            and MEXC where supported.
           </p>
         </div>
       </Section>
@@ -35,7 +36,7 @@ export default function DeskBotsAutomationPage() {
       <Section>
         <FeatureGrid
           title="How bots and automation fit"
-          subtitle="Desk should make bot-driven workflows feel usable, understandable, and connected to the rest of the product path."
+          subtitle="Desk should make bot-driven workflows feel usable, understandable, and connected to the rest of the product path, including supported exchange execution where relevant."
           items={deskBotAutomationSections}
         />
       </Section>

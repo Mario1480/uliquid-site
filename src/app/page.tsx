@@ -17,7 +17,7 @@ import { deskCapabilities, deskFormula } from "@/lib/content/desk";
 export const metadata = createPageMetadata({
   title: "Vaults, bots and AI-powered trading workflows for Hyperliquid",
   description:
-    "uLiquid Desk is the primary path into vaults, bots, AI-powered workflows, and automated trading access for Hyperliquid users, with Market Maker available for specialized operator teams.",
+    "uLiquid Desk is the primary path into Hyperliquid vaults, bots, AI-powered workflows, automated trading access, and connected CEX trading paths such as Bitget and MEXC where supported, with Market Maker available for specialized operator teams.",
   canonical: "/",
   siteName: brandName,
   openGraphTitle: `${brandName} - Desk-first trading workflows for Hyperliquid`,
@@ -33,7 +33,7 @@ export default function Home() {
           name: brandName,
           url: siteUrl,
           description:
-            "uLiquid builds Desk-first vault, bot, AI workflow, and trading automation products for Hyperliquid users, with Market Maker for specialized operator teams.",
+            "uLiquid builds Desk-first vault, bot, AI workflow, trading automation, and connected trading desk products for Hyperliquid users, with Market Maker for specialized operator teams.",
         }}
       />
       <JsonLd
@@ -67,8 +67,9 @@ export default function Home() {
             </h1>
             <p className="mt-6 text-lg text-muted">
               Start with uLiquid Desk for a simpler way to access vaults, bots, strategy workflows, and
-              trading automation on Hyperliquid. Market Maker remains available for operator teams that need
-              dedicated liquidity infrastructure.
+              trading automation on Hyperliquid, then extend into connected trading workflows on supported
+              venues such as Bitget and MEXC where available. Market Maker remains available for operator
+              teams that need dedicated liquidity infrastructure.
             </p>
             <div className="mt-6 flex flex-wrap gap-4">
               <Button href="/desk">Explore Desk</Button>
@@ -89,11 +90,13 @@ export default function Home() {
             <p className="text-sm font-semibold text-emerald-200">{deskFormula}</p>
             <p className="text-lg text-text">
               Desk is the main discovery path for users who want Hyperliquid vaults, bots, AI-assisted
-              workflows, strategy automation, and a cleaner route into trading tools.
+              workflows, strategy automation, and a cleaner route into trading tools, including supported
+              connected CEX paths where available.
             </p>
             <div className="grid gap-3 text-sm text-muted">
               <p>Vault access and strategy discovery without operator-heavy tooling</p>
               <p>Bots, AI-supported workflows, and automation framed as a product experience</p>
+              <p>Connected trading desk workflows with supported exchange access, including Bitget and MEXC where available</p>
               <p>Performance, allocation visibility, and control surfaces in one interface</p>
               <p>Market Maker still available as the dedicated path for listings and professional liquidity ops</p>
             </div>
@@ -109,7 +112,7 @@ export default function Home() {
             specialized operator teams.
           </p>
         </div>
-        <div className="mb-6 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mb-6 grid gap-6 md:grid-cols-2 xl:grid-cols-5">
           {[
             {
               title: "Vault access",
@@ -126,6 +129,10 @@ export default function Home() {
             {
               title: "Automation",
               description: "Trading automation and ongoing visibility framed around usability and control.",
+            },
+            {
+              title: "Connected execution",
+              description: "Desk-style execution across supported exchanges such as Bitget and MEXC where available.",
             },
           ].map((item) => (
             <Card key={item.title} className="border-emerald-400/20">
@@ -144,7 +151,7 @@ export default function Home() {
             <p className="mt-4 text-sm text-muted">{deskDescription}</p>
             <div className="mt-6 grid gap-2 text-sm text-muted">
               <p>For vault users, strategy followers, bot users, automation-oriented traders, and AI-assisted workflow users</p>
-              <p>Vault access, bots, AI-supported workflows, strategy automation, performance visibility, and clearer control surfaces</p>
+              <p>Vault access, bots, AI-supported workflows, strategy automation, connected CEX trading paths, performance visibility, and clearer control surfaces</p>
             </div>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button href="/desk">Explore Desk</Button>
@@ -177,10 +184,11 @@ export default function Home() {
 
       <Section>
         <div className="mb-10">
-          <h2 className="text-3xl font-semibold text-text">What you can do with Desk</h2>
+          <h2 className="text-3xl font-semibold text-text">What Desk includes</h2>
           <p className="mt-3 text-muted">
             Desk is broader than a vault viewer. It combines Hyperliquid vault access with bots,
-            AI-assisted workflows, strategies, automation, and visibility in one user-facing product.
+            AI-assisted workflows, strategies, automation, trading desk controls, supported connected
+            exchange execution, and visibility in one user-facing product.
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -207,7 +215,8 @@ export default function Home() {
             <div className="mt-4 grid gap-3 text-sm text-muted">
               <p>You want easier access to Hyperliquid vaults, strategies, bots, AI-assisted workflows, and trading automation.</p>
               <p>You are a vault user, strategy follower, bot user, automation-oriented trader, or someone who wants AI-supported decision help.</p>
-              <p>You want a user-facing product experience centered on allocation, performance visibility, and control.</p>
+              <p>You want a user-facing product experience centered on allocation, performance visibility, connected execution context, and control.</p>
+              <p>You want a Hyperliquid-first desk that can also support connected CEX trading paths such as Bitget and MEXC where available.</p>
               <p>Your conversion path is exploration, request access, and product onboarding.</p>
             </div>
           </Card>
@@ -252,7 +261,7 @@ export default function Home() {
 
       <CTASection
         title="Start with Desk, keep Market Maker in reach."
-        subtitle="Explore Desk first if you want vaults, bots, AI-powered workflows, and trading automation on Hyperliquid. Market Maker stays available for operator-grade liquidity programs."
+        subtitle="Explore Desk first if you want Hyperliquid vaults, bots, AI-powered workflows, trading automation, and connected CEX trading paths such as Bitget and MEXC where supported. Market Maker stays available for operator-grade liquidity programs."
         primaryLabel="Explore Desk"
         primaryHref="/desk"
         secondaryLabel="Request Access"

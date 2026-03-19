@@ -38,7 +38,8 @@ export default function DeskPage() {
             <h1 className="text-4xl font-semibold text-text sm:text-5xl">{deskFormula}</h1>
             <p className="mt-6 text-lg text-muted">
               A user-friendly platform for Hyperliquid vaults, bots, AI-assisted workflows, strategy
-              discovery, automation, and performance visibility.
+              discovery, automation, performance visibility, and connected CEX trading workflows on venues
+              such as Bitget and MEXC where supported.
             </p>
             <div className="mt-6 flex flex-wrap gap-4">
               <a
@@ -59,11 +60,13 @@ export default function DeskPage() {
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-300">Desk Thesis</p>
             <p className="mt-5 text-lg text-text">
               Advanced trading infrastructure becomes more useful when vaults, bots, AI-assisted workflows,
-              strategy discovery, and ongoing visibility feel productized instead of operator-heavy.
+              strategy discovery, connected execution paths, and ongoing visibility feel productized instead
+              of operator-heavy.
             </p>
             <div className="mt-6 grid gap-3 text-sm text-muted">
               <p>Vault-first product framing with a broader bot and strategy layer</p>
               <p>AI-supported workflows and strategy access with cleaner control surfaces</p>
+              <p>Supported exchange access, including Bitget and MEXC where available</p>
               <p>Automation, performance visibility, and allocation context built into the workflow</p>
             </div>
           </Card>
@@ -76,8 +79,8 @@ export default function DeskPage() {
             <h2 className="text-2xl font-semibold text-text">What Desk is</h2>
             <p className="mt-4 text-sm text-muted">
               uLiquid Desk gives users a simpler way to access Hyperliquid vaults, bots, strategies,
-              AI-assisted workflows, and automation without presenting them with operator-focused
-              infrastructure.
+              AI-assisted workflows, automation, and supported connected trading paths without presenting
+              them with operator-focused infrastructure.
             </p>
           </Card>
           <Card className="border-emerald-400/30">
@@ -94,7 +97,7 @@ export default function DeskPage() {
       <Section>
         <FeatureGrid
           title="Vaults, bots, AI workflows, strategies, automation, visibility"
-          subtitle="Desk is designed to make advanced infrastructure easier to access, understand, and manage."
+          subtitle="Desk is designed to make Hyperliquid-first and supported connected trading workflows easier to access, understand, and manage."
           items={deskPillars}
         />
       </Section>
@@ -107,7 +110,7 @@ export default function DeskPage() {
       <Section>
         <div className="mb-8">
           <h2 className="text-3xl font-semibold text-text">How it works</h2>
-          <p className="mt-3 text-muted">A simpler product flow from discovery and decision support to ongoing monitoring.</p>
+          <p className="mt-3 text-muted">A simpler product flow from Hyperliquid discovery and decision support to connected execution and ongoing monitoring.</p>
         </div>
         <div className="grid gap-6 md:grid-cols-3">
           {deskHowItWorks.map((step, index) => (
@@ -141,7 +144,8 @@ export default function DeskPage() {
             <h2 className="text-3xl font-semibold text-text">Request Access</h2>
             <p className="mt-4 text-muted">
               Desk is launching with a request-access flow. Tell us how you want to use vaults, bots,
-              strategies, AI-assisted workflows, and automation on Hyperliquid.
+              strategies, AI-assisted workflows, automation, or connected CEX trading paths such as Bitget
+              and MEXC where supported.
             </p>
           </div>
           <RequestAccessForm />
@@ -150,7 +154,7 @@ export default function DeskPage() {
 
       <CTASection
         title="Explore the Desk path."
-        subtitle="Start with Desk if you want a cleaner Hyperliquid experience across vaults, bots, AI-assisted workflows, strategies, automation, and visibility."
+        subtitle="Start with Desk if you want a cleaner Hyperliquid experience across vaults, bots, AI-assisted workflows, strategies, automation, visibility, and connected CEX trading paths where supported."
         primaryLabel="Explore Desk"
         primaryHref="/desk"
         secondaryLabel="Request Access"
