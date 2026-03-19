@@ -218,19 +218,19 @@ export const deskFeatureSections = [
 export const deskVaultHighlights = [
   {
     title: "Strategy framing",
-    description: "Each vault should be easier to evaluate through clearer product-level explanations and context.",
+    description: "See what a vault is trying to do, how the strategy is framed, and why it may fit before you commit capital.",
   },
   {
     title: "Bots alongside vaults",
-    description: "Desk should let users navigate vaults and bot-driven workflows through one connected product story.",
+    description: "Move from a vault-first view into bot-driven workflows without switching into a separate, operator-style product experience.",
   },
   {
     title: "Allocation workflows",
-    description: "Move from discovery to allocation through a guided product flow instead of disconnected steps.",
+    description: "Compare options, review the setup, and move from discovery to allocation through a guided product flow.",
   },
   {
     title: "Ongoing transparency",
-    description: "Stay close to performance, AI-supported context, and operational signals without needing operator tooling.",
+    description: "Track performance, AI-supported signals, and workflow context after entry without needing operator-grade tooling.",
   },
 ];
 
