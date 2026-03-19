@@ -2,20 +2,58 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 
 const navLinks = [
-  { href: "/product", label: "Product" },
-  { href: "/pricing", label: "Pricing" },
-  { href: "/exchanges", label: "Exchanges" },
-  { href: "/security", label: "Security" },
-  { href: "/docs", label: "Docs" },
+  { href: "/#products", label: "Products" },
+  { href: "/market-maker", label: "Market Maker" },
+  { href: "/desk", label: "Desk" },
+  { href: "/market-maker/pricing", label: "Pricing" },
+  { href: "/market-maker/docs", label: "Docs" },
   { href: "/company", label: "Company" },
 ];
 
+function getHeaderCtas(pathname: string) {
+  if (pathname.startsWith("/desk")) {
+    return {
+      primaryLabel: "Request Access",
+      primaryHref: "/desk#request-access",
+      secondaryLabel: "Explore Vaults",
+      secondaryHref: "/desk/vaults",
+    };
+  }
+
+  if (
+    pathname.startsWith("/market-maker") ||
+    pathname.startsWith("/blog") ||
+    pathname.startsWith("/guides") ||
+    pathname.startsWith("/use-cases") ||
+    pathname === "/faq" ||
+    pathname === "/crypto-market-maker" ||
+    pathname === "/app"
+  ) {
+    return {
+      primaryLabel: "Buy License",
+      primaryHref: "https://license-server.uliquid.vip/",
+      secondaryLabel: "Go to License Manager",
+      secondaryHref: "https://license-server.uliquid.vip/",
+    };
+  }
+
+  return {
+    primaryLabel: "Explore Market Maker",
+    primaryHref: "/market-maker",
+    secondaryLabel: "Request Access",
+    secondaryHref: "/desk#request-access",
+  };
+}
+
 export function HeaderNav() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname() || "/";
+  const ctas = getHeaderCtas(pathname);
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur">
@@ -38,10 +76,10 @@ export function HeaderNav() {
           ))}
         </nav>
         <div className="hidden items-center gap-3 md:flex">
-          <Button href="https://license-server.uliquid.vip/" variant="secondary">
-            Go to License Manager
+          <Button href={ctas.secondaryHref} variant="secondary">
+            {ctas.secondaryLabel}
           </Button>
-          <Button href="https://license-server.uliquid.vip/">Buy License</Button>
+          <Button href={ctas.primaryHref}>{ctas.primaryLabel}</Button>
         </div>
         <button
           type="button"
@@ -73,10 +111,10 @@ export function HeaderNav() {
             ))}
           </div>
           <div className="mt-4 flex flex-col gap-3">
-            <Button href="https://license-server.uliquid.vip/" variant="secondary">
-              Go to License Manager
+            <Button href={ctas.secondaryHref} variant="secondary">
+              {ctas.secondaryLabel}
             </Button>
-            <Button href="https://license-server.uliquid.vip/">Buy License</Button>
+            <Button href={ctas.primaryHref}>{ctas.primaryLabel}</Button>
           </div>
         </div>
       ) : null}

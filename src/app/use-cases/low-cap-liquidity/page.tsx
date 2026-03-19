@@ -72,11 +72,11 @@ export default function LowCapLiquidityPage() {
 
       <Section>
         <div className="flex flex-wrap items-center gap-4">
-          <Button href="/pricing">View pricing</Button>
+          <Button href="/market-maker/pricing">View pricing</Button>
           <Button href="https://license-server.uliquid.vip/" variant="secondary">
             Go to License Manager
           </Button>
-          <Link href="/product#price-intelligence" className="text-sm font-semibold text-accent-cyan">
+          <Link href="/market-maker#price-intelligence" className="text-sm font-semibold text-accent-cyan">
             Learn about price intelligence →
           </Link>
         </div>

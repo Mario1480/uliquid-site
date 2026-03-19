@@ -1,16 +1,15 @@
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
-import type { Metadata } from "next";
+import { createPageMetadata, marketMakerName } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "License Manager – uLiquid Market Maker",
+export const metadata = createPageMetadata({
+  title: "License Manager",
   description:
     "Manage your uLiquid Market Maker license, VPS details, and subscription in the Customer Portal.",
-  alternates: {
-    canonical: "/app",
-  },
-};
+  canonical: "/app",
+  siteName: marketMakerName,
+});
 
 export default function AppLoginPage() {
   return (

@@ -62,7 +62,7 @@ export default function TokenProjectsUseCasePage() {
 
       <Section>
         <div className="flex flex-wrap items-center gap-4">
-          <Button href="/pricing">View pricing</Button>
+          <Button href="/market-maker/pricing">View pricing</Button>
           <Button href="https://license-server.uliquid.vip/" variant="secondary">
             Go to License Manager
           </Button>

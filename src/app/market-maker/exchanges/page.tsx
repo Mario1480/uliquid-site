@@ -1,39 +1,16 @@
 import { RequestExchangeForm } from "@/components/RequestExchangeForm";
 import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
-import type { Metadata } from "next";
+import { createPageMetadata, marketMakerName } from "@/lib/seo";
+import { supportedExchanges } from "@/lib/content/marketMaker";
 
-export const metadata: Metadata = {
-  title: "Exchanges – uLiquid Market Maker",
-  description:
-    "Supported exchange integrations and request form for new venues in uLiquid Market Maker.",
-  alternates: {
-    canonical: "/exchanges",
-  },
-};
-
-const supportedExchanges = [
-  "Bitmart",
-  "Coinstore",
-  "Pionex",
-  "P2B",
-  "MEXC",
-  "BingX",
-  "XT",
-  "Binance",
-  "Bitget",
-  "Lbank",
-  "HTX",
-  "OKX",
-  "Bybit",
-  "Weex",
-  "Gate",
-  "KuCoin",
-  "Phemex",
-  "Bitfinex",
-  "CoinEx",
-  "BloFin",
-];
+export const metadata = createPageMetadata({
+  title: "Exchanges",
+  description: "Supported exchange integrations and request form for new venues in uLiquid Market Maker.",
+  canonical: "/market-maker/exchanges",
+  siteName: marketMakerName,
+  openGraphTitle: `Exchanges - ${marketMakerName}`,
+});
 
 export default function ExchangesPage() {
   return (

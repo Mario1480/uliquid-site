@@ -47,10 +47,10 @@ export default function CexVsDexPriceFeedsPage() {
           DEX feeds can be used as a master reference or validation input to reduce pricing anomalies.
         </p>
         <div className="mt-4 flex flex-wrap gap-3 text-sm text-muted">
-          <Link href="/product#price-intelligence" className="text-accent-cyan font-semibold">
+          <Link href="/market-maker#price-intelligence" className="text-accent-cyan font-semibold">
             Price intelligence →
           </Link>
-          <Link href="/pricing" className="text-accent-cyan font-semibold">
+          <Link href="/market-maker/pricing" className="text-accent-cyan font-semibold">
             View pricing →
           </Link>
         </div>

@@ -48,10 +48,10 @@ export default function WhatIsMarketMakingPage() {
           execution.
         </p>
         <div className="mt-4 flex flex-wrap gap-3 text-sm text-muted">
-          <Link href="/product#core-modules" className="text-accent-cyan font-semibold">
+          <Link href="/market-maker#core-modules" className="text-accent-cyan font-semibold">
             Explore core modules →
           </Link>
-          <Link href="/pricing" className="text-accent-cyan font-semibold">
+          <Link href="/market-maker/pricing" className="text-accent-cyan font-semibold">
             View pricing →
           </Link>
         </div>

@@ -96,7 +96,7 @@ export default function BlogAiMarketMakingCrypto() {
           <Link href="/crypto-market-maker" className="text-accent-cyan font-semibold">
             Crypto Market Maker Software →
           </Link>
-          <Link href="/product#ai-advisory" className="text-accent-cyan font-semibold">
+          <Link href="/market-maker#ai-advisory" className="text-accent-cyan font-semibold">
             AI advisory module →
           </Link>
         </div>

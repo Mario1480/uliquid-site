@@ -69,11 +69,11 @@ export default function MasterSlavePriceFollowPage() {
 
       <Section>
         <div className="flex flex-wrap items-center gap-4">
-          <Button href="/pricing">View pricing</Button>
+          <Button href="/market-maker/pricing">View pricing</Button>
           <Button href="https://license-server.uliquid.vip/" variant="secondary">
             Go to License Manager
           </Button>
-          <Link href="/product#price-follow" className="text-sm font-semibold text-accent-cyan">
+          <Link href="/market-maker#price-follow" className="text-sm font-semibold text-accent-cyan">
             Price follow details →
           </Link>
         </div>

@@ -1,16 +1,15 @@
 import { ContactForm } from "@/components/ContactForm";
 import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
-import type { Metadata } from "next";
+import { brandName, createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Company – uLiquid Market Maker",
+export const metadata = createPageMetadata({
+  title: "Company",
   description:
-    "Learn about uLiquid and contact the team for managed liquidity, listing support, and market-making operations.",
-  alternates: {
-    canonical: "/company",
-  },
-};
+    "Learn about uLiquid and contact the team about Market Maker, Desk, liquidity operations, and vault-based trading workflows.",
+  canonical: "/company",
+  siteName: brandName,
+});
 
 export default function CompanyPage() {
   return (
@@ -19,8 +18,8 @@ export default function CompanyPage() {
         <div className="max-w-3xl">
           <h1 className="text-4xl font-semibold text-text">Company</h1>
           <p className="mt-4 text-lg text-muted">
-            uLiquid is built for small and mid-sized token projects and listing teams that need reliable
-            liquidity without building a market-making desk.
+            uLiquid builds specialized crypto products for professional liquidity operations and
+            user-friendly vault-based trading workflows.
           </p>
         </div>
       </Section>
@@ -30,7 +29,8 @@ export default function CompanyPage() {
           <div id="contact">
             <h2 className="text-3xl font-semibold text-text">Contact</h2>
             <p className="mt-3 text-muted">
-              Tell us about your listing goals and preferred exchanges. We will respond quickly.
+              Tell us whether you are exploring Market Maker or Desk, what you want to achieve, and where
+              you need help. We will respond quickly.
             </p>
           </div>
           <ContactForm />

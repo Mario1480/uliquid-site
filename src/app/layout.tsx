@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Footer } from "@/components/Footer";
 import { HeaderNav } from "@/components/HeaderNav";
+import { brandDescription, brandName } from "@/lib/seo";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -17,21 +18,16 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: {
-    default: "uLiquid Market Maker",
-    template: "%s | uLiquid Market Maker",
-  },
-  description:
-    "uLiquid Market Maker is a managed crypto market-making system with volume execution, price follow, price support, and enterprise-grade security.",
+  title: brandName,
+  description: brandDescription,
   metadataBase: new URL("https://uliquid.vip"),
   openGraph: {
-    title: "uLiquid Market Maker",
-    description:
-      "uLiquid Market Maker is a managed crypto market-making system with volume execution, price follow, price support, and enterprise-grade security.",
+    title: brandName,
+    description: brandDescription,
     url: "https://uliquid.vip",
     type: "website",
     images: ["/logo.png"],
-    siteName: "uLiquid Market Maker",
+    siteName: brandName,
   },
   icons: {
     icon: "/favicon.ico",

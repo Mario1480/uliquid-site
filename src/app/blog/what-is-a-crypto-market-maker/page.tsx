@@ -140,7 +140,7 @@ export default function BlogWhatIsCryptoMarketMaker() {
           <Link href="/crypto-market-maker" className="text-accent-cyan font-semibold">
             Crypto Market Maker Software →
           </Link>
-          <Link href="/pricing" className="text-accent-cyan font-semibold">
+          <Link href="/market-maker/pricing" className="text-accent-cyan font-semibold">
             Pricing →
           </Link>
         </div>

@@ -1,10 +1,11 @@
 import Link from "next/link";
 
 const footerLinks = {
-  Product: [
-    { label: "Overview", href: "/product" },
-    { label: "Pricing", href: "/pricing" },
-    { label: "Security", href: "/security" },
+  Products: [
+    { label: "Market Maker", href: "/market-maker" },
+    { label: "Market Maker Pricing", href: "/market-maker/pricing" },
+    { label: "Desk", href: "/desk" },
+    { label: "Desk FAQ", href: "/desk/faq" },
   ],
   Company: [
     { label: "About", href: "/company" },
@@ -12,12 +13,12 @@ const footerLinks = {
     { label: "Careers", href: "/company" },
   ],
   Resources: [
-    { label: "Docs", href: "/docs" },
-    { label: "Exchanges", href: "/exchanges" },
+    { label: "Market Maker Docs", href: "/market-maker/docs" },
+    { label: "Market Maker Exchanges", href: "/market-maker/exchanges" },
     { label: "Blog", href: "/blog" },
     { label: "Crypto Market Maker", href: "/crypto-market-maker" },
     { label: "License Manager", href: "https://license-server.uliquid.vip/" },
-    { label: "Status", href: "/security" },
+    { label: "Security", href: "/market-maker/security" },
   ],
   Legal: [
     { label: "Privacy", href: "/privacy" },
@@ -32,7 +33,8 @@ export function Footer() {
         <div className="space-y-4">
           <p className="text-lg font-semibold text-text">uLiquid</p>
           <p className="text-sm text-muted">
-            Managed liquidity tooling with a dedicated VPS included. No market-making desk required.
+            Specialized crypto products for liquidity operations and vault-based trading, spanning Market
+            Maker and uLiquid Desk.
           </p>
           <div className="text-sm text-muted">
             Contact: <span className="text-text">hello@uliquid.vip</span>

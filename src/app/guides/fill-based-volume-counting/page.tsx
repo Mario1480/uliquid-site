@@ -47,10 +47,10 @@ export default function FillBasedVolumeCountingPage() {
           Use fill-based volume in tandem with price follow and price support for listing readiness.
         </p>
         <div className="mt-4 flex flex-wrap gap-3 text-sm text-muted">
-          <Link href="/product#volume-bot" className="text-accent-cyan font-semibold">
+          <Link href="/market-maker#volume-bot" className="text-accent-cyan font-semibold">
             Volume bot →
           </Link>
-          <Link href="/pricing" className="text-accent-cyan font-semibold">
+          <Link href="/market-maker/pricing" className="text-accent-cyan font-semibold">
             View pricing →
           </Link>
         </div>

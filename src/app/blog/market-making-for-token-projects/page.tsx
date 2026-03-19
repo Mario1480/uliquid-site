@@ -94,7 +94,7 @@ export default function BlogMarketMakingForTokenProjects() {
         </p>
         <p className="mt-3 text-sm text-muted">
           See details: {" "}
-          <Link href="/security" className="text-accent-cyan font-semibold">
+          <Link href="/market-maker/security" className="text-accent-cyan font-semibold">
             Security & access control
           </Link>
           .
@@ -134,7 +134,7 @@ export default function BlogMarketMakingForTokenProjects() {
           <Link href="/crypto-market-maker" className="text-accent-cyan font-semibold">
             Crypto Market Maker Software →
           </Link>
-          <Link href="/pricing" className="text-accent-cyan font-semibold">
+          <Link href="/market-maker/pricing" className="text-accent-cyan font-semibold">
             Pricing →
           </Link>
         </div>

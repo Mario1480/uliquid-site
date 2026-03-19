@@ -77,7 +77,7 @@ export default function BlogDexVsCexMarketMaking() {
           <Link href="/crypto-market-maker" className="text-accent-cyan font-semibold">
             Crypto Market Maker Software →
           </Link>
-          <Link href="/product#price-intelligence" className="text-accent-cyan font-semibold">
+          <Link href="/market-maker#price-intelligence" className="text-accent-cyan font-semibold">
             Price intelligence →
           </Link>
         </div>
@@ -89,7 +89,7 @@ export default function BlogDexVsCexMarketMaking() {
           If you’re a token project preparing for listings, review the managed VPS model and pricing tiers.
         </p>
         <div className="mt-6 flex flex-wrap gap-3 text-sm text-muted">
-          <Link href="/pricing" className="text-accent-cyan font-semibold">
+          <Link href="/market-maker/pricing" className="text-accent-cyan font-semibold">
             Pricing →
           </Link>
           <Link href="/use-cases/low-cap-liquidity" className="text-accent-cyan font-semibold">

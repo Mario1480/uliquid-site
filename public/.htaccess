@@ -3,6 +3,14 @@
 
 Options -MultiViews
 
+<IfModule mod_alias.c>
+  RedirectMatch 301 ^/product/?$ /market-maker
+  RedirectMatch 301 ^/pricing/?$ /market-maker/pricing
+  RedirectMatch 301 ^/security/?$ /market-maker/security
+  RedirectMatch 301 ^/exchanges/?$ /market-maker/exchanges
+  RedirectMatch 301 ^/docs/?$ /market-maker/docs
+</IfModule>
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
 

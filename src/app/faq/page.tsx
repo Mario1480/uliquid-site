@@ -97,10 +97,10 @@ export default function FaqPage() {
 
       <Section>
         <div className="flex flex-wrap gap-3 text-sm text-muted">
-          <Link href="/pricing" className="text-accent-cyan font-semibold">
+          <Link href="/market-maker/pricing" className="text-accent-cyan font-semibold">
             View pricing →
           </Link>
-          <Link href="/product" className="text-accent-cyan font-semibold">
+          <Link href="/market-maker" className="text-accent-cyan font-semibold">
             See product features →
           </Link>
           <a

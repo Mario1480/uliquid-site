@@ -89,14 +89,14 @@ export default function CryptoMarketMakerPage() {
             provisioned and maintained by uLiquid.
           </p>
           <div className="mt-6 flex flex-wrap gap-4">
-            <Button href="/pricing">View pricing</Button>
+            <Button href="/market-maker/pricing">View pricing</Button>
             <Button href="https://license-server.uliquid.vip/" variant="secondary">
               Go to License Manager
             </Button>
           </div>
           <p className="mt-6 text-sm text-muted">
-            Looking for details? Start with <Link href="/product" className="text-accent-cyan font-semibold">features</Link>,
-            then review <Link href="/security" className="text-accent-cyan font-semibold">security controls</Link> and the
+            Looking for details? Start with <Link href="/market-maker" className="text-accent-cyan font-semibold">features</Link>,
+            then review <Link href="/market-maker/security" className="text-accent-cyan font-semibold">security controls</Link> and the
             <Link href="/faq" className="text-accent-cyan font-semibold"> full FAQ</Link>.
           </p>
         </div>
@@ -157,7 +157,7 @@ export default function CryptoMarketMakerPage() {
               Multi-level ladders with configurable spread, step sizes, distributions, jitter, and inventory skew.
               Control the shape of depth rather than guessing.
             </p>
-            <Link href="/product#market-making" className="mt-4 inline-flex text-sm font-semibold text-accent-cyan">
+            <Link href="/market-maker#market-making" className="mt-4 inline-flex text-sm font-semibold text-accent-cyan">
               Learn more →
             </Link>
           </Card>
@@ -187,7 +187,7 @@ export default function CryptoMarketMakerPage() {
               Maintain a floor price using a dedicated budget. Auto-stops when the budget is depleted and notifies
               operators.
             </p>
-            <Link href="/product#price-support" className="mt-4 inline-flex text-sm font-semibold text-accent-cyan">
+            <Link href="/market-maker#price-support" className="mt-4 inline-flex text-sm font-semibold text-accent-cyan">
               Learn more →
             </Link>
           </Card>
@@ -197,7 +197,7 @@ export default function CryptoMarketMakerPage() {
               On-chain reference pricing as a master reference or validation layer for low-cap tokens.
               Read-only feed—no DEX trading.
             </p>
-            <Link href="/product#price-intelligence" className="mt-4 inline-flex text-sm font-semibold text-accent-cyan">
+            <Link href="/market-maker#price-intelligence" className="mt-4 inline-flex text-sm font-semibold text-accent-cyan">
               Price intelligence →
             </Link>
           </Card>
@@ -207,7 +207,7 @@ export default function CryptoMarketMakerPage() {
               AI reviews structure and execution to recommend better parameters. Recommendations only; no
               autonomous trading.
             </p>
-            <Link href="/product#ai-advisory" className="mt-4 inline-flex text-sm font-semibold text-accent-cyan">
+            <Link href="/market-maker#ai-advisory" className="mt-4 inline-flex text-sm font-semibold text-accent-cyan">
               AI advisory →
             </Link>
           </Card>
@@ -232,7 +232,7 @@ export default function CryptoMarketMakerPage() {
               Trade-only keys, encrypted at rest. Workspace roles, optional email 2FA, and re-auth for sensitive
               actions.
             </p>
-            <Link href="/security" className="mt-4 inline-flex text-sm font-semibold text-accent-cyan">
+            <Link href="/market-maker/security" className="mt-4 inline-flex text-sm font-semibold text-accent-cyan">
               Security page →
             </Link>
           </Card>
@@ -242,7 +242,7 @@ export default function CryptoMarketMakerPage() {
               Telegram alerts, runner heartbeat monitoring, and health checks support fast response when something
               breaks.
             </p>
-            <Link href="/docs" className="mt-4 inline-flex text-sm font-semibold text-accent-cyan">
+            <Link href="/market-maker/docs" className="mt-4 inline-flex text-sm font-semibold text-accent-cyan">
               Docs overview →
             </Link>
           </Card>
@@ -283,7 +283,7 @@ export default function CryptoMarketMakerPage() {
 
       <Section>
         <div className="flex flex-wrap items-center gap-4">
-          <Button href="/pricing">View pricing</Button>
+          <Button href="/market-maker/pricing">View pricing</Button>
           <Button href="https://license-server.uliquid.vip/" variant="secondary">
             Go to License Manager
           </Button>

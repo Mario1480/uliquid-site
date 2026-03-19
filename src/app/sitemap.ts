@@ -1,16 +1,23 @@
 import type { MetadataRoute } from "next";
+import { siteUrl } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://uliquid.vip";
   const lastModified = new Date();
 
   const routes = [
     "/",
     "/market-maker",
-    "/pricing",
-    "/features",
-    "/support",
-    "/help",
+    "/market-maker/pricing",
+    "/market-maker/security",
+    "/market-maker/exchanges",
+    "/market-maker/docs",
+    "/desk",
+    "/desk/features",
+    "/desk/how-it-works",
+    "/desk/vaults",
+    "/desk/faq",
+    "/company",
+    "/faq",
     "/crypto-market-maker",
     "/blog",
     "/blog/what-is-a-crypto-market-maker",
@@ -18,8 +25,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blog/market-maker-saas-vs-custom-bots",
     "/blog/ai-market-making-crypto",
     "/blog/dex-vs-cex-market-making",
+    "/guides/what-is-market-making",
+    "/guides/fill-based-volume-counting",
+    "/guides/cex-vs-dex-price-feeds",
     "/use-cases/token-projects",
     "/use-cases/exchange-listings",
+    "/use-cases/exchange-listing-support",
+    "/use-cases/master-slave-price-follow",
+    "/use-cases/low-cap-liquidity",
+    "/privacy",
+    "/terms",
+    "/app",
   ];
 
   return routes.map((route) => ({
