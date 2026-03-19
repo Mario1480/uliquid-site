@@ -1,4 +1,5 @@
 import { CTASection } from "@/components/CTASection";
+import { DeskResourceSection } from "@/components/DeskResourceSection";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { Section } from "@/components/ui/Section";
 import { createPageMetadata, deskName } from "@/lib/seo";
@@ -6,7 +7,7 @@ import { deskFaqs } from "@/lib/content/desk";
 
 export const metadata = createPageMetadata({
   title: "FAQ",
-  description: "Common questions about uLiquid Desk, Hyperliquid vault access, strategy discovery, and the request-access launch flow.",
+  description: "Common questions about uLiquid Desk, Hyperliquid vaults, bots, AI-assisted workflows, strategies, automation, and the request-access launch flow.",
   canonical: "/desk/faq",
   siteName: deskName,
   openGraphTitle: `FAQ - ${deskName}`,
@@ -19,10 +20,15 @@ export default function DeskFaqPage() {
         <div className="max-w-3xl">
           <h1 className="text-4xl font-semibold text-text">Desk FAQ</h1>
           <p className="mt-4 text-lg text-muted">
-            Answers about product framing, who Desk is for, and how access works.
+            Answers about product framing, vaults, bots, AI-assisted workflows, automation, visibility, and how access works.
           </p>
         </div>
       </Section>
+
+      <DeskResourceSection
+        title="Desk resources"
+        subtitle="The FAQ is one part of the Desk path. Explore overview, features, vaults, bots, AI workflows, and how-it-works pages for the full product picture."
+      />
 
       <Section>
         <FAQAccordion items={deskFaqs} />
@@ -30,11 +36,13 @@ export default function DeskFaqPage() {
 
       <CTASection
         title="Ready to try the Desk path?"
-        subtitle="Request access if you want a simpler, vault-first experience on Hyperliquid."
-        primaryLabel="Request Access"
-        primaryHref="/desk#request-access"
-        secondaryLabel="Explore Features"
-        secondaryHref="/desk/features"
+        subtitle="Explore Desk first, then request access when the broader Hyperliquid product path across vaults, bots, AI workflows, and automation fits your goals."
+        primaryLabel="Explore Desk"
+        primaryHref="/desk"
+        secondaryLabel="Request Access"
+        secondaryHref="/desk#request-access"
+        tertiaryLabel="Learn How It Works"
+        tertiaryHref="/desk/how-it-works"
       />
     </div>
   );

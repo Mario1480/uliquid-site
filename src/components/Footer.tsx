@@ -2,15 +2,22 @@ import Link from "next/link";
 
 const footerLinks = {
   Products: [
+    { label: "Desk Overview", href: "/desk" },
+    { label: "Desk Features", href: "/desk/features" },
     { label: "Market Maker", href: "/market-maker" },
     { label: "Market Maker Pricing", href: "/market-maker/pricing" },
-    { label: "Desk", href: "/desk" },
-    { label: "Desk FAQ", href: "/desk/faq" },
   ],
   Company: [
     { label: "About", href: "/company" },
     { label: "Contact", href: "/company#contact" },
     { label: "Careers", href: "/company" },
+  ],
+  Desk: [
+    { label: "Desk FAQ", href: "/desk/faq" },
+    { label: "Hyperliquid Vaults", href: "/desk/vaults" },
+    { label: "Bots & Automation", href: "/desk/bots-automation" },
+    { label: "AI Workflows", href: "/desk/ai-workflows" },
+    { label: "How It Works", href: "/desk/how-it-works" },
   ],
   Resources: [
     { label: "Market Maker Docs", href: "/market-maker/docs" },

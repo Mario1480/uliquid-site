@@ -43,8 +43,8 @@ function getHeaderCtas(pathname: string) {
   }
 
   return {
-    primaryLabel: "Explore Market Maker",
-    primaryHref: "/market-maker",
+    primaryLabel: "Explore Desk",
+    primaryHref: "/desk",
     secondaryLabel: "Request Access",
     secondaryHref: "/desk#request-access",
   };

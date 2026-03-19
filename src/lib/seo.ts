@@ -4,7 +4,7 @@ export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://uliquid.vip"
 
 export const brandName = "uLiquid";
 export const brandDescription =
-  "uLiquid builds specialized crypto products for liquidity operations and vault-based trading, including Market Maker for professional liquidity operations and Desk for user-friendly Hyperliquid vault access.";
+  "uLiquid builds specialized crypto products for liquidity operations and user-friendly trading workflows, including Market Maker for professional liquidity operations and Desk for Hyperliquid vaults, bots, AI workflows, strategies, and automation.";
 
 export const marketMakerName = "uLiquid Market Maker";
 export const marketMakerDescription =
@@ -12,7 +12,7 @@ export const marketMakerDescription =
 
 export const deskName = "uLiquid Desk";
 export const deskDescription =
-  "The vault layer for Hyperliquid. A user-friendly platform for accessing vault-based strategies, automation, allocation, and performance visibility.";
+  "The vault, bot and AI layer for Hyperliquid. A user-friendly platform for vaults, bots, AI-assisted workflows, strategy discovery, automation, allocation, and performance visibility.";
 
 type PageMetadataOptions = {
   title: string;

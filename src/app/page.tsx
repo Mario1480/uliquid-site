@@ -1,17 +1,26 @@
+import Link from "next/link";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { CTASection } from "@/components/CTASection";
 import { JsonLd } from "@/components/JsonLd";
 import { Section } from "@/components/ui/Section";
-import { brandDescription, brandName, createPageMetadata, deskDescription, marketMakerDescription, siteUrl } from "@/lib/seo";
+import {
+  brandName,
+  createPageMetadata,
+  deskDescription,
+  marketMakerDescription,
+  siteUrl,
+} from "@/lib/seo";
+import { deskCapabilities, deskFormula } from "@/lib/content/desk";
 
 export const metadata = createPageMetadata({
-  title: "Professional crypto tools for liquidity operations and vault-based trading",
-  description: brandDescription,
+  title: "Vaults, bots and AI-powered trading workflows for Hyperliquid",
+  description:
+    "uLiquid Desk is the primary path into vaults, bots, AI-powered workflows, and automated trading access for Hyperliquid users, with Market Maker available for specialized operator teams.",
   canonical: "/",
   siteName: brandName,
-  openGraphTitle: `${brandName} - Crypto tooling for operators and vault users`,
+  openGraphTitle: `${brandName} - Desk-first trading workflows for Hyperliquid`,
 });
 
 export default function Home() {
@@ -23,7 +32,8 @@ export default function Home() {
           "@type": "Organization",
           name: brandName,
           url: siteUrl,
-          description: brandDescription,
+          description:
+            "uLiquid builds Desk-first vault, bot, AI workflow, and trading automation products for Hyperliquid users, with Market Maker for specialized operator teams.",
         }}
       />
       <JsonLd
@@ -35,14 +45,14 @@ export default function Home() {
             {
               "@type": "ListItem",
               position: 1,
-              name: "uLiquid Market Maker",
-              url: `${siteUrl}/market-maker`,
+              name: "uLiquid Desk",
+              url: `${siteUrl}/desk`,
             },
             {
               "@type": "ListItem",
               position: 2,
-              name: "uLiquid Desk",
-              url: `${siteUrl}/desk`,
+              name: "uLiquid Market Maker",
+              url: `${siteUrl}/market-maker`,
             },
           ],
         }}
@@ -51,31 +61,41 @@ export default function Home() {
       <Section className="pt-20">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
-            <Badge className="mb-4">uLiquid</Badge>
+            <Badge className="mb-4 border-emerald-400/40 text-emerald-300">uLiquid Desk</Badge>
             <h1 className="text-4xl font-semibold text-text sm:text-5xl">
-              Professional crypto tools for liquidity operations and vault-based trading
+              Vaults, bots and AI-powered trading workflows for Hyperliquid
             </h1>
             <p className="mt-6 text-lg text-muted">
-              uLiquid builds specialized products for crypto operators and users, including Market Maker for
-              liquidity operations and Desk for user-friendly Hyperliquid vault access.
+              Start with uLiquid Desk for a simpler way to access vaults, bots, strategy workflows, and
+              trading automation on Hyperliquid. Market Maker remains available for operator teams that need
+              dedicated liquidity infrastructure.
             </p>
             <div className="mt-6 flex flex-wrap gap-4">
-              <Button href="/market-maker">Explore Market Maker</Button>
+              <Button href="/desk">Explore Desk</Button>
               <Button href="/desk#request-access" variant="secondary">
                 Request Access
               </Button>
             </div>
+            <p className="mt-4 text-sm text-muted">
+              Need the operator path?{" "}
+              <Link href="/market-maker" className="font-semibold text-accent-cyan">
+                Explore Market Maker
+              </Link>
+              .
+            </p>
           </div>
-          <Card className="grid gap-4 border-accent-blue/30 bg-gradient-to-br from-accent-cyan/10 via-surface/90 to-accent-blue/10">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent-cyan">Brand Overview</p>
+          <Card className="grid gap-4 border-emerald-400/30 bg-gradient-to-br from-emerald-400/15 via-surface/90 to-accent-blue/10">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-300">Desk-first Growth Path</p>
+            <p className="text-sm font-semibold text-emerald-200">{deskFormula}</p>
             <p className="text-lg text-text">
-              Two distinct product paths under one brand: operator-grade market making and a simpler
-              vault-first Desk experience for Hyperliquid users.
+              Desk is the main discovery path for users who want Hyperliquid vaults, bots, AI-assisted
+              workflows, strategy automation, and a cleaner route into trading tools.
             </p>
             <div className="grid gap-3 text-sm text-muted">
-              <p>Built for token teams, listings, and liquidity operators</p>
-              <p>Built for vault users, strategy followers, and automation-oriented traders</p>
-              <p>Unified trust layer across security, infrastructure, and product discipline</p>
+              <p>Vault access and strategy discovery without operator-heavy tooling</p>
+              <p>Bots, AI-supported workflows, and automation framed as a product experience</p>
+              <p>Performance, allocation visibility, and control surfaces in one interface</p>
+              <p>Market Maker still available as the dedicated path for listings and professional liquidity ops</p>
             </div>
           </Card>
         </div>
@@ -83,16 +103,61 @@ export default function Home() {
 
       <Section id="products">
         <div className="mb-10">
-          <h2 className="text-3xl font-semibold text-text">Products</h2>
+          <h2 className="text-3xl font-semibold text-text">Start with Desk</h2>
           <p className="mt-3 text-muted">
-            Choose the product path that matches your workflow and audience.
+            The homepage now leads with the user-facing Desk path, while keeping Market Maker visible for
+            specialized operator teams.
           </p>
         </div>
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="mb-6 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          {[
+            {
+              title: "Vault access",
+              description: "A simpler route into Hyperliquid vaults and strategy products.",
+            },
+            {
+              title: "Bots",
+              description: "Productized bot workflows instead of operator-style control panels.",
+            },
+            {
+              title: "AI workflows",
+              description: "Guided, AI-powered product flows that help users navigate strategy decisions.",
+            },
+            {
+              title: "Automation",
+              description: "Trading automation and ongoing visibility framed around usability and control.",
+            },
+          ].map((item) => (
+            <Card key={item.title} className="border-emerald-400/20">
+              <h3 className="text-lg font-semibold text-text">{item.title}</h3>
+              <p className="mt-3 text-sm text-muted">{item.description}</p>
+            </Card>
+          ))}
+        </div>
+        <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
+          <Card className="flex h-full flex-col border-emerald-400/25 bg-gradient-to-br from-emerald-400/10 via-surface/90 to-accent-blue/10">
+            <div className="flex items-center justify-between gap-3">
+              <Badge className="border-emerald-400/40 text-emerald-300">uLiquid Desk</Badge>
+              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300">Primary path</span>
+            </div>
+            <h3 className="mt-5 text-2xl font-semibold text-text">{deskFormula}</h3>
+            <p className="mt-4 text-sm text-muted">{deskDescription}</p>
+            <div className="mt-6 grid gap-2 text-sm text-muted">
+              <p>For vault users, strategy followers, bot users, automation-oriented traders, and AI-assisted workflow users</p>
+              <p>Vault access, bots, AI-supported workflows, strategy automation, performance visibility, and clearer control surfaces</p>
+            </div>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Button href="/desk">Explore Desk</Button>
+              <Button href="/desk#request-access" variant="secondary">
+                Request Access
+              </Button>
+            </div>
+          </Card>
+
           <Card className="flex h-full flex-col">
             <div className="flex items-center justify-between gap-3">
               <Badge>uLiquid Market Maker</Badge>
-              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-accent-cyan">Operator</span>
+              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-accent-cyan">Specialized path</span>
             </div>
             <h3 className="mt-5 text-2xl font-semibold text-text">Managed market-making infrastructure</h3>
             <p className="mt-4 text-sm text-muted">{marketMakerDescription}</p>
@@ -107,48 +172,51 @@ export default function Home() {
               </Button>
             </div>
           </Card>
+        </div>
+      </Section>
 
-          <Card className="flex h-full flex-col border-emerald-400/25 bg-gradient-to-br from-emerald-400/10 via-surface/90 to-accent-blue/10">
-            <div className="flex items-center justify-between gap-3">
-              <Badge className="border-emerald-400/40 text-emerald-300">uLiquid Desk</Badge>
-              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300">Vault-first</span>
-            </div>
-            <h3 className="mt-5 text-2xl font-semibold text-text">The vault layer for Hyperliquid</h3>
-            <p className="mt-4 text-sm text-muted">{deskDescription}</p>
-            <div className="mt-6 grid gap-2 text-sm text-muted">
-              <p>For broader trading users, vault users, strategy followers, and automation-oriented traders</p>
-              <p>Vault access, strategy discovery, automation, usability, and clearer control surfaces</p>
-            </div>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Button href="/desk">Explore Desk</Button>
-              <Button href="/desk#request-access" variant="secondary">
-                Request Access
-              </Button>
-            </div>
-          </Card>
+      <Section>
+        <div className="mb-10">
+          <h2 className="text-3xl font-semibold text-text">What you can do with Desk</h2>
+          <p className="mt-3 text-muted">
+            Desk is broader than a vault viewer. It combines Hyperliquid vault access with bots,
+            AI-assisted workflows, strategies, automation, and visibility in one user-facing product.
+          </p>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {deskCapabilities.map((item) => (
+            <Card key={item.title} className="border-emerald-400/20">
+              <h3 className="text-lg font-semibold text-text">{item.title}</h3>
+              <p className="mt-3 text-sm text-muted">{item.description}</p>
+            </Card>
+          ))}
         </div>
       </Section>
 
       <Section>
         <div className="mb-10">
           <h2 className="text-3xl font-semibold text-text">Which product is right for you?</h2>
-          <p className="mt-3 text-muted">The two products live under one brand, but they serve different needs.</p>
+          <p className="mt-3 text-muted">
+            Desk is the default growth path for most users. Market Maker remains the operator-grade route for
+            teams with specialized liquidity requirements.
+          </p>
         </div>
         <div className="grid gap-6 lg:grid-cols-2">
+          <Card className="border-emerald-400/25">
+            <h3 className="text-2xl font-semibold text-text">Start with Desk if...</h3>
+            <div className="mt-4 grid gap-3 text-sm text-muted">
+              <p>You want easier access to Hyperliquid vaults, strategies, bots, AI-assisted workflows, and trading automation.</p>
+              <p>You are a vault user, strategy follower, bot user, automation-oriented trader, or someone who wants AI-supported decision help.</p>
+              <p>You want a user-facing product experience centered on allocation, performance visibility, and control.</p>
+              <p>Your conversion path is exploration, request access, and product onboarding.</p>
+            </div>
+          </Card>
           <Card>
             <h3 className="text-2xl font-semibold text-text">Choose Market Maker if...</h3>
             <div className="mt-4 grid gap-3 text-sm text-muted">
               <p>You need operator-grade liquidity tooling for listings, token pairs, and ongoing exchange readiness.</p>
               <p>You care about execution, spread control, runtime risk limits, reporting, and managed infrastructure.</p>
               <p>Your conversion path is license purchase, provisioning, and professional operations.</p>
-            </div>
-          </Card>
-          <Card className="border-emerald-400/25">
-            <h3 className="text-2xl font-semibold text-text">Choose Desk if...</h3>
-            <div className="mt-4 grid gap-3 text-sm text-muted">
-              <p>You want user-friendly access to Hyperliquid vaults, strategies, and automation.</p>
-              <p>You want a simpler product experience centered on allocation, performance, and visibility.</p>
-              <p>Your conversion path is product exploration and request-access onboarding.</p>
             </div>
           </Card>
         </div>
@@ -183,12 +251,14 @@ export default function Home() {
       </Section>
 
       <CTASection
-        title="Route into the right product path."
-        subtitle="Choose Market Maker for professional liquidity operations or Desk for user-friendly Hyperliquid vault access."
-        primaryLabel="Explore Market Maker"
-        primaryHref="/market-maker"
+        title="Start with Desk, keep Market Maker in reach."
+        subtitle="Explore Desk first if you want vaults, bots, AI-powered workflows, and trading automation on Hyperliquid. Market Maker stays available for operator-grade liquidity programs."
+        primaryLabel="Explore Desk"
+        primaryHref="/desk"
         secondaryLabel="Request Access"
         secondaryHref="/desk#request-access"
+        tertiaryLabel="Explore Market Maker"
+        tertiaryHref="/market-maker"
       />
     </div>
   );

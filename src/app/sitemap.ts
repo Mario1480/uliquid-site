@@ -15,6 +15,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/desk/features",
     "/desk/how-it-works",
     "/desk/vaults",
+    "/desk/bots-automation",
+    "/desk/ai-workflows",
     "/desk/faq",
     "/company",
     "/faq",

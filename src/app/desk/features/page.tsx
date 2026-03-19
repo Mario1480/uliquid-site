@@ -1,12 +1,14 @@
 import { FeatureGrid } from "@/components/FeatureGrid";
 import { CTASection } from "@/components/CTASection";
+import { DeskResourceSection } from "@/components/DeskResourceSection";
 import { Section } from "@/components/ui/Section";
-import { createPageMetadata, deskDescription, deskName } from "@/lib/seo";
+import { createPageMetadata, deskName } from "@/lib/seo";
 import { deskFeatureSections } from "@/lib/content/desk";
 
 export const metadata = createPageMetadata({
   title: "Features",
-  description: deskDescription,
+  description:
+    "Explore uLiquid Desk features across Hyperliquid vaults, bots, AI-assisted workflows, strategies, automation, performance visibility, and user-friendly controls.",
   canonical: "/desk/features",
   siteName: deskName,
   openGraphTitle: `Features - ${deskName}`,
@@ -19,10 +21,15 @@ export default function DeskFeaturesPage() {
         <div className="max-w-3xl">
           <h1 className="text-4xl font-semibold text-text">Desk Features</h1>
           <p className="mt-4 text-lg text-muted">
-            Productized access to Hyperliquid vaults, strategy discovery, automation, and ongoing visibility.
+            Productized access to Hyperliquid vaults, bots, AI workflows, strategy discovery, automation, and ongoing visibility.
           </p>
         </div>
       </Section>
+
+      <DeskResourceSection
+        title="Desk resources"
+        subtitle="Use the full Desk support surface to move between overview, vaults, bots, AI workflows, FAQ, and how the product works."
+      />
 
       <Section>
         <FeatureGrid
@@ -34,11 +41,13 @@ export default function DeskFeaturesPage() {
 
       <CTASection
         title="Start with the Desk experience."
-        subtitle="Learn how the product flow works, then request access when the Desk path matches your goals."
-        primaryLabel="Request Access"
-        primaryHref="/desk#request-access"
-        secondaryLabel="Learn How It Works"
-        secondaryHref="/desk/how-it-works"
+        subtitle="Explore the Desk overview first, then request access when the feature set and workflow match your goals."
+        primaryLabel="Explore Desk"
+        primaryHref="/desk"
+        secondaryLabel="Request Access"
+        secondaryHref="/desk#request-access"
+        tertiaryLabel="Learn How It Works"
+        tertiaryHref="/desk/how-it-works"
       />
     </div>
   );

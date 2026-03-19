@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 
 type CTASectionProps = {
@@ -7,6 +8,8 @@ type CTASectionProps = {
   primaryHref: string;
   secondaryLabel: string;
   secondaryHref: string;
+  tertiaryLabel?: string;
+  tertiaryHref?: string;
 };
 
 export function CTASection({
@@ -16,6 +19,8 @@ export function CTASection({
   primaryHref,
   secondaryLabel,
   secondaryHref,
+  tertiaryLabel,
+  tertiaryHref,
 }: CTASectionProps) {
   return (
     <section className="px-6 pb-20 sm:px-10 lg:px-16">
@@ -30,6 +35,13 @@ export function CTASection({
             {secondaryLabel}
           </Button>
         </div>
+        {tertiaryLabel && tertiaryHref ? (
+          <div className="mt-4">
+            <Link href={tertiaryHref} className="text-sm font-semibold text-accent-cyan">
+              {tertiaryLabel}
+            </Link>
+          </div>
+        ) : null}
       </div>
     </section>
   );
