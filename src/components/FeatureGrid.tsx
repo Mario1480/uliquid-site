@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SectionIntro } from "@/components/SectionIntro";
 import { Card } from "@/components/ui/Card";
 
 type FeatureItem = {
@@ -18,22 +19,21 @@ type FeatureGridProps = {
 export function FeatureGrid({ title, subtitle, items }: FeatureGridProps) {
   return (
     <div>
-      {title ? (
-        <div className="mb-10">
-          <h2 className="text-3xl font-semibold text-text">{title}</h2>
-          {subtitle ? <p className="mt-3 text-muted">{subtitle}</p> : null}
-        </div>
-      ) : null}
+      {title ? <SectionIntro title={title} description={subtitle} /> : null}
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {items.map((item) => (
           <Card key={item.title}>
-            <h3 id={item.id} className="text-lg font-semibold text-text">
+            <h3 id={item.id} className="text-xl font-semibold text-text">
               {item.title}
             </h3>
-            <p className="mt-3 text-sm text-muted">{item.description}</p>
+            <p className="mt-4 text-sm leading-7 text-muted">{item.description}</p>
             {item.href ? (
-              <Link href={item.href} className="mt-4 inline-flex text-sm font-semibold text-accent-cyan">
-                {item.linkLabel ?? "Learn more →"}
+              <Link
+                href={item.href}
+                className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-accent-cyan hover:text-text"
+              >
+                {item.linkLabel ?? "Learn more"}
+                <span aria-hidden="true">→</span>
               </Link>
             ) : null}
           </Card>

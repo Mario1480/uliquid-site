@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Section } from "@/components/ui/Section";
-import { Card } from "@/components/ui/Card";
 import { JsonLd } from "@/components/JsonLd";
+import { PageHero } from "@/components/PageHero";
+import { SectionIntro } from "@/components/SectionIntro";
+import { Button } from "@/components/ui/Button";
+import { Card } from "@/components/ui/Card";
+import { Section } from "@/components/ui/Section";
 
 const title = "Blog | uLiquid Market Maker";
 const description =
@@ -54,28 +57,37 @@ export default function BlogIndexPage() {
         }}
       />
 
-      <Section className="pt-20">
-        <div className="max-w-3xl">
-          <h1 className="text-4xl font-semibold text-text">Blog</h1>
-          <p className="mt-4 text-lg text-muted">{description}</p>
-          <p className="mt-4 text-sm text-muted">
-            Start here: {" "}
-            <Link href="/crypto-market-maker" className="text-accent-cyan font-semibold">
-              Crypto Market Maker Software
-            </Link>
-            .
-          </p>
-        </div>
-      </Section>
+      <PageHero
+        eyebrow="Blog"
+        title="Operator-focused writing from the uLiquid team"
+        description={description}
+        backgroundVariant="neutral"
+        actions={
+          <>
+            <Button href="/crypto-market-maker">Crypto Market Maker Software</Button>
+            <Button href="/market-maker" variant="secondary">
+              Explore Market Maker
+            </Button>
+          </>
+        }
+      />
 
-      <Section>
+      <Section tone="muted">
+        <SectionIntro
+          eyebrow="Latest Articles"
+          title="Deep dives, comparisons, and practical guides"
+          description="Start with the core explainers, then branch into use cases and operational tradeoffs."
+        />
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (
             <Card key={post.href}>
               <h2 className="text-lg font-semibold text-text">{post.title}</h2>
-              <p className="mt-3 text-sm text-muted">{post.description}</p>
-              <Link href={post.href} className="mt-4 inline-flex text-sm font-semibold text-accent-cyan">
-                Read →
+              <p className="mt-4 text-sm leading-7 text-muted">{post.description}</p>
+              <Link
+                href={post.href}
+                className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-accent-cyan hover:text-text"
+              >
+                Read <span aria-hidden="true">→</span>
               </Link>
             </Card>
           ))}

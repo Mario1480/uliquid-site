@@ -36,24 +36,24 @@ export default function DeskVaultsPage() {
       <Section>
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {deskVaultHighlights.map((item) => (
-            <Card key={item.title} className="border-emerald-400/20">
+            <Card key={item.title}>
               <h2 className="text-xl font-semibold text-text">{item.title}</h2>
-              <p className="mt-3 text-sm text-muted">{item.description}</p>
+              <p className="mt-4 text-sm leading-7 text-muted">{item.description}</p>
             </Card>
           ))}
         </div>
       </Section>
 
       <Section>
-        <Card className="border-emerald-400/20">
+        <Card>
           <h2 className="text-2xl font-semibold text-text">Beyond vault access</h2>
-          <p className="mt-4 text-sm text-muted">
+          <p className="mt-4 text-sm leading-7 text-muted">
             Desk starts with Hyperliquid vaults as the clearest entry point, but it is not limited to vault
             discovery and allocation. From the vault layer, users can move into broader connected trading
             workflows, including bots, AI-assisted signals and decision support, and supported exchange
             execution paths.
           </p>
-          <p className="mt-4 text-sm text-muted">
+          <p className="mt-4 text-sm leading-7 text-muted">
             Where available, that broader desk layer can extend into connected CEX environments such as
             Bitget and MEXC. The product story remains Hyperliquid-first, with connected execution added
             carefully where supported.
@@ -102,9 +102,9 @@ export default function DeskVaultsPage() {
               description: "Keep a clear view of what is happening without needing a heavy, operator-grade execution console.",
             },
           ].map((item) => (
-            <Card key={item.title} className="border-emerald-400/20">
+            <Card key={item.title}>
               <h3 className="text-lg font-semibold text-text">{item.title}</h3>
-              <p className="mt-3 text-sm text-muted">{item.description}</p>
+              <p className="mt-4 text-sm leading-7 text-muted">{item.description}</p>
             </Card>
           ))}
         </div>

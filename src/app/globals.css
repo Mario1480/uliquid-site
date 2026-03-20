@@ -3,29 +3,142 @@
 @tailwind utilities;
 
 :root {
-  --background: 225 28% 6%;
-  --surface: 225 24% 10%;
-  --border: 225 20% 22%;
-  --text: 210 35% 92%;
-  --muted: 220 16% 65%;
-  --accent-cyan: 188 96% 53%;
-  --accent-blue: 216 90% 60%;
-  --accent-purple: 278 85% 66%;
+  --bg: 222 51% 7%;
+  --bg-alt: 220 46% 10%;
+  --surface-1: 220 41% 14%;
+  --surface-2: 217 43% 17%;
+  --surface-3: 214 39% 22%;
+  --text: 210 60% 96%;
+  --text-soft: 214 25% 72%;
+  --border: 216 27% 26%;
+  --border-strong: 197 88% 64%;
+  --brand-primary: 208 94% 67%;
+  --brand-secondary: 190 95% 61%;
+  --brand-tertiary: 205 52% 78%;
+  --glow: 196 100% 70%;
+  --background: var(--bg);
+  --surface: var(--surface-1);
+  --muted: var(--text-soft);
+  --accent-cyan: var(--brand-secondary);
+  --accent-blue: var(--brand-primary);
+  --accent-purple: var(--brand-tertiary);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border) / 0.75);
+  }
+
+  body {
+    min-height: 100vh;
+    color: hsl(var(--text));
+    background:
+      radial-gradient(circle at top left, hsl(var(--brand-primary) / 0.2), transparent 28%),
+      radial-gradient(circle at top right, hsl(var(--brand-secondary) / 0.16), transparent 24%),
+      radial-gradient(circle at 50% 0%, hsl(var(--glow) / 0.08), transparent 30%),
+      linear-gradient(180deg, hsl(var(--bg-alt)), hsl(var(--bg)));
+    font-family: var(--font-geist-sans), "Geist", sans-serif;
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(hsl(var(--text) / 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--text) / 0.03) 1px, transparent 1px);
+    background-size: 120px 120px;
+    mask-image: radial-gradient(circle at center, black 35%, transparent 82%);
+    opacity: 0.45;
+    z-index: -2;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 20% 20%, hsl(var(--brand-secondary) / 0.08), transparent 20%),
+      radial-gradient(circle at 80% 18%, hsl(var(--brand-primary) / 0.08), transparent 18%),
+      radial-gradient(circle at 50% 100%, hsl(var(--glow) / 0.06), transparent 24%);
+    filter: blur(40px);
+    z-index: -3;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display), var(--font-geist-sans), sans-serif;
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background: hsl(var(--brand-primary) / 0.32);
+    color: hsl(var(--text));
+  }
+
+  a {
+    transition:
+      color 160ms ease,
+      opacity 160ms ease,
+      border-color 160ms ease,
+      background-color 160ms ease,
+      transform 160ms ease;
+  }
 }
 
 body {
-  color: hsl(var(--text));
-  background: radial-gradient(
-      circle at top,
-      hsl(220 40% 12% / 0.6),
-      transparent 55%
-    ),
-    hsl(var(--background));
-  font-family: var(--font-geist-sans), "Geist", sans-serif;
+  overflow-x: clip;
 }
 
 @layer utilities {
-.text-balance {
-  text-wrap: balance;
-}
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .surface-border {
+    border-color: hsl(var(--border) / 0.9);
+  }
+
+  .surface-glass {
+    background:
+      linear-gradient(180deg, hsl(var(--surface-2) / 0.92), hsl(var(--surface-1) / 0.88)),
+      radial-gradient(circle at top, hsl(var(--text) / 0.04), transparent 42%);
+    box-shadow:
+      0 30px 80px hsl(var(--bg) / 0.45),
+      inset 0 1px 0 hsl(var(--text) / 0.05);
+  }
+
+  .surface-glow {
+    background:
+      radial-gradient(circle at top left, hsl(var(--brand-secondary) / 0.18), transparent 28%),
+      linear-gradient(180deg, hsl(var(--surface-2) / 0.96), hsl(var(--surface-1) / 0.9));
+  }
+
+  .eyebrow-divider {
+    position: relative;
+  }
+
+  .eyebrow-divider::before {
+    content: "";
+    display: inline-block;
+    width: 0.6rem;
+    height: 0.6rem;
+    margin-right: 0.65rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, hsl(var(--brand-secondary)), hsl(var(--brand-primary)));
+    box-shadow: 0 0 18px hsl(var(--glow) / 0.45);
+    vertical-align: middle;
+  }
 }

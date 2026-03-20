@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SectionIntro } from "@/components/SectionIntro";
 import { Card } from "@/components/ui/Card";
 import { Section } from "@/components/ui/Section";
 import { deskSupportLinks } from "@/lib/content/desk";
@@ -14,17 +15,18 @@ export function DeskResourceSection({
 }: DeskResourceSectionProps) {
   return (
     <Section>
-      <div className="mb-8">
-        <h2 className="text-3xl font-semibold text-text">{title}</h2>
-        <p className="mt-3 text-muted">{subtitle}</p>
-      </div>
+      <SectionIntro eyebrow="Resource Map" title={title} description={subtitle} />
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         {deskSupportLinks.map((item) => (
-          <Card key={item.href} className="border-emerald-400/20">
-            <h3 className="text-lg font-semibold text-text">{item.title}</h3>
-            <p className="mt-3 text-sm text-muted">{item.description}</p>
-            <Link href={item.href} className="mt-4 inline-flex text-sm font-semibold text-accent-cyan">
-              Explore {"->"}
+          <Card key={item.href} className="border-border-strong/10">
+            <h3 className="text-xl font-semibold text-text">{item.title}</h3>
+            <p className="mt-4 text-sm leading-7 text-muted">{item.description}</p>
+            <Link
+              href={item.href}
+              className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-accent-cyan hover:text-text"
+            >
+              Explore
+              <span aria-hidden="true">→</span>
             </Link>
           </Card>
         ))}

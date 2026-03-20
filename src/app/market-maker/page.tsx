@@ -1,14 +1,18 @@
 import Link from "next/link";
 import { AppScreenshotPlaceholder } from "@/components/AppScreenshotPlaceholder";
+import { CTASection } from "@/components/CTASection";
+import { FAQAccordion } from "@/components/FAQAccordion";
+import { FeatureGrid } from "@/components/FeatureGrid";
+import { JsonLd } from "@/components/JsonLd";
+import { MetricStrip } from "@/components/MetricStrip";
+import { PageHero } from "@/components/PageHero";
+import { PricingCards } from "@/components/PricingCards";
+import { SectionIntro } from "@/components/SectionIntro";
+import { SurfacePanel } from "@/components/SurfacePanel";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Section } from "@/components/ui/Section";
-import { FeatureGrid } from "@/components/FeatureGrid";
-import { PricingCards } from "@/components/PricingCards";
-import { FAQAccordion } from "@/components/FAQAccordion";
-import { CTASection } from "@/components/CTASection";
-import { JsonLd } from "@/components/JsonLd";
 import { createPageMetadata, marketMakerDescription, marketMakerName, siteUrl } from "@/lib/seo";
 import {
   marketMakerBenefits,
@@ -48,49 +52,69 @@ export default function MarketMakerPage() {
         }}
       />
 
-      <Section className="pt-20">
-        <div className="grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:items-center">
-          <div>
-            <Badge className="mb-4">uLiquid Market Maker</Badge>
-            <h1 className="text-4xl font-semibold text-text sm:text-5xl">
-              Professional Crypto Market Making
-            </h1>
-            <p className="mt-6 text-lg text-muted">
-              uLiquid Market Maker is a managed market-making system with volume execution, CEX and DEX
-              price intelligence, and AI advisory, built for operators who require control, security, and
-              reliability.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-4">
-              <Button href="https://license-server.uliquid.vip/">Buy License</Button>
-              <Button href="https://license-server.uliquid.vip/" variant="secondary">
-                Go to License Manager
-              </Button>
-            </div>
-            <div className="mt-8 flex flex-wrap gap-3">
-              {marketMakerTrustChips.map((chip) => (
-                <Badge key={chip}>{chip}</Badge>
-              ))}
-            </div>
+      <PageHero
+        eyebrow="uLiquid Market Maker"
+        title="Professional Crypto Market Making"
+        description="uLiquid Market Maker is a managed market-making system with volume execution, CEX and DEX price intelligence, and advisory AI built for operators who require control, security, and reliability."
+        backgroundVariant="market"
+        actions={
+          <>
+            <Button href="https://license-server.uliquid.vip/">Buy License</Button>
+            <Button href="https://license-server.uliquid.vip/" variant="secondary">
+              Go to License Manager
+            </Button>
+          </>
+        }
+        aside={
+          <div className="grid gap-4">
+            <AppScreenshotPlaceholder title="Market Maker Dashboard" src="/screens/risk-controls.png" />
+            <SurfacePanel tone="muted">
+              <div className="flex flex-wrap gap-2">
+                {marketMakerTrustChips.slice(0, 6).map((chip) => (
+                  <Badge key={chip}>{chip}</Badge>
+                ))}
+              </div>
+            </SurfacePanel>
           </div>
-          <AppScreenshotPlaceholder title="Overview Dashboard" src="/screens/overview-dashboard.png" />
-        </div>
+        }
+      />
+
+      <Section className="pt-0">
+        <MetricStrip
+          items={[
+            {
+              label: "Delivery",
+              value: "Dedicated VPS included",
+              detail: "Provisioned and managed for you after license purchase so the team can focus on operations.",
+            },
+            {
+              label: "Intelligence",
+              value: "CEX + DEX validation",
+              detail: "Use centralized and on-chain pricing together as a safer reference layer for low-cap markets.",
+            },
+            {
+              label: "Control",
+              value: "Human-in-the-loop AI",
+              detail: "Advisory AI recommends settings while trading remains deterministic and operator-controlled.",
+            },
+          ]}
+        />
       </Section>
 
       <Section>
-        <div className="mb-10">
-          <h2 className="text-3xl font-semibold text-text">Built for</h2>
-          <p className="mt-3 text-muted">
-            Liquidity operations for listing teams and project operators who want predictable execution.
-          </p>
-        </div>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <SectionIntro
+          eyebrow="Audience"
+          title="Built for"
+          description="Liquidity operations for listing teams and project operators who want predictable execution."
+        />
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {marketMakerBuiltFor.map((item) => (
             <Card key={item.title}>
               <h3 className="text-lg font-semibold text-text">{item.title}</h3>
-              <ul className="mt-4 space-y-2 text-sm text-muted">
+              <ul className="mt-4 space-y-3 text-sm leading-7 text-muted">
                 {item.bullets.map((bullet) => (
                   <li key={bullet} className="flex items-start gap-2">
-                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-accent-cyan" />
+                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent-cyan" />
                     <span>{bullet}</span>
                   </li>
                 ))}
@@ -104,29 +128,28 @@ export default function MarketMakerPage() {
         <FeatureGrid title="Benefits" subtitle="A steady orderbook without heavy ops." items={marketMakerBenefits} />
       </Section>
 
-      <Section>
-        <div className="mb-10">
-          <h2 className="text-3xl font-semibold text-text">How it works</h2>
-        </div>
+      <Section tone="muted">
+        <SectionIntro eyebrow="Workflow" title="How it works" />
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {marketMakerHowItWorks.map((step, index) => (
             <Card key={step.title}>
-              <p className="text-xs font-semibold uppercase tracking-wide text-accent-cyan">Step {index + 1}</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-accent-cyan">Step {index + 1}</p>
               <h3 className="mt-3 text-lg font-semibold text-text">{step.title}</h3>
-              <p className="mt-2 text-sm text-muted">{step.description}</p>
+              <p className="mt-4 text-sm leading-7 text-muted">{step.description}</p>
             </Card>
           ))}
         </div>
       </Section>
 
       <Section>
-        <div className="mb-8">
-          <h2 className="text-3xl font-semibold text-text">Supported Exchanges</h2>
-          <p className="mt-3 text-muted">Current CEX integrations with more added on demand.</p>
-        </div>
+        <SectionIntro
+          eyebrow="Coverage"
+          title="Supported Exchanges"
+          description="Current CEX integrations with more added on demand."
+        />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {supportedExchanges.map((exchange) => (
-            <Card key={exchange} className="text-sm text-muted">
+            <Card key={exchange} className="text-sm font-medium text-muted">
               {exchange}
             </Card>
           ))}
@@ -136,30 +159,30 @@ export default function MarketMakerPage() {
 
       <Section id="core-modules">
         <FeatureGrid title="Key features" subtitle="Control, safety, and reporting in one platform." items={marketMakerFeatures} />
-        <div className="mt-6 rounded-2xl border border-border/60 bg-surface/60 p-5 text-sm text-muted">
+        <div className="mt-6 rounded-[26px] border border-border bg-bg-alt/50 p-5 text-sm leading-7 text-muted">
           <h3 className="text-base font-semibold text-text">What it is / What it is not</h3>
           <p className="mt-3">DEX Price Feed is read-only. No on-chain trading.</p>
           <p className="mt-2">AI provides recommendations only. No autonomous trading.</p>
         </div>
       </Section>
 
-      <Section id="price-intelligence">
+      <Section id="price-intelligence" tone="muted">
         <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-start">
           <div>
             <h2 className="text-3xl font-semibold text-text">Price Intelligence (CEX + DEX)</h2>
-            <p className="mt-4 text-muted">
+            <p className="mt-4 text-base leading-8 text-muted">
               Combine centralized exchange prices with on-chain DEX price feeds. Use DEX data as a master
               reference, or as a safety validation layer.
             </p>
-            <ul className="mt-6 space-y-3 text-sm text-muted">
+            <ul className="mt-6 space-y-3 text-sm leading-7 text-muted">
               <li>Read-only DEX price feed with no DEX trading</li>
               <li>Ideal for low-cap and illiquid pairs</li>
               <li>Detect CEX anomalies with cross-source validation</li>
             </ul>
           </div>
-          <Card className="border-accent-blue/40 bg-surface/60">
+          <Card className="border-border-strong/40">
             <h3 className="text-lg font-semibold text-text">What it is / What it is not</h3>
-            <p className="mt-3 text-sm text-muted">DEX Price Feed is read-only. No on-chain trading.</p>
+            <p className="mt-4 text-sm leading-7 text-muted">DEX Price Feed is read-only. No on-chain trading.</p>
           </Card>
         </div>
       </Section>
@@ -168,19 +191,19 @@ export default function MarketMakerPage() {
         <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-start">
           <div>
             <h2 className="text-3xl font-semibold text-text">AI Advisory (Human-in-the-loop)</h2>
-            <p className="mt-4 text-muted">
+            <p className="mt-4 text-base leading-8 text-muted">
               uLiquid AI reviews market structure, order books, and execution stats to recommend better
               parameters.
             </p>
-            <ul className="mt-6 space-y-3 text-sm text-muted">
+            <ul className="mt-6 space-y-3 text-sm leading-7 text-muted">
               <li>Read-only recommendations</li>
               <li>No autonomous trading</li>
               <li>Use suggestions as presets</li>
             </ul>
           </div>
-          <Card className="border-accent-blue/40 bg-surface/60">
+          <Card className="border-border-strong/40">
             <h3 className="text-lg font-semibold text-text">What it is / What it is not</h3>
-            <p className="mt-3 text-sm text-muted">AI provides recommendations only. No autonomous trading.</p>
+            <p className="mt-4 text-sm leading-7 text-muted">AI provides recommendations only. No autonomous trading.</p>
           </Card>
         </div>
       </Section>
@@ -191,32 +214,29 @@ export default function MarketMakerPage() {
             <h2 className="text-3xl font-semibold text-text">Pricing preview</h2>
             <p className="mt-3 text-muted">Managed VPS included with every subscription.</p>
           </div>
-          <Link href="/market-maker/pricing" className="text-sm font-semibold text-accent-cyan">
-            View full pricing {"->"}
+          <Link href="/market-maker/pricing" className="text-sm font-semibold text-accent-cyan hover:text-text">
+            View full pricing →
           </Link>
         </div>
         <PricingCards variant="teaser" />
       </Section>
 
       <Section>
-        <div className="mb-10">
-          <h2 className="text-3xl font-semibold text-text">FAQ</h2>
-          <p className="mt-3 text-muted">Answers for teams getting ready to list.</p>
-        </div>
+        <SectionIntro eyebrow="FAQ" title="Answers for teams getting ready to list." />
         <FAQAccordion items={marketMakerFaqs} />
       </Section>
 
-      <Section>
-        <div className="mb-8">
-          <h2 className="text-3xl font-semibold text-text">Resources</h2>
-          <p className="mt-3 text-muted">Operator guidance, use cases, and deep dives.</p>
-        </div>
+      <Section tone="muted">
+        <SectionIntro eyebrow="Resources" title="Operator guidance, use cases, and deep dives." />
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {marketMakerResources.map((item) => (
             <Card key={item.title}>
               <h3 className="text-lg font-semibold text-text">{item.title}</h3>
-              <Link href={item.href} className="mt-3 inline-flex text-sm font-semibold text-accent-cyan">
-                Learn more {"->"}
+              <Link
+                href={item.href}
+                className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-accent-cyan hover:text-text"
+              >
+                Learn more <span aria-hidden="true">→</span>
               </Link>
             </Card>
           ))}

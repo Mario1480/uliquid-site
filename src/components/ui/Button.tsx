@@ -18,13 +18,14 @@ export function Button({
   children,
 }: ButtonProps) {
   const base =
-    "inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+    "inline-flex items-center justify-center rounded-full border px-5 py-3 text-sm font-semibold transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-background";
   const styles = {
     primary:
-      "bg-gradient-to-r from-accent-cyan via-accent-blue to-accent-purple text-slate-950 shadow-md hover:shadow-glow",
+      "border-transparent bg-gradient-to-r from-accent-cyan to-accent-blue text-slate-950 shadow-glow hover:-translate-y-0.5 hover:brightness-110",
     secondary:
-      "border border-border bg-surface/60 text-text hover:border-accent-blue",
-    ghost: "text-text hover:text-white",
+      "border-border bg-white/[0.03] text-text shadow-panel hover:-translate-y-0.5 hover:border-border-strong hover:bg-white/[0.06]",
+    ghost:
+      "border-transparent bg-transparent text-muted hover:border-border/60 hover:bg-white/[0.03] hover:text-text",
   };
 
   if (href) {

@@ -54,10 +54,10 @@ export function Tabs({ items }: TabsProps) {
               aria-controls={panelId}
               tabIndex={isActive ? 0 : -1}
               className={cn(
-                "rounded-full px-4 py-2 text-sm font-semibold transition",
+                "rounded-full border px-4 py-2 text-sm font-semibold transition",
                 isActive
-                  ? "bg-gradient-to-r from-accent-cyan via-accent-blue to-accent-purple text-slate-950"
-                  : "text-muted hover:text-text"
+                  ? "border-transparent bg-gradient-to-r from-accent-cyan to-accent-blue text-slate-950 shadow-glow"
+                  : "border-transparent text-muted hover:border-border hover:bg-white/[0.04] hover:text-text"
               )}
               onClick={() => setActiveIndex(index)}
             >

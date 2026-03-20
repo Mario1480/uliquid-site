@@ -18,6 +18,8 @@ export function RequestAccessForm() {
   const [state, setState] = useState<FormState>({ name: "", email: "", role: "", interest: "" });
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState<{ name?: string; email?: string; role?: string; interest?: string }>({});
+  const fieldClass =
+    "mt-2 w-full rounded-2xl border border-border bg-bg-alt/80 px-4 py-3 text-sm text-text outline-none transition focus:border-border-strong focus:bg-white/[0.04] focus:ring-2 focus:ring-accent-cyan/25";
 
   const handleChange = (field: keyof FormState) => (
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -46,8 +48,16 @@ export function RequestAccessForm() {
     <form
       id="request-access"
       onSubmit={handleSubmit}
-      className="space-y-4 rounded-3xl border border-border bg-surface/70 p-6 shadow-[0_0_18px_rgba(20,129,192,0.2)]"
+      className="space-y-5 rounded-[30px] border border-border/90 bg-[linear-gradient(180deg,hsl(var(--surface-2)/0.96),hsl(var(--surface-1)/0.9))] p-6 shadow-panel sm:p-8"
     >
+      <div className="space-y-2">
+        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-accent-cyan">Access Request</p>
+        <h3 className="font-display text-2xl font-semibold text-text">Tell us how you want to use Desk</h3>
+        <p className="text-sm leading-7 text-muted">
+          We use this to understand your trading workflow, vault interests, and automation needs before
+          onboarding.
+        </p>
+      </div>
       <div>
         <label className="text-sm font-semibold text-text" htmlFor="request-access-name">
           Name
@@ -55,7 +65,7 @@ export function RequestAccessForm() {
         <input
           id="request-access-name"
           className={cn(
-            "mt-2 w-full rounded-xl border border-border bg-background/60 px-3 py-2 text-sm text-text outline-none focus:ring-2 focus:ring-accent-blue",
+            fieldClass,
             errors.name ? "border-red-400" : ""
           )}
           value={state.name}
@@ -73,7 +83,7 @@ export function RequestAccessForm() {
           id="request-access-email"
           type="email"
           className={cn(
-            "mt-2 w-full rounded-xl border border-border bg-background/60 px-3 py-2 text-sm text-text outline-none focus:ring-2 focus:ring-accent-blue",
+            fieldClass,
             errors.email ? "border-red-400" : ""
           )}
           value={state.email}
@@ -90,7 +100,7 @@ export function RequestAccessForm() {
         <input
           id="request-access-role"
           className={cn(
-            "mt-2 w-full rounded-xl border border-border bg-background/60 px-3 py-2 text-sm text-text outline-none focus:ring-2 focus:ring-accent-blue",
+            fieldClass,
             errors.role ? "border-red-400" : ""
           )}
           value={state.role}
@@ -108,7 +118,7 @@ export function RequestAccessForm() {
         <textarea
           id="request-access-interest"
           className={cn(
-            "mt-2 w-full rounded-xl border border-border bg-background/60 px-3 py-2 text-sm text-text outline-none focus:ring-2 focus:ring-accent-blue",
+            fieldClass,
             errors.interest ? "border-red-400" : ""
           )}
           rows={5}
@@ -122,7 +132,9 @@ export function RequestAccessForm() {
 
       <Button type="submit">Request Access</Button>
       {submitted ? (
-        <p className="text-sm text-accent-cyan">Thanks. Your Desk access request has been noted.</p>
+        <p className="rounded-2xl border border-accent-cyan/30 bg-accent-cyan/10 px-4 py-3 text-sm text-accent-cyan">
+          Thanks. Your Desk access request has been noted.
+        </p>
       ) : null}
     </form>
   );

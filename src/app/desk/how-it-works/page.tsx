@@ -34,9 +34,9 @@ export default function DeskHowItWorksPage() {
       />
 
       <Section>
-        <Card className="border-emerald-400/20">
+        <Card>
           <h2 className="text-2xl font-semibold text-text">How the product layers fit together</h2>
-          <div className="mt-4 grid gap-3 text-sm text-muted">
+          <div className="mt-4 grid gap-3 text-sm leading-7 text-muted">
             <p>Desk starts with a Hyperliquid vault access layer that gives users a clearer entry point into strategies.</p>
             <p>It then extends into a bot and automation layer for users who want more active workflows.</p>
             <p>AI-assisted workflow support adds signals, context, and decision guidance on top of those product paths.</p>
@@ -62,10 +62,10 @@ export default function DeskHowItWorksPage() {
       <Section>
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
           {deskHowItWorks.map((step, index) => (
-            <Card key={step.title} className="border-emerald-400/20">
-              <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">Step {index + 1}</p>
+            <Card key={step.title}>
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-accent-cyan">Step {index + 1}</p>
               <h2 className="mt-3 text-lg font-semibold text-text">{step.title}</h2>
-              <p className="mt-3 text-sm text-muted">{step.description}</p>
+              <p className="mt-4 text-sm leading-7 text-muted">{step.description}</p>
             </Card>
           ))}
         </div>
@@ -74,7 +74,7 @@ export default function DeskHowItWorksPage() {
       <Section>
         <Card>
           <h2 className="text-2xl font-semibold text-text">Product direction</h2>
-          <p className="mt-4 text-sm text-muted">
+          <p className="mt-4 text-sm leading-7 text-muted">
             Desk is meant to remove unnecessary operational overhead. The user journey should feel like a
             modern product flow instead of an execution console.
           </p>

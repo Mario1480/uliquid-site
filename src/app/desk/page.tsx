@@ -1,10 +1,16 @@
-import { Badge } from "@/components/ui/Badge";
-import { Card } from "@/components/ui/Card";
+import { AppScreenshotPlaceholder } from "@/components/AppScreenshotPlaceholder";
 import { CTASection } from "@/components/CTASection";
 import { DeskResourceSection } from "@/components/DeskResourceSection";
 import { FeatureGrid } from "@/components/FeatureGrid";
 import { JsonLd } from "@/components/JsonLd";
+import { MetricStrip } from "@/components/MetricStrip";
+import { PageHero } from "@/components/PageHero";
 import { RequestAccessForm } from "@/components/RequestAccessForm";
+import { SectionIntro } from "@/components/SectionIntro";
+import { SurfacePanel } from "@/components/SurfacePanel";
+import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
+import { Card } from "@/components/ui/Card";
 import { Section } from "@/components/ui/Section";
 import { createPageMetadata, deskDescription, deskName, siteUrl } from "@/lib/seo";
 import { deskAudience, deskFormula, deskHowItWorks, deskPillars, deskWhyItExists } from "@/lib/content/desk";
@@ -31,61 +37,72 @@ export default function DeskPage() {
         }}
       />
 
-      <Section className="pt-20">
-        <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <div>
-            <Badge className="mb-4 border-emerald-400/40 text-emerald-300">uLiquid Desk</Badge>
-            <h1 className="text-4xl font-semibold text-text sm:text-5xl">{deskFormula}</h1>
-            <p className="mt-6 text-lg text-muted">
-              A user-friendly platform for Hyperliquid vaults, bots, AI-assisted workflows, strategy
-              discovery, automation, performance visibility, and connected CEX trading workflows on venues
-              such as Bitget and MEXC where supported.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-4">
-              <a
-                href="#request-access"
-                className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-emerald-300 via-accent-cyan to-accent-blue px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-md transition hover:shadow-glow"
-              >
-                Request Access
-              </a>
-              <a
-                href="/desk/how-it-works"
-                className="inline-flex items-center justify-center rounded-full border border-border bg-surface/60 px-5 py-2.5 text-sm font-semibold text-text transition hover:border-accent-blue"
-              >
-                Learn How It Works
-              </a>
-            </div>
+      <PageHero
+        eyebrow="uLiquid Desk"
+        title={deskFormula}
+        description="A user-friendly platform for Hyperliquid vaults, bots, AI-assisted workflows, strategy discovery, automation, performance visibility, and supported connected CEX trading workflows."
+        backgroundVariant="desk"
+        actions={
+          <>
+            <Button href="/desk#request-access">Request Access</Button>
+            <Button href="/desk/how-it-works" variant="secondary">
+              Learn How It Works
+            </Button>
+          </>
+        }
+        aside={
+          <div className="grid gap-4">
+            <AppScreenshotPlaceholder title="Desk Strategy Editor" src="/screens/strategy-editor.png" />
+            <SurfacePanel tone="muted" className="grid gap-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-accent-cyan">Desk thesis</p>
+              <p className="text-lg font-semibold text-text">
+                Advanced trading infrastructure becomes more useful when it feels productized instead of operator-heavy.
+              </p>
+              <div className="grid gap-3 text-sm leading-7 text-muted">
+                <p>Vault-first product framing with a broader bot and strategy layer.</p>
+                <p>AI-supported workflows and connected execution paths where supported.</p>
+                <p>Automation, performance visibility, and allocation context built into the workflow.</p>
+              </div>
+            </SurfacePanel>
           </div>
-          <Card className="border-emerald-400/30 bg-gradient-to-br from-emerald-400/10 via-background to-accent-blue/10">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-300">Desk Thesis</p>
-            <p className="mt-5 text-lg text-text">
-              Advanced trading infrastructure becomes more useful when vaults, bots, AI-assisted workflows,
-              strategy discovery, connected execution paths, and ongoing visibility feel productized instead
-              of operator-heavy.
-            </p>
-            <div className="mt-6 grid gap-3 text-sm text-muted">
-              <p>Vault-first product framing with a broader bot and strategy layer</p>
-              <p>AI-supported workflows and strategy access with cleaner control surfaces</p>
-              <p>Supported exchange access, including Bitget and MEXC where available</p>
-              <p>Automation, performance visibility, and allocation context built into the workflow</p>
-            </div>
-          </Card>
-        </div>
+        }
+      />
+
+      <Section className="pt-0">
+        <MetricStrip
+          items={[
+            {
+              label: "Entry Point",
+              value: "Vault-first discovery",
+              detail: "Start with Hyperliquid vault access, then branch into bots, AI, and automation from one product surface.",
+            },
+            {
+              label: "Control Layer",
+              value: "Guided workflows",
+              detail: "Keep signals, decisions, monitoring, and connected trading context visible in one interface.",
+            },
+            {
+              label: "Supported Reach",
+              value: "Hyperliquid + connected CEX paths",
+              detail: "Extend into supported exchange workflows such as Bitget and MEXC where available.",
+            },
+          ]}
+        />
       </Section>
 
       <Section>
         <div className="grid gap-6 lg:grid-cols-2">
           <Card>
             <h2 className="text-2xl font-semibold text-text">What Desk is</h2>
-            <p className="mt-4 text-sm text-muted">
+            <p className="mt-4 text-sm leading-7 text-muted">
               uLiquid Desk gives users a simpler way to access Hyperliquid vaults, bots, strategies,
               AI-assisted workflows, automation, and supported connected trading paths without presenting
               them with operator-focused infrastructure.
             </p>
           </Card>
-          <Card className="border-emerald-400/30">
+          <Card>
             <h2 className="text-2xl font-semibold text-text">Why Desk exists</h2>
-            <div className="mt-4 space-y-3 text-sm text-muted">
+            <div className="mt-4 space-y-3 text-sm leading-7 text-muted">
               {deskWhyItExists.map((reason) => (
                 <p key={reason}>{reason}</p>
               ))}
@@ -107,32 +124,34 @@ export default function DeskPage() {
         subtitle="Desk now has a fuller support surface across overview, features, vaults, bots, AI workflows, FAQ, and how-it-works pages."
       />
 
-      <Section>
-        <div className="mb-8">
-          <h2 className="text-3xl font-semibold text-text">How it works</h2>
-          <p className="mt-3 text-muted">A simpler product flow from Hyperliquid discovery and decision support to connected execution and ongoing monitoring.</p>
-        </div>
+      <Section tone="muted">
+        <SectionIntro
+          eyebrow="Workflow"
+          title="How it works"
+          description="A simpler product flow from Hyperliquid discovery and decision support to connected execution and ongoing monitoring."
+        />
         <div className="grid gap-6 md:grid-cols-3">
           {deskHowItWorks.map((step, index) => (
-            <Card key={step.title} className="border-emerald-400/20">
-              <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">Step {index + 1}</p>
+            <Card key={step.title}>
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-accent-cyan">Step {index + 1}</p>
               <h3 className="mt-3 text-lg font-semibold text-text">{step.title}</h3>
-              <p className="mt-3 text-sm text-muted">{step.description}</p>
+              <p className="mt-4 text-sm leading-7 text-muted">{step.description}</p>
             </Card>
           ))}
         </div>
       </Section>
 
       <Section>
-        <div className="mb-8">
-          <h2 className="text-3xl font-semibold text-text">Who it is for</h2>
-          <p className="mt-3 text-muted">A broader, more accessible trading product story than Market Maker.</p>
-        </div>
+        <SectionIntro
+          eyebrow="Audience"
+          title="Who it is for"
+          description="A broader, more accessible trading product story than Market Maker."
+        />
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
           {deskAudience.map((item) => (
             <Card key={item.title}>
               <h3 className="text-lg font-semibold text-text">{item.title}</h3>
-              <p className="mt-3 text-sm text-muted">{item.description}</p>
+              <p className="mt-4 text-sm leading-7 text-muted">{item.description}</p>
             </Card>
           ))}
         </div>
@@ -141,8 +160,9 @@ export default function DeskPage() {
       <Section>
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
-            <h2 className="text-3xl font-semibold text-text">Request Access</h2>
-            <p className="mt-4 text-muted">
+            <Badge>Launch Access</Badge>
+            <h2 className="mt-5 text-3xl font-semibold text-text sm:text-4xl">Request Access</h2>
+            <p className="mt-4 text-base leading-8 text-muted">
               Desk is launching with a request-access flow. Tell us how you want to use vaults, bots,
               strategies, AI-assisted workflows, automation, or connected CEX trading paths such as Bitget
               and MEXC where supported.

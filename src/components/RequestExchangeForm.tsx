@@ -17,6 +17,8 @@ export function RequestExchangeForm() {
   const [state, setState] = useState<FormState>({ exchange: "", email: "", notes: "" });
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState<{ exchange?: string; email?: string }>({});
+  const fieldClass =
+    "mt-2 w-full rounded-2xl border border-border bg-bg-alt/80 px-4 py-3 text-sm text-text outline-none transition focus:border-border-strong focus:bg-white/[0.04] focus:ring-2 focus:ring-accent-cyan/25";
 
   const handleChange = (field: keyof FormState) => (
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -38,7 +40,17 @@ export function RequestExchangeForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 rounded-2xl border border-border bg-surface/70 p-6">
+    <form
+      onSubmit={handleSubmit}
+      className="space-y-5 rounded-[30px] border border-border/90 bg-[linear-gradient(180deg,hsl(var(--surface-2)/0.96),hsl(var(--surface-1)/0.9))] p-6 shadow-panel sm:p-8"
+    >
+      <div className="space-y-2">
+        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-accent-cyan">Exchange Request</p>
+        <h3 className="font-display text-2xl font-semibold text-text">Need another venue connected?</h3>
+        <p className="text-sm leading-7 text-muted">
+          Tell us which exchange you want to use and any context around trading requirements or timelines.
+        </p>
+      </div>
       <div>
         <label className="text-sm font-semibold text-text" htmlFor="exchange-name">
           Exchange name
@@ -46,7 +58,7 @@ export function RequestExchangeForm() {
         <input
           id="exchange-name"
           className={cn(
-            "mt-2 w-full rounded-xl border border-border bg-background/60 px-3 py-2 text-sm text-text outline-none focus:ring-2 focus:ring-accent-blue",
+            fieldClass,
             errors.exchange ? "border-red-400" : ""
           )}
           value={state.exchange}
@@ -63,7 +75,7 @@ export function RequestExchangeForm() {
           id="exchange-email"
           type="email"
           className={cn(
-            "mt-2 w-full rounded-xl border border-border bg-background/60 px-3 py-2 text-sm text-text outline-none focus:ring-2 focus:ring-accent-blue",
+            fieldClass,
             errors.email ? "border-red-400" : ""
           )}
           value={state.email}
@@ -78,17 +90,17 @@ export function RequestExchangeForm() {
         </label>
         <textarea
           id="exchange-notes"
-          className="mt-2 w-full rounded-xl border border-border bg-background/60 px-3 py-2 text-sm text-text outline-none focus:ring-2 focus:ring-accent-blue"
+          className={fieldClass}
           rows={4}
           value={state.notes}
           onChange={handleChange("notes")}
         />
       </div>
-      <Button type="submit">
-        Request exchange
-      </Button>
+      <Button type="submit">Request Exchange</Button>
       {submitted ? (
-        <p className="text-sm text-accent-cyan">Thanks — we’ll get back to you.</p>
+        <p className="rounded-2xl border border-accent-cyan/30 bg-accent-cyan/10 px-4 py-3 text-sm text-accent-cyan">
+          Thanks. We&apos;ll get back to you.
+        </p>
       ) : null}
     </form>
   );

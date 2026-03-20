@@ -33,12 +33,12 @@ export function AppScreenshotPlaceholder({
   return (
     <div
       className={cn(
-        "relative rounded-3xl border border-transparent bg-gradient-to-br from-accent-cyan/60 via-accent-blue/40 to-accent-purple/60 p-[1.5px] shadow-lg",
+        "relative rounded-[30px] border border-border/60 bg-[linear-gradient(135deg,hsl(var(--brand-primary)/0.65),hsl(var(--brand-secondary)/0.45),rgba(255,255,255,0.08))] p-[1.5px] shadow-elevated",
         aspectMap[aspect]
       )}
     >
-      <div className="flex h-full w-full flex-col overflow-hidden rounded-[22px] bg-surface/90">
-        <div className="flex items-center justify-between border-b border-border/60 bg-background/60 px-4 py-3 text-xs text-muted">
+      <div className="flex h-full w-full flex-col overflow-hidden rounded-[28px] bg-[linear-gradient(180deg,hsl(var(--surface-2)/0.98),hsl(var(--surface-1)/0.94))]">
+        <div className="flex items-center justify-between border-b border-border/60 bg-bg-alt/80 px-4 py-3 text-xs text-muted">
           <div className="flex items-center gap-2">
             <span className="h-2.5 w-2.5 rounded-full bg-red-400/70" />
             <span className="h-2.5 w-2.5 rounded-full bg-yellow-400/70" />
@@ -73,7 +73,7 @@ export function AppScreenshotPlaceholder({
               <div className="grid flex-1 grid-cols-[2fr_1fr] gap-4">
                 <div className="rounded-xl border border-border/70 bg-background/70 p-4">
                   <div className="h-3 w-32 rounded-full bg-border/70" />
-                  <div className="mt-4 h-28 w-full rounded-xl bg-gradient-to-r from-accent-cyan/20 via-accent-blue/20 to-accent-purple/20" />
+                  <div className="mt-4 h-28 w-full rounded-xl bg-gradient-to-r from-accent-cyan/20 via-accent-blue/25 to-white/10" />
                   <div className="mt-3 h-3 w-24 rounded-full bg-border/60" />
                 </div>
                 <div className="flex flex-col gap-3">
@@ -83,7 +83,7 @@ export function AppScreenshotPlaceholder({
                       className="rounded-xl border border-border/70 bg-background/70 p-3"
                     >
                       <div className="h-3 w-16 rounded-full bg-border/70" />
-                      <div className="mt-3 h-6 w-20 rounded-lg bg-accent-purple/30" />
+                      <div className="mt-3 h-6 w-20 rounded-lg bg-accent-blue/25" />
                     </div>
                   ))}
                 </div>
@@ -99,7 +99,7 @@ export function AppScreenshotPlaceholder({
             </div>
           )}
         </div>
-        <div className="border-t border-border/60 px-4 py-2 text-xs text-muted">
+        <div className="border-t border-border/60 bg-bg-alt/50 px-4 py-2 text-xs text-muted">
           {src ? "\u00A0" : `Replace with real app screenshot: /public/screens/${slug}.png`}
         </div>
       </div>

@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { SectionIntro } from "@/components/SectionIntro";
+import { SurfacePanel } from "@/components/SurfacePanel";
 import { Button } from "@/components/ui/Button";
 
 type CTASectionProps = {
@@ -24,11 +26,9 @@ export function CTASection({
 }: CTASectionProps) {
   return (
     <section className="px-6 pb-20 sm:px-10 lg:px-16">
-      <div className="mx-auto w-full max-w-6xl rounded-3xl border border-border bg-gradient-to-r from-accent-cyan/10 via-accent-blue/10 to-accent-purple/10 p-10 text-center shadow-lg">
-        <h2 className="text-3xl font-semibold text-text sm:text-4xl">{title}</h2>
-        <p className="mx-auto mt-4 max-w-2xl text-base text-muted sm:text-lg">
-          {subtitle}
-        </p>
+      <div className="mx-auto w-full max-w-7xl">
+        <SurfacePanel tone="accent" className="px-6 py-10 text-center sm:px-10 sm:py-12">
+          <SectionIntro title={title} description={subtitle} align="center" className="mb-0" />
         <div className="mt-6 flex flex-wrap justify-center gap-4">
           <Button href={primaryHref}>{primaryLabel}</Button>
           <Button href={secondaryHref} variant="secondary">
@@ -37,11 +37,12 @@ export function CTASection({
         </div>
         {tertiaryLabel && tertiaryHref ? (
           <div className="mt-4">
-            <Link href={tertiaryHref} className="text-sm font-semibold text-accent-cyan">
+            <Link href={tertiaryHref} className="text-sm font-semibold text-accent-cyan hover:text-text">
               {tertiaryLabel}
             </Link>
           </div>
         ) : null}
+        </SurfacePanel>
       </div>
     </section>
   );

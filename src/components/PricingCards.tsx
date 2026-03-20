@@ -57,23 +57,25 @@ export function PricingCards({ variant = "full" }: PricingCardsProps) {
           key={tier.name}
           className={cn(
             "flex h-full flex-col",
-            index === 1 ? "border-accent-blue/60 shadow-[0_0_22px_rgba(20,129,192,0.45)]" : "border-border"
+            index === 1
+              ? "border-border-strong/60 bg-[radial-gradient(circle_at_top,hsl(var(--brand-secondary)/0.12),transparent_34%),linear-gradient(180deg,hsl(var(--surface-2)/0.98),hsl(var(--surface-1)/0.92))]"
+              : "border-border"
           )}
         >
           <div className="flex items-center justify-between">
             <h3 className="text-xl font-semibold text-text">{tier.name}</h3>
             {index === 1 ? (
-              <span className="rounded-full border border-accent-blue/50 px-3 py-1 text-xs font-semibold text-accent-blue">
+              <span className="rounded-full border border-border-strong/50 bg-accent-cyan/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-accent-cyan">
                 Most popular
               </span>
             ) : null}
           </div>
-          <p className="mt-3 text-2xl font-semibold text-text">{tier.price}</p>
-          <p className="mt-2 text-sm text-muted">{tier.description}</p>
-          <ul className="mt-4 space-y-2 text-sm text-muted">
+          <p className="mt-4 font-display text-3xl font-semibold text-text">{tier.price}</p>
+          <p className="mt-3 text-sm leading-7 text-muted">{tier.description}</p>
+          <ul className="mt-6 space-y-3 text-sm text-muted">
             {tier.features.map((feature) => (
               <li key={feature} className="flex items-start gap-2">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-accent-blue" />
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-accent-cyan" />
                 <span>{feature}</span>
               </li>
             ))}
