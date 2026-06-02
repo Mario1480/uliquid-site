@@ -7,6 +7,8 @@ export type AppScreenshotPlaceholderProps = {
   title: string;
   aspect?: AspectRatio;
   src?: string;
+  alt?: string;
+  priority?: boolean;
 };
 
 const aspectMap: Record<AspectRatio, string> = {
@@ -26,6 +28,8 @@ export function AppScreenshotPlaceholder({
   title,
   aspect = "16:9",
   src,
+  alt,
+  priority = false,
 }: AppScreenshotPlaceholderProps) {
   const slug = slugify(title);
   const shouldShowImage = Boolean(src);
@@ -51,10 +55,11 @@ export function AppScreenshotPlaceholder({
           {shouldShowImage ? (
             <Image
               src={src!}
-              alt={`${title} screenshot`}
+              alt={alt ?? `${title} screenshot from the uLiquid app`}
               fill
+              priority={priority}
               className="object-cover"
-              sizes="(max-width: 768px) 100vw, 800px"
+              sizes="(max-width: 1024px) 100vw, 560px"
             />
           ) : (
             <div className="grid h-full w-full gap-4 p-6">

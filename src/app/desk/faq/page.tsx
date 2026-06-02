@@ -1,8 +1,9 @@
 import { CTASection } from "@/components/CTASection";
 import { DeskResourceSection } from "@/components/DeskResourceSection";
 import { FAQAccordion } from "@/components/FAQAccordion";
+import { JsonLd } from "@/components/JsonLd";
 import { Section } from "@/components/ui/Section";
-import { createPageMetadata, deskName } from "@/lib/seo";
+import { createFaqJsonLd, createPageMetadata, deskName } from "@/lib/seo";
 import { deskFaqs } from "@/lib/content/desk";
 
 export const metadata = createPageMetadata({
@@ -16,6 +17,7 @@ export const metadata = createPageMetadata({
 export default function DeskFaqPage() {
   return (
     <div>
+      <JsonLd data={createFaqJsonLd(deskFaqs)} />
       <Section className="pt-20">
         <div className="max-w-3xl">
           <h1 className="text-4xl font-semibold text-text">Desk FAQ</h1>

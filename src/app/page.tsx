@@ -10,35 +10,56 @@ import { Card } from "@/components/ui/Card";
 import { Section } from "@/components/ui/Section";
 import {
   brandName,
+  createFaqJsonLd,
   createPageMetadata,
   deskDescription,
+  deskSoftwareJsonLd,
+  marketMakerSoftwareJsonLd,
   marketMakerDescription,
+  organizationJsonLd,
   siteUrl,
 } from "@/lib/seo";
 import { deskCapabilities, deskFormula } from "@/lib/content/desk";
 
 export const metadata = createPageMetadata({
-  title: "Vaults, bots and AI-powered trading workflows for Hyperliquid",
+  title: "Hyperliquid Vaults, Bots & AI Trading Desk",
   description:
-    "uLiquid Desk is the primary path into Hyperliquid vaults, bots, AI-powered workflows, automated trading access, and connected CEX trading paths such as Bitget and MEXC where supported, with Market Maker available for specialized operator teams.",
+    "uLiquid Desk helps Hyperliquid users access vaults, run bots, use AI-assisted workflows, and manage connected trading paths.",
   canonical: "/",
   siteName: brandName,
-  openGraphTitle: `${brandName} - Desk-first trading workflows for Hyperliquid`,
+  openGraphTitle: `${brandName} - Hyperliquid vaults, bots and AI workflows`,
 });
+
+const homeFaqs = [
+  {
+    question: "What is uLiquid Desk?",
+    answer:
+      "uLiquid Desk is a Hyperliquid-first trading workspace for vault access, bot automation, strategy discovery, AI-assisted workflows, performance visibility, and supported connected execution paths.",
+  },
+  {
+    question: "Who should start with Desk?",
+    answer:
+      "Desk is the default path for vault users, strategy followers, bot users, automation-oriented traders, and users who want a clearer product experience around Hyperliquid workflows.",
+  },
+  {
+    question: "When is uLiquid Market Maker the better fit?",
+    answer:
+      "Market Maker is the specialized route for token projects, listing teams, liquidity operators, and agencies that need managed infrastructure, spread control, risk limits, and reporting.",
+  },
+  {
+    question: "Does uLiquid support connected exchange workflows?",
+    answer:
+      "uLiquid Desk is Hyperliquid-first and can support connected CEX trading paths such as Bitget and MEXC where available. Market Maker supports a broader operator-focused exchange stack.",
+  },
+];
 
 export default function Home() {
   return (
     <div>
-      <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          name: brandName,
-          url: siteUrl,
-          description:
-            "uLiquid builds Desk-first vault, bot, AI workflow, trading automation, and connected trading desk products for Hyperliquid users, with Market Maker for specialized operator teams.",
-        }}
-      />
+      <JsonLd data={organizationJsonLd} />
+      <JsonLd data={deskSoftwareJsonLd} />
+      <JsonLd data={marketMakerSoftwareJsonLd} />
+      <JsonLd data={createFaqJsonLd(homeFaqs)} />
       <JsonLd
         data={{
           "@context": "https://schema.org",
@@ -63,8 +84,8 @@ export default function Home() {
 
       <PageHero
         eyebrow="uLiquid Platform"
-        title="Vaults, bots and AI-powered trading workflows for Hyperliquid"
-        description="Start with uLiquid Desk for a simpler path into vaults, strategy workflows, bot automation, and supported connected execution. When teams need dedicated liquidity infrastructure, Market Maker remains the operator-grade path."
+        title="Hyperliquid vaults, bots and AI trading workflows"
+        description="Start with uLiquid Desk to access Hyperliquid vaults, run bot automation, use AI-assisted workflow context, and manage supported connected execution. Market Maker remains the operator-grade path for teams that need dedicated liquidity infrastructure."
         backgroundVariant="brand"
         actions={
           <>
@@ -79,7 +100,12 @@ export default function Home() {
         }
         aside={
           <div className="grid gap-4">
-            <AppScreenshotPlaceholder title="Desk Overview" src="/screens/overview-dashboard.png" />
+            <AppScreenshotPlaceholder
+              title="Desk Overview"
+              src="/screens/overview-dashboard.jpg"
+              alt="uLiquid Desk overview dashboard showing Hyperliquid vaults, strategy performance, and trading workflow controls"
+              priority
+            />
             <SurfacePanel tone="muted" className="grid gap-3">
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-accent-cyan">
                 Desk-first growth path
@@ -120,30 +146,30 @@ export default function Home() {
       <Section id="products" tone="muted">
         <SectionIntro
           eyebrow="Product Map"
-          title="Start with Desk, keep Market Maker in view"
-          description="The public site now leads with the user-facing Desk path while preserving a clear route into specialized operator tooling."
+          title="Choose the right uLiquid trading product"
+          description="Desk is the user-facing path for Hyperliquid vaults, bots, AI workflows, and supported connected trading. Market Maker is the specialized infrastructure path for liquidity teams and operators."
         />
         <div className="mb-8 grid gap-6 md:grid-cols-2 xl:grid-cols-5">
           {[
             {
               title: "Vault access",
-              description: "A simpler route into Hyperliquid vaults and strategy products.",
+              description: "A simpler route into Hyperliquid vaults, strategy context, and allocation workflows.",
             },
             {
               title: "Bots",
-              description: "Productized bot workflows instead of operator-style control panels.",
+              description: "Productized bot automation without operator-style configuration overhead.",
             },
             {
               title: "AI workflows",
-              description: "Guided, AI-powered product flows that help users navigate strategy decisions.",
+              description: "AI-assisted trading context that helps users evaluate strategy decisions.",
             },
             {
               title: "Automation",
-              description: "Trading automation and ongoing visibility framed around usability and control.",
+              description: "Trading automation with clearer controls, monitoring, and performance visibility.",
             },
             {
               title: "Connected execution",
-              description: "Desk-style execution across supported exchanges such as Bitget and MEXC where available.",
+              description: "Supported CEX trading paths such as Bitget and MEXC where available.",
             },
           ].map((item) => (
             <Card key={item.title}>
@@ -166,7 +192,7 @@ export default function Home() {
             <p className="mt-4 max-w-2xl text-sm leading-7 text-muted">{deskDescription}</p>
             <div className="mt-6 grid gap-3 text-sm leading-7 text-muted">
               <p>For vault users, strategy followers, bot users, automation-oriented traders, and AI-assisted workflow users.</p>
-              <p>Vault access, bots, AI-supported workflows, strategy automation, connected CEX trading paths, performance visibility, and clearer control surfaces.</p>
+              <p>Use Desk for vault access, bot automation, AI-assisted strategy context, connected CEX trading paths, performance visibility, and clearer control surfaces.</p>
             </div>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button href="/desk">Explore Desk</Button>
@@ -189,7 +215,7 @@ export default function Home() {
             <p className="mt-4 text-sm leading-7 text-muted">{marketMakerDescription}</p>
             <div className="mt-6 grid gap-3 text-sm leading-7 text-muted">
               <p>For token projects, listing teams, liquidity operators, and agencies.</p>
-              <p>Execution, spread control, runtime risk limits, reporting, and managed VPS delivery.</p>
+              <p>Use Market Maker for execution, spread control, runtime risk limits, reporting, and managed VPS delivery.</p>
             </div>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button href="/market-maker">Explore Market Maker</Button>
@@ -205,7 +231,7 @@ export default function Home() {
         <SectionIntro
           eyebrow="Desk Surface"
           title="What Desk includes"
-          description="Desk is broader than a vault viewer. It combines Hyperliquid vault access with bots, AI-assisted workflows, automation, connected execution, and visibility in one user-facing product."
+          description="Desk combines Hyperliquid vault access with bot automation, AI-assisted workflows, strategy discovery, connected execution, and performance visibility in one user-facing product."
         />
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {deskCapabilities.map((item) => (
@@ -221,7 +247,7 @@ export default function Home() {
         <SectionIntro
           eyebrow="Path Selection"
           title="Which product is right for you?"
-          description="Desk is the default growth path for most users. Market Maker remains the operator-grade route for teams with specialized liquidity requirements."
+          description="Desk is the default product path for most trading users. Market Maker is the operator-grade route for teams with specialized liquidity requirements."
         />
         <div className="grid gap-6 lg:grid-cols-2">
           <Card>
@@ -269,6 +295,22 @@ export default function Home() {
             <Card key={item.title}>
               <h3 className="text-lg font-semibold text-text">{item.title}</h3>
               <p className="mt-4 text-sm leading-7 text-muted">{item.description}</p>
+            </Card>
+          ))}
+        </div>
+      </Section>
+
+      <Section tone="muted">
+        <SectionIntro
+          eyebrow="FAQ"
+          title="Common questions about uLiquid"
+          description="Short answers for users comparing the Desk and Market Maker paths."
+        />
+        <div className="grid gap-6 md:grid-cols-2">
+          {homeFaqs.map((item) => (
+            <Card key={item.question}>
+              <h3 className="text-lg font-semibold text-text">{item.question}</h3>
+              <p className="mt-4 text-sm leading-7 text-muted">{item.answer}</p>
             </Card>
           ))}
         </div>

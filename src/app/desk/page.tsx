@@ -12,7 +12,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Section } from "@/components/ui/Section";
-import { createPageMetadata, deskDescription, deskName, siteUrl } from "@/lib/seo";
+import { createPageMetadata, deskDescription, deskName, deskSoftwareJsonLd } from "@/lib/seo";
 import { deskAudience, deskFormula, deskHowItWorks, deskPillars, deskWhyItExists } from "@/lib/content/desk";
 
 export const metadata = createPageMetadata({
@@ -27,14 +27,7 @@ export default function DeskPage() {
   return (
     <div>
       <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@type": "SoftwareApplication",
-          name: deskName,
-          applicationCategory: "FinancialProduct",
-          url: `${siteUrl}/desk`,
-          description: deskDescription,
-        }}
+        data={deskSoftwareJsonLd}
       />
 
       <PageHero
@@ -52,7 +45,12 @@ export default function DeskPage() {
         }
         aside={
           <div className="grid gap-4">
-            <AppScreenshotPlaceholder title="Desk Strategy Editor" src="/screens/strategy-editor.png" />
+            <AppScreenshotPlaceholder
+              title="Desk Strategy Editor"
+              src="/screens/strategy-editor.jpg"
+              alt="uLiquid Desk strategy editor with bot automation, AI workflow context, and connected trading controls"
+              priority
+            />
             <SurfacePanel tone="muted" className="grid gap-3">
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-accent-cyan">Desk thesis</p>
               <p className="text-lg font-semibold text-text">

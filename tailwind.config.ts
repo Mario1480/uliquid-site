@@ -26,7 +26,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)", "Geist", "sans-serif"],
-        display: ["var(--font-display)", "var(--font-geist-sans)", "sans-serif"],
+        display: ["var(--font-geist-sans)", "Geist", "sans-serif"],
         mono: ["var(--font-geist-mono)", "monospace"],
       },
       boxShadow: {

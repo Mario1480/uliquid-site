@@ -1,16 +1,15 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import { JsonLd } from "@/components/JsonLd";
 import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
+import { createFaqJsonLd, createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "FAQ – uLiquid Market Maker",
+export const metadata = createPageMetadata({
+  title: "Market Maker FAQ",
   description:
     "Answers to common questions about uLiquid Market Maker, managed VPS, DEX price feeds, AI advisory, licensing, and security.",
-  alternates: {
-    canonical: "/faq",
-  },
-};
+  canonical: "/faq",
+});
 
 const faqs = [
   {
@@ -75,6 +74,7 @@ const faqs = [
 export default function FaqPage() {
   return (
     <div>
+      <JsonLd data={createFaqJsonLd(faqs)} />
       <Section className="pt-20">
         <div className="max-w-3xl">
           <h1 className="text-4xl font-semibold text-text">FAQ</h1>

@@ -63,10 +63,11 @@ export function HeaderNav() {
           <div className="flex items-center justify-between gap-4 px-4 py-4 sm:px-6">
             <Link href="/" className="flex min-w-0 items-center gap-3 text-lg font-semibold text-text">
               <Image
-                src="/logo.png"
+                src="/logo-128.png"
                 alt="uLiquid logo"
                 width={56}
                 height={56}
+                priority
                 className="h-12 w-12 rounded-2xl border border-white/10 bg-white/[0.03] p-1.5 shadow-glow"
               />
               <div className="min-w-0">

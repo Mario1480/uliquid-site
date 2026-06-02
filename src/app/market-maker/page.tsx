@@ -13,7 +13,13 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Section } from "@/components/ui/Section";
-import { createPageMetadata, marketMakerDescription, marketMakerName, siteUrl } from "@/lib/seo";
+import {
+  createFaqJsonLd,
+  createPageMetadata,
+  marketMakerDescription,
+  marketMakerName,
+  marketMakerSoftwareJsonLd,
+} from "@/lib/seo";
 import {
   marketMakerBenefits,
   marketMakerBuiltFor,
@@ -37,20 +43,9 @@ export default function MarketMakerPage() {
   return (
     <div>
       <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@type": "SoftwareApplication",
-          name: marketMakerName,
-          applicationCategory: "FinancialTradingSoftware",
-          operatingSystem: "Linux (Managed VPS)",
-          url: `${siteUrl}/market-maker`,
-          description: marketMakerDescription,
-          offers: {
-            "@type": "Offer",
-            url: "https://license-server.uliquid.vip/",
-          },
-        }}
+        data={marketMakerSoftwareJsonLd}
       />
+      <JsonLd data={createFaqJsonLd(marketMakerFaqs)} />
 
       <PageHero
         eyebrow="uLiquid Market Maker"
@@ -67,7 +62,12 @@ export default function MarketMakerPage() {
         }
         aside={
           <div className="grid gap-4">
-            <AppScreenshotPlaceholder title="Market Maker Dashboard" src="/screens/risk-controls.png" />
+            <AppScreenshotPlaceholder
+              title="Market Maker Dashboard"
+              src="/screens/risk-controls.jpg"
+              alt="uLiquid Market Maker dashboard showing risk controls, exchange operations, and liquidity automation settings"
+              priority
+            />
             <SurfacePanel tone="muted">
               <div className="flex flex-wrap gap-2">
                 {marketMakerTrustChips.slice(0, 6).map((chip) => (
