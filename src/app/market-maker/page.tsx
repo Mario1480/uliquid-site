@@ -64,7 +64,7 @@ export default function MarketMakerPage() {
           <div className="grid gap-4">
             <AppScreenshotPlaceholder
               title="Market Maker Dashboard"
-              src="/screens/risk-controls.jpg"
+              src="/screens/risk-controls.png"
               alt="uLiquid Market Maker dashboard showing risk controls, exchange operations, and liquidity automation settings"
               priority
             />

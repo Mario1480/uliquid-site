@@ -8,11 +8,10 @@ import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
 
 const navLinks = [
-  { href: "/#products", label: "Products" },
   { href: "/market-maker", label: "Market Maker" },
-  { href: "/desk", label: "Desk" },
   { href: "/market-maker/pricing", label: "Pricing" },
   { href: "/market-maker/docs", label: "Docs" },
+  { href: "/faq", label: "FAQ" },
   { href: "/company", label: "Company" },
 ];
 
@@ -26,6 +25,15 @@ function getHeaderCtas(pathname: string) {
     };
   }
 
+  if (pathname === "/") {
+    return {
+      primaryLabel: "Buy License",
+      primaryHref: "https://license-server.uliquid.vip/",
+      secondaryLabel: "Explore Market Maker",
+      secondaryHref: "/market-maker",
+    };
+  }
+
   if (
     pathname.startsWith("/market-maker") ||
     pathname.startsWith("/blog") ||
@@ -33,7 +41,8 @@ function getHeaderCtas(pathname: string) {
     pathname.startsWith("/use-cases") ||
     pathname === "/faq" ||
     pathname === "/crypto-market-maker" ||
-    pathname === "/app"
+    pathname === "/app" ||
+    pathname === "/company"
   ) {
     return {
       primaryLabel: "Buy License",
@@ -44,10 +53,10 @@ function getHeaderCtas(pathname: string) {
   }
 
   return {
-    primaryLabel: "Explore Desk",
-    primaryHref: "/desk",
-    secondaryLabel: "Request Access",
-    secondaryHref: "/desk#request-access",
+    primaryLabel: "Buy License",
+    primaryHref: "https://license-server.uliquid.vip/",
+    secondaryLabel: "Explore Market Maker",
+    secondaryHref: "/market-maker",
   };
 }
 
@@ -63,7 +72,7 @@ export function HeaderNav() {
           <div className="flex items-center justify-between gap-4 px-4 py-4 sm:px-6">
             <Link href="/" className="flex min-w-0 items-center gap-3 text-lg font-semibold text-text">
               <Image
-                src="/logo-128.png"
+                src="/logo.png"
                 alt="uLiquid logo"
                 width={56}
                 height={56}
@@ -72,17 +81,13 @@ export function HeaderNav() {
               />
               <div className="min-w-0">
                 <span className="block font-display text-xl">uLiquid</span>
-                <span className="hidden text-xs uppercase tracking-[0.22em] text-muted sm:block">
-                  Desk + Market Maker
-                </span>
+                <span className="hidden text-xs uppercase tracking-[0.22em] text-muted sm:block">Market Maker</span>
               </div>
             </Link>
             <nav className="hidden items-center gap-2 text-sm md:flex">
               {navLinks.map((link) => {
                 const isActive =
-                  link.href === "/#products"
-                    ? pathname === "/"
-                    : pathname === link.href || pathname.startsWith(`${link.href}/`);
+                  pathname === link.href || pathname.startsWith(`${link.href}/`);
 
                 return (
                   <Link

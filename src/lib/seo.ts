@@ -4,7 +4,7 @@ export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://uliquid.vip"
 
 export const brandName = "uLiquid";
 export const brandDescription =
-  "uLiquid builds crypto trading software for Hyperliquid vaults, bot automation, AI-assisted workflows, and professional market-making operations.";
+  "uLiquid builds crypto market-making software for professional liquidity operations, exchange readiness, and controlled execution.";
 
 export const defaultOgImage = "/og/uliquid-og.jpg";
 

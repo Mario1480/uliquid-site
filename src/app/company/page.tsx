@@ -8,7 +8,7 @@ import { brandName, createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "Company",
   description:
-    "Learn about uLiquid and contact the team about Market Maker, Desk, liquidity operations, and vault-based trading workflows.",
+    "Learn about uLiquid and contact the team about Market Maker, liquidity operations, and exchange readiness.",
   canonical: "/company",
   siteName: brandName,
 });
@@ -18,8 +18,8 @@ export default function CompanyPage() {
     <div>
       <PageHero
         eyebrow="Company"
-        title="The team behind Desk and Market Maker"
-        description="uLiquid builds specialized crypto products for professional liquidity operations and user-friendly vault-based trading workflows."
+        title="The team behind uLiquid Market Maker"
+        description="uLiquid builds specialized crypto software for professional liquidity operations, exchange readiness, and controlled execution."
         backgroundVariant="neutral"
         actions={<Button href="#contact">Contact the team</Button>}
       />
@@ -29,8 +29,8 @@ export default function CompanyPage() {
           <div id="contact">
             <h2 className="text-3xl font-semibold text-text">Contact</h2>
             <p className="mt-4 text-base leading-8 text-muted">
-              Tell us whether you are exploring Market Maker or Desk, what you want to achieve, and where
-              you need help. We will respond quickly.
+              Tell us what you want to achieve with Market Maker, your exchange setup, and where you need
+              help. We will respond quickly.
             </p>
           </div>
           <ContactForm />

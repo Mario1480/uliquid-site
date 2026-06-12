@@ -1,67 +1,25 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
-const defaultFooterLinks = {
+const footerLinks = {
   Products: [
-    { label: "Desk Overview", href: "/desk" },
-    { label: "Desk Features", href: "/desk/features" },
     { label: "Market Maker", href: "/market-maker" },
     { label: "Market Maker Pricing", href: "/market-maker/pricing" },
+    { label: "Market Maker Exchanges", href: "/market-maker/exchanges" },
+    { label: "Market Maker Docs", href: "/market-maker/docs" },
   ],
   Company: [
     { label: "About", href: "/company" },
     { label: "Contact", href: "/company#contact" },
     { label: "Careers", href: "/company" },
   ],
-  Desk: [
-    { label: "Desk FAQ", href: "/desk/faq" },
-    { label: "Hyperliquid Vaults", href: "/desk/vaults" },
-    { label: "Bots & Automation", href: "/desk/bots-automation" },
-    { label: "AI Workflows", href: "/desk/ai-workflows" },
-    { label: "How It Works", href: "/desk/how-it-works" },
-  ],
   Resources: [
-    { label: "Market Maker Docs", href: "/market-maker/docs" },
-    { label: "Market Maker Exchanges", href: "/market-maker/exchanges" },
     { label: "Blog", href: "/blog" },
     { label: "Crypto Market Maker", href: "/crypto-market-maker" },
+    { label: "FAQ", href: "/faq" },
     { label: "License Manager", href: "https://license-server.uliquid.vip/" },
     { label: "Security", href: "/market-maker/security" },
-  ],
-  Legal: [
-    { label: "Privacy", href: "/privacy" },
-    { label: "Terms", href: "/terms" },
-  ],
-};
-
-const deskFooterLinks = {
-  Products: [
-    { label: "Desk Overview", href: "/desk" },
-    { label: "Desk Features", href: "/desk/features" },
-    { label: "Market Maker", href: "/market-maker" },
-    { label: "Market Maker Pricing", href: "/market-maker/pricing" },
-  ],
-  Desk: [
-    { label: "Desk FAQ", href: "/desk/faq" },
-    { label: "Hyperliquid Vaults", href: "/desk/vaults" },
-    { label: "Bots & Automation", href: "/desk/bots-automation" },
-    { label: "AI Workflows", href: "/desk/ai-workflows" },
-    { label: "How It Works", href: "/desk/how-it-works" },
-  ],
-  Resources: [
-    { label: "Desk Overview", href: "/desk" },
-    { label: "Desk Features", href: "/desk/features" },
-    { label: "Blog", href: "/blog" },
-    { label: "License Manager", href: "https://license-server.uliquid.vip/" },
-    { label: "Market Maker Docs", href: "/market-maker/docs" },
-    { label: "Security", href: "/market-maker/security" },
-  ],
-  Company: [
-    { label: "About", href: "/company" },
-    { label: "Contact", href: "/company#contact" },
-    { label: "Careers", href: "/company" },
   ],
   Legal: [
     { label: "Privacy", href: "/privacy" },
@@ -70,10 +28,6 @@ const deskFooterLinks = {
 };
 
 export function Footer() {
-  const pathname = usePathname() || "/";
-  const isDeskPage = pathname.startsWith("/desk");
-  const footerLinks = isDeskPage ? deskFooterLinks : defaultFooterLinks;
-
   return (
     <footer className="px-6 pb-8 pt-10 sm:px-10 lg:px-16">
       <div className="mx-auto max-w-7xl overflow-hidden rounded-[32px] border border-border/80 bg-[linear-gradient(180deg,hsl(var(--surface-2)/0.9),hsl(var(--surface-1)/0.82))] shadow-panel">
@@ -86,15 +40,9 @@ export function Footer() {
               </p>
             </div>
             <p className="max-w-md text-sm leading-7 text-muted">
-            Specialized crypto products for liquidity operations and vault-based trading, spanning Market
-            Maker and uLiquid Desk.
+              Managed market-making software for liquidity operations, exchange readiness, and controlled
+              execution.
             </p>
-            {isDeskPage ? (
-              <p className="max-w-md text-sm leading-7 text-muted">
-                Desk pages keep vaults, bots, AI workflows, and how-it-works links close by while preserving
-                the shared brand surface below.
-              </p>
-            ) : null}
             <div className="text-sm text-muted">
               Contact: <span className="font-semibold text-text">hello@uliquid.vip</span>
             </div>

@@ -35,7 +35,7 @@ export const metadata: Metadata = {
         url: defaultOgImage,
         width: 1200,
         height: 630,
-        alt: "uLiquid Desk and Market Maker product preview",
+        alt: "uLiquid Market Maker product preview",
       },
     ],
     siteName: brandName,
