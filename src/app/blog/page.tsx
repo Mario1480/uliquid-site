@@ -52,7 +52,7 @@ export default function BlogIndexPage() {
           "@context": "https://schema.org",
           "@type": "Blog",
           name: "uLiquid Blog",
-          url: "https://uliquid.vip/blog",
+          url: "https://uliquid.cloud/blog",
           description,
         }}
       />

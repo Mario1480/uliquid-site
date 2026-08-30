@@ -24,7 +24,7 @@ export default function BlogWhatIsCryptoMarketMaker() {
           description,
           author: { "@type": "Organization", name: "uLiquid" },
           publisher: { "@type": "Organization", name: "uLiquid" },
-          mainEntityOfPage: "https://uliquid.vip/blog/what-is-a-crypto-market-maker",
+          mainEntityOfPage: "https://uliquid.cloud/blog/what-is-a-crypto-market-maker",
         }}
       />
 

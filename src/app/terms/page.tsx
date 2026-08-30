@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms of Service – uLiquid Market Maker",
   description:
-    "Terms governing use of uliquid.vip and the uLiquid Market Maker marketing site.",
+    "Terms governing use of uliquid.cloud and the uLiquid Market Maker marketing site.",
   alternates: {
     canonical: "/terms",
   },
@@ -18,7 +18,7 @@ export default function TermsPage() {
         <h1 className="text-3xl font-semibold text-text">Terms of Service</h1>
         <p className="mt-4 text-sm text-muted">Effective date: January 24, 2026</p>
         <p className="mt-6 text-sm text-muted">
-          These Terms govern your use of uliquid.vip (the “Website”). The Website provides marketing
+          These Terms govern your use of uliquid.cloud (the “Website”). The Website provides marketing
           information about uLiquid Market Maker. Customer licensing, VPS management, and subscriptions are
           handled in the Customer Portal / License Manager at license-server.uliquid.vip and may be subject to
           additional terms.

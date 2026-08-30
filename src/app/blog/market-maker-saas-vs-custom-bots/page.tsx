@@ -24,7 +24,7 @@ export default function BlogSaasVsCustomBots() {
           description,
           author: { "@type": "Organization", name: "uLiquid" },
           publisher: { "@type": "Organization", name: "uLiquid" },
-          mainEntityOfPage: "https://uliquid.vip/blog/market-maker-saas-vs-custom-bots",
+          mainEntityOfPage: "https://uliquid.cloud/blog/market-maker-saas-vs-custom-bots",
         }}
       />
 

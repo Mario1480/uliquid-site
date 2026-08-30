@@ -57,7 +57,7 @@ export default function CryptoMarketMakerPage() {
           name: "uLiquid Market Maker",
           applicationCategory: "FinancialTradingSoftware",
           operatingSystem: "Linux (Managed VPS)",
-          url: "https://uliquid.vip/crypto-market-maker",
+          url: "https://uliquid.cloud/crypto-market-maker",
           description,
           offers: {
             "@type": "Offer",

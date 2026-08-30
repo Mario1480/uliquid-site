@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy – uLiquid Market Maker",
   description:
-    "Privacy policy describing how uliquid.vip collects and uses information on the marketing site.",
+    "Privacy policy describing how uliquid.cloud collects and uses information on the marketing site.",
   alternates: {
     canonical: "/privacy",
   },
@@ -19,7 +19,7 @@ export default function PrivacyPage() {
         <p className="mt-4 text-sm text-muted">Effective date: January 24, 2026</p>
         <p className="mt-6 text-sm text-muted">
           This Privacy Policy explains how uLiquid (“we,” “us,” “our”) collects and uses information on
-          uliquid.vip (the “Website”). The Website is a marketing site. Customer account actions, licensing,
+          uliquid.cloud (the “Website”). The Website is a marketing site. Customer account actions, licensing,
           and VPS details are managed in the Customer Portal / License Manager at license-server.uliquid.vip.
         </p>
 

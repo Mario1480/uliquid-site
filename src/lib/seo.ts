@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://uliquid.vip";
+export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://uliquid.cloud";
 
 export const brandName = "uLiquid";
 export const brandDescription =

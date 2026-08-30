@@ -24,7 +24,7 @@ export default function BlogAiMarketMakingCrypto() {
           description,
           author: { "@type": "Organization", name: "uLiquid" },
           publisher: { "@type": "Organization", name: "uLiquid" },
-          mainEntityOfPage: "https://uliquid.vip/blog/ai-market-making-crypto",
+          mainEntityOfPage: "https://uliquid.cloud/blog/ai-market-making-crypto",
         }}
       />
 

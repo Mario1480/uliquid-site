@@ -24,7 +24,7 @@ export default function BlogDexVsCexMarketMaking() {
           description,
           author: { "@type": "Organization", name: "uLiquid" },
           publisher: { "@type": "Organization", name: "uLiquid" },
-          mainEntityOfPage: "https://uliquid.vip/blog/dex-vs-cex-market-making",
+          mainEntityOfPage: "https://uliquid.cloud/blog/dex-vs-cex-market-making",
         }}
       />
 

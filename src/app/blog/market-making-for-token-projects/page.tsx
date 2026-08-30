@@ -24,7 +24,7 @@ export default function BlogMarketMakingForTokenProjects() {
           description,
           author: { "@type": "Organization", name: "uLiquid" },
           publisher: { "@type": "Organization", name: "uLiquid" },
-          mainEntityOfPage: "https://uliquid.vip/blog/market-making-for-token-projects",
+          mainEntityOfPage: "https://uliquid.cloud/blog/market-making-for-token-projects",
         }}
       />
 
